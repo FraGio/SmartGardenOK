@@ -59,6 +59,11 @@ namespace SmartGarden.Model
                 _timers.SetTimer(turno.Attesa, turno.Durata,openclose);
             }
         }
+
+        public MyTimer MyTimer
+        {
+            get { return _timers; }
+        }
         
     }
 }
