@@ -15,8 +15,19 @@ namespace SmartGarden.Model.Gestore_Informazioni
         private readonly string @namespaceProvider = "SmartGarden.Fornitori";
         private readonly Type interfaceVisitor = typeof(IinformationProviderVisitor);
         private readonly Type interfaceProvider = typeof(IinformationProvider);
-        Dictionary<Type, Type> _providers;
-       
+        private static ProviderVisitorInspector instance = null;
+        private ProviderVisitorInspector()
+        {
+
+        }
+
+        public static ProviderVisitorInspector GetInspector()
+        {
+            if (instance == null)
+                instance = new ProviderVisitorInspector();
+            return instance;
+        }
+
         #region Self Inspector
         public List<Type> GetListProvider()
         {
