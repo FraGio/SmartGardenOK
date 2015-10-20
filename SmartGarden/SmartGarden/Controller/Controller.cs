@@ -34,7 +34,6 @@ namespace SmartGarden.Control
 
         public void CaricaViewPiante(string nomeSettore)
         {
-
             Settore settore = _gestioneGiardino.Giardino.Settori.TrovaSettore(nomeSettore);
 
             using (var pianteForm = new Form())

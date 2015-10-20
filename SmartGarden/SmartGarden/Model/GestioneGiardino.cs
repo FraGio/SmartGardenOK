@@ -5,7 +5,7 @@ namespace SmartGarden.Model
 {
     class GestioneGiardino:IGestioneGiardinoData
     {
-        public IGiardino _giardino { get; set; }
+        public IGiardino Giardino { get; set; }
         public event EventHandler Changed;
         private MyTimer _timers;
         private static GestioneGiardino _instance = null;
@@ -14,7 +14,7 @@ namespace SmartGarden.Model
 
         private GestioneGiardino()
         {
-            _giardino = new Giardino();
+            Giardino = new Giardino();
             _timers = new MyTimer();
             OraInizioInnaffiatura = DateTime.Now;
             TimeSpan ts;
@@ -52,7 +52,7 @@ namespace SmartGarden.Model
 
         private void IniziaInnaffiatura(DateTime inizio ,DateTime fine)
         {
-            foreach(TurnoItem turno in _giardino.GetTurni(inizio,fine))
+            foreach(TurnoItem turno in Giardino.GetTurni(inizio,fine))
             {
                 foreach(IOpenClose openclose in turno.Mehtods)
                 _timers.SetTimer(turno.Attesa, turno.Durata,openclose);
