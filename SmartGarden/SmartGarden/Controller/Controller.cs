@@ -34,7 +34,7 @@ namespace SmartGarden.Control
 
         public void CaricaViewPiante(string nomeSettore)
         {
-            Settore settore = _gestioneGiardino.Giardino.Settori.TrovaSettore(nomeSettore);
+            ISettore settore = _gestioneGiardino.Giardino.GetSettore(nomeSettore);
 
             using (var pianteForm = new Form())
             {
@@ -49,8 +49,8 @@ namespace SmartGarden.Control
 
         public void CambiaProvincia(string provincia)
         {
-            _gestioneGiardino.Giardino.Luogo = provincia;
-            _gestioneGiardino.AggiornaInfoMeteo();
+            _gestioneGiardino.Luogo = provincia;
+            //_gestioneGiardino.AggiornaInfoMeteo();
         }
 
         public void CaricaProvinceComboBox(ComboBox provinceComboBox)
@@ -112,9 +112,9 @@ namespace SmartGarden.Control
 
                     if (result2 == DialogResult.OK)
                     {
-                        _gestioneGiardino.ResetGiardino();
+                       // _gestioneGiardino.ResetGiardino();
                         _gestioneGiardino.Giardino.Luogo = nuovoGiardinoView.Controls.Find("_provinceComboBox", false)[0].Text;
-                        _gestioneGiardino.AggiornaInfoMeteo();
+                       // _gestioneGiardino.AggiornaInfoMeteo();
                     }
                 }
             }

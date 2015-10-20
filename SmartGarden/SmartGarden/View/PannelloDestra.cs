@@ -35,10 +35,10 @@ namespace SmartGarden.View
         }
         protected override void OnModelChanged(object sender, EventArgs e)
         {
-            Giardino giardino = GestoreGiardino.Giardino;
+            IGiardino giardino = GestoreGiardino.Giardino;
 
             _giardinoNameLabel.Text = giardino.Luogo;
-            _numeroSettoriLabel.Text = giardino.Settori.ListaSettori.Count.ToString();
+            _numeroSettoriLabel.Text = giardino.GetNomiSettori;
             _numeroPianteLabel.Text = giardino.Settori.NumeroPianteTotali().ToString();
             _capacitàLabel.Text = giardino.Cisterna.Capienza + " l";
             _portataLabel.Text = giardino.Cisterna.Portata + " l/s";
