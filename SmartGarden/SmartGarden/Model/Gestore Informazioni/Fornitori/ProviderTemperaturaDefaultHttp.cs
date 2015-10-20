@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SmartGarden
+namespace SmartGarden.Model.Gestore_Informazioni.Fornitori
 {
     class ProviderTemperaturaDefaultHttp : IinformationProvider
     {

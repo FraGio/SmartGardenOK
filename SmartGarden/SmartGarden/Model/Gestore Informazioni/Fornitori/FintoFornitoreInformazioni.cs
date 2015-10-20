@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SmartGarden.Fornitori;
 
-namespace SmartGarden
+
+namespace SmartGarden.Model.Gestore_Informazioni.Fornitori
 {
     class FintoFornitoreInformazioni : IinformationProvider
     {

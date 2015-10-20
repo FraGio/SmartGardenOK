@@ -3,30 +3,30 @@ using System.Globalization;
 using System.Xml;
 using System.Xml.XPath;
 
-namespace SmartGarden
+namespace SmartGarden.Model.Gestore_Informazioni.Fornitori
 { //deve diventare un singleton ci si deve lavorare per soddisfare richieste
      class FornitoreInformazioniMeteoHttp
     {
         private XmlDocument _xmlDati;
         private int _numeroIntervalloTempo = 8; //di default il meteo prende le informazioni di 24 ore dopo (3 ore a intervallo, 8° intervallo->24h)
+        private static FornitoreInformazioniMeteoHttp _instance = null;
 
-        internal static FornitoreInformazioniMeteoHttp GetFornitore()
+        public static FornitoreInformazioniMeteoHttp GetFornitore()
         {
-            throw new NotImplementedException();
+            if (_instance == null)
+                _instance = new FornitoreInformazioniMeteoHttp();
+            return _instance;     
         }
-
-        public string Città { get; set; }
 
         public FornitoreInformazioniMeteoHttp()
         {
             _xmlDati = new XmlDocument();
-            AggiornaDatiMeteo(); //appena creato aggiorna i dati meteo
         }
 
-        public void AggiornaDatiMeteo()
+        public void AggiornaDatiMeteo(string citta)
         {
             //commentate perchè c'è un limite di richieste al servizio meteo, usiamo l'xml già fatto
-             if (Città != null)
+             if (citta != null)
              {
                  _xmlDati.Load("http://api.openweathermap.org/data/2.5/forecast/city?q=" + Città + "&APPID=3468347b36b867d8ef1978a625d84616&mode=xml");
                  _xmlDati.Save("DatiMeteo.xml");
