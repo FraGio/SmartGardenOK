@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    class Giardino
+    class Giardino:IGiardino
     {
-        private ICisterna Cisterna { get; set; }
+        public ICisterna Cisterna { get; set; }
         private Dictionary<string,ISettore> _settori;
 
         public Giardino()

@@ -11,6 +11,6 @@ namespace SmartGarden.Model.Gestore_Informazioni
         GestoreInformazioni GetGestore(Dictionary<Type, Type> typeProviders);
 
         GestoreInformazioni Modifica(GestoreInformazioni OldGestore, Dictionary<Type, Type> typeProviders);
-      
+       //TODO metodo equals
     }
 }

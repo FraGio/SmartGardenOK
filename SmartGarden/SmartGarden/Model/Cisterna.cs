@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SmartGarden
+namespace SmartGarden.Model
 {
-    class Cisterna
+    class Cisterna :ICisterna
     {
-        private SensorePressione _sensorePressione;
 
+        public SensorePressione SensorePressione { get; set; }
+        public IOpenClose ValvolaSicurezza { get; set; }
         public double Portata { get; set; }
         public double Capienza { get; set; }
 
@@ -20,13 +21,12 @@ namespace SmartGarden
 
             Portata = portata;
             Capienza = capienza;
-            _sensorePressione = new SensorePressione();
         }
 
-        public SensorePressione SensorePressione
+        public IOpenClose GetOpenClose()
         {
-            get { return _sensorePressione; }
-            set{ _sensorePressione = value; }
+            return ValvolaSicurezza;
         }
+
     }
 }

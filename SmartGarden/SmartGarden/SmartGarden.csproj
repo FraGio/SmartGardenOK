@@ -50,6 +50,7 @@
     <Compile Include="Controller\IController.cs" />
     <Compile Include="Model\Cisterna.cs" />
     <Compile Include="Model\FabbisognoGiornalieroPeriodo.cs" />
+    <Compile Include="Model\GestioneGiardino.cs" />
     <Compile Include="Model\Gestore Informazioni\FactoryGestoreInformazioni.cs" />
     <Compile Include="Model\Gestore Informazioni\FactoryVisitor.cs" />
     <Compile Include="Model\Gestore Informazioni\Fornitori\FintoFornitoreInformazioni.cs" />
@@ -69,11 +70,13 @@
     <Compile Include="Model\IDataPianta.cs" />
     <Compile Include="Model\IDataPiantaFlyweight.cs" />
     <Compile Include="Model\IGestioneGiardinoData.cs" />
+    <Compile Include="Model\IGiardino.cs" />
     <Compile Include="Model\InvalidDifferenceOfTime.cs" />
     <Compile Include="Model\IOpenClose.cs" />
     <Compile Include="Model\IPianta.cs" />
     <Compile Include="Model\ISettore.cs" />
     <Compile Include="Model\MessagePump.cs" />
+    <Compile Include="Model\MyTimer.cs" />
     <Compile Include="Model\Pianta.cs" />
     <Compile Include="Model\PiantaFactory.cs" />
     <Compile Include="Model\SensorePressione.cs" />
