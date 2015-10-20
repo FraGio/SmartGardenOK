@@ -2,10 +2,11 @@
 using SmartGarden.View;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using SmartGarden.Model;
 
 namespace SmartGarden.View
 {
-    public partial class _settoriView : MainView
+    partial class _settoriView : MainView
     {
         private List<Settore> _settori;
 

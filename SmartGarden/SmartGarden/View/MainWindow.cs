@@ -6,7 +6,7 @@ using System.Xml.XPath;
 
 namespace SmartGarden
 {
-    public partial class MainWindow : Form
+    partial class MainWindow : Form
     {
         private Controller _controller;
 
@@ -26,7 +26,7 @@ namespace SmartGarden
             base.OnLoad(e);
 
             GestioneGiardino gestoreGiardino = new GestioneGiardino();
-            _controller = new Control(gestoreGiardino);
+            _controller = new Controller(gestoreGiardino);
 
             bool loginOk = _controller.CreateLoginForm();
             if (!loginOk)

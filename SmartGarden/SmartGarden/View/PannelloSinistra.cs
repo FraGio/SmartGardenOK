@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SmartGarden.Model;
 
 namespace SmartGarden.View
 {
-    public partial class PannelloSinistra : MainView
+    partial class PannelloSinistra : MainView
     {
         public PannelloSinistra()
         {

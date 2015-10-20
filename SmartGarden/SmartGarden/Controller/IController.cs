@@ -3,7 +3,7 @@ using SmartGarden.Model;
 
 namespace SmartGarden.Control
 {
-    public interface IController
+    interface IController
     {
         bool CreateLoginForm();
         void CaricaViewPiante(string nomeSettore);

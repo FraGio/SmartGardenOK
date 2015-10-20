@@ -11,7 +11,7 @@ using SmartGarden.View;
 
 namespace SmartGarden.View
 {
-    public partial class NuovoGiardinoView : MainView
+    partial class NuovoGiardinoView : MainView
     {
         public NuovoGiardinoView()
         {
