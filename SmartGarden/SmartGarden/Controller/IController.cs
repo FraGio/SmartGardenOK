@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace SmartGarden.Controller
+namespace SmartGarden.Control
 {
     public interface IController
     {

@@ -1,5 +1,5 @@
 ﻿
-using SmartGarden.Controller;
+using SmartGarden.Control;
 using SmartGarden.View;
 using System;
 using System.Windows.Forms;
@@ -11,9 +11,13 @@ namespace SmartGarden.Control
     {
         private readonly GestioneGiardino _gestioneGiardino; //GestioneGiardino è il model
 
-        public Controller(GestioneGiardino gestioneGiardino)
+        /* public Controller(GestioneGiardino gestioneGiardino)
+         {
+             _gestioneGiardino = gestioneGiardino;
+         }*/
+        public Controller()
         {
-            _gestioneGiardino = gestioneGiardino;
+            ;
         }
 
         public bool CreateLoginForm()
