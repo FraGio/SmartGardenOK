@@ -1,4 +1,5 @@
 ﻿
+using SmartGarden.Controller;
 using SmartGarden.View;
 using System;
 using System.Windows.Forms;
@@ -6,7 +7,7 @@ using System.Xml.XPath;
 
 namespace SmartGarden.Control
 {
-    public class Controller
+    public class Controller : IController
     {
         private readonly GestioneGiardino _gestioneGiardino; //GestioneGiardino è il model
 
@@ -32,7 +33,7 @@ namespace SmartGarden.Control
             }
         }
 
-        internal void CaricaViewPiante(string nomeSettore)
+        public void CaricaViewPiante(string nomeSettore)
         {
 
             Settore settore = _gestioneGiardino.Giardino.Settori.TrovaSettore(nomeSettore);
@@ -48,13 +49,13 @@ namespace SmartGarden.Control
             }
         }
 
-       internal void CambiaProvincia(string provincia)
+        public void CambiaProvincia(string provincia)
         {
             _gestioneGiardino.Giardino.Luogo = provincia;
             _gestioneGiardino.AggiornaInfoMeteo();
         }
 
-        internal void CaricaProvinceComboBox(ComboBox provinceComboBox)
+        public void CaricaProvinceComboBox(ComboBox provinceComboBox)
         {
             XPathDocument doc = new XPathDocument("ProvinceItaliane.xml");
             XPathNavigator nav = doc.CreateNavigator();
@@ -69,17 +70,17 @@ namespace SmartGarden.Control
             }
         }
 
-        internal void CaricaInfoGiardino()
+        public void CaricaInfoGiardino()
         {
             _gestioneGiardino.ProvaCaricamentoInfo();
         }
 
-        internal void SettaTimer()
+        public void SettaTimer()
         {
             _gestioneGiardino.SettaTimer();
         }
 
-        internal void GestisciSettori()
+        public void GestisciSettori()
         {
             using (var settoriForm = new Form())
             {
@@ -94,7 +95,7 @@ namespace SmartGarden.Control
             }
         }
 
-        internal void NuovoGiardino()
+        public void NuovoGiardino()
         {
 
             var result1 = MessageBox.Show("Questa operazione cancellerà il tuo giardino corrente.\r\nSei sicuro di voler procedere?", "Avviso", MessageBoxButtons.YesNo);
