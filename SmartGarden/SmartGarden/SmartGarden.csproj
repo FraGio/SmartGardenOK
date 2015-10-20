@@ -48,6 +48,19 @@
   <ItemGroup>
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Controller\IController.cs" />
+    <Compile Include="Model\Gestore Informazioni\FactoryGestoreInformazioni.cs" />
+    <Compile Include="Model\Gestore Informazioni\FactoryVisitor.cs" />
+    <Compile Include="Model\Gestore Informazioni\Fornitori\FintoFornitoreInformazioni.cs" />
+    <Compile Include="Model\Gestore Informazioni\Fornitori\FornitoreInformazioniMeteoHttp.cs" />
+    <Compile Include="Model\Gestore Informazioni\Fornitori\IinformationProvider.cs" />
+    <Compile Include="Model\Gestore Informazioni\Fornitori\ProviderPrecipitazioniDefaultHttp.cs" />
+    <Compile Include="Model\Gestore Informazioni\Fornitori\ProviderTemperaturaDefaultHttp.cs" />
+    <Compile Include="Model\Gestore Informazioni\GestoreInformazioni.cs" />
+    <Compile Include="Model\Gestore Informazioni\IFactoryGestoreInformazioni.cs" />
+    <Compile Include="Model\Gestore Informazioni\IinformationProviderVisitor.cs" />
+    <Compile Include="Model\Gestore Informazioni\IInspector.cs" />
+    <Compile Include="Model\Gestore Informazioni\ProviderVisitorInspector.cs" />
+    <Compile Include="Model\Gestore Informazioni\StandardInformationVisitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\LoginForm.cs">
