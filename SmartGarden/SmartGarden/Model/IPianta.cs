@@ -15,5 +15,8 @@ namespace SmartGarden.Model
         void AddFabisogno(FabbisognoGiornalieroPeriodo fab);
         double FabbisognoPiantaAttuale(DateTime inizio, TimeSpan durata);
         Guid Guid { get; }
+        double Area { get; set; }
+        string NomeComune { get; set; }
+        string NomeBotanico { get; set; }
     }
 }

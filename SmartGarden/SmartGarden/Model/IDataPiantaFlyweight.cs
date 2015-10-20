@@ -4,13 +4,13 @@ namespace SmartGarden.Model
 {
     internal interface IDataPiantaFlyweight
     {
-        string NomeComune{ get; }
+        string NomeComune{ get; set; }
 
-        string NomeBotanico{ get;}
+        string NomeBotanico{ get; set; }
 
         List<FabbisognoGiornalieroPeriodo> Fabisogni{ get;}
 
-        void addFabisognoRelativoPeriodo(FabbisognoGiornalieroPeriodo fab);
-        
+        void AddFabisognoRelativoPeriodo(FabbisognoGiornalieroPeriodo fab);
+        void RemoveFabisognoRelativoPeriodo(FabbisognoGiornalieroPeriodo fab);
     }
 }

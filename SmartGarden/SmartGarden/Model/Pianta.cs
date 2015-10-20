@@ -11,6 +11,8 @@ namespace SmartGarden.Model
     {
         private Guid Guid;
         private IDataPiantaFlyweight _data;
+        public double Area { get; set; }
+        public IGestoreInformazioni GestoreInformazioni { get; set; }
 
         #region getter and setter methods
         Guid IDataPianta.Guid
@@ -27,24 +29,34 @@ namespace SmartGarden.Model
                 return Guid;
             }
         }
-        public double Area { get; set; }
-        public IGestoreInformazioni GestoreInformazioni { get; set; }
         public string NomeComune { get { return _data.NomeComune; } }
         public string NomeBotanico { get { return _data.NomeBotanico; } }
         public List<FabbisognoGiornalieroPeriodo> FabbisogniPianta
         {
             get { return _data.Fabisogni; }
         }
-        IGestoreInformazioni IPianta.GestoreInformazioni
+        string IPianta.NomeComune
         {
             get
             {
-                throw new NotImplementedException();
+                return NomeComune;
             }
 
             set
             {
-                throw new NotImplementedException();
+               _data.NomeComune=value;
+            }
+        }
+        string IPianta.NomeBotanico
+        {
+            get
+            {
+                return NomeBotanico;
+            }
+
+            set
+            {
+                _data.NomeBotanico = value;
             }
         }
         #endregion

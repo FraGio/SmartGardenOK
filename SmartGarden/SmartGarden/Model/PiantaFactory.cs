@@ -51,18 +51,14 @@ namespace SmartGarden.Model
 
             public string NomeComune
             {
-                get
-                {
-                    return _nomeComune;
-                }
+                get{ return _nomeComune;}
+                set { _nomeComune = value; }
             }
 
             public string NomeBotanico
             {
-                get
-                {
-                    return _nomeBotanico;
-                }
+                get{ return _nomeBotanico;}
+                set { _nomeBotanico = value; }
             }
 
             public List<FabbisognoGiornalieroPeriodo> Fabisogni
@@ -73,11 +69,15 @@ namespace SmartGarden.Model
                 }
             }
 
-            public void addFabisognoRelativoPeriodo(FabbisognoGiornalieroPeriodo fab)
+            public void AddFabisognoRelativoPeriodo(FabbisognoGiornalieroPeriodo fab)
             {
                 _fabisogni.Add(fab);
             }
 
+            public void RemoveFabisognoRelativoPeriodo(FabbisognoGiornalieroPeriodo fab)
+            {
+                _fabisogni.Remove(fab);
+            }
         }
     }
 }
