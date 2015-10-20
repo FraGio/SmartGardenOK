@@ -26,7 +26,7 @@ namespace SmartGarden
             base.OnLoad(e);
 
             GestioneGiardino gestoreGiardino = new GestioneGiardino();
-            _controller = new Controller(gestoreGiardino);
+            _controller = new Control(gestoreGiardino);
 
             bool loginOk = _controller.CreateLoginForm();
             if (!loginOk)

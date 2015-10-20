@@ -14,7 +14,7 @@ namespace SmartGarden.View
     public partial class MainView : UserControl
     {
         private GestioneGiardino _gestoreGiardino;
-        private Controller _controller;
+        private IController _controller;
 
         public MainView()
         {
@@ -43,14 +43,17 @@ namespace SmartGarden.View
             }
         }
 
-        public Controller Controller
+        public IController Controller
         {
             get
             {
                 if (_controller != null)
                     return _controller;
                 else
-                    return new Controller(_gestoreGiardino);
+                {
+                    _controller = new Controller();
+                    return _controller;
+                }
             }
             set { _controller = value; }
         }
