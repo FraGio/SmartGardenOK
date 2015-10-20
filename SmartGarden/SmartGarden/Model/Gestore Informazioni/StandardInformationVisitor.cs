@@ -1,4 +1,5 @@
 ﻿using SmartGarden.Model;
+using SmartGarden.Model.Gestore_Informazioni.Fornitori;
 using System;
 using System.Collections.Generic;
 using System.Linq;

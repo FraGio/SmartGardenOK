@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Controller\IController.cs" />
+    <Compile Include="Model\FabbisognoGiornalieroPeriodo.cs" />
     <Compile Include="Model\Gestore Informazioni\FactoryGestoreInformazioni.cs" />
     <Compile Include="Model\Gestore Informazioni\FactoryVisitor.cs" />
     <Compile Include="Model\Gestore Informazioni\Fornitori\FintoFornitoreInformazioni.cs" />
@@ -57,10 +58,18 @@
     <Compile Include="Model\Gestore Informazioni\Fornitori\ProviderTemperaturaDefaultHttp.cs" />
     <Compile Include="Model\Gestore Informazioni\GestoreInformazioni.cs" />
     <Compile Include="Model\Gestore Informazioni\IFactoryGestoreInformazioni.cs" />
+    <Compile Include="Model\Gestore Informazioni\IGestoreInformazioni.cs" />
     <Compile Include="Model\Gestore Informazioni\IinformationProviderVisitor.cs" />
     <Compile Include="Model\Gestore Informazioni\IInspector.cs" />
     <Compile Include="Model\Gestore Informazioni\ProviderVisitorInspector.cs" />
     <Compile Include="Model\Gestore Informazioni\StandardInformationVisitor.cs" />
+    <Compile Include="Model\IDataPianta.cs" />
+    <Compile Include="Model\IDataPiantaFlyweight.cs" />
+    <Compile Include="Model\IGestioneGiardinoData.cs" />
+    <Compile Include="Model\IPianta.cs" />
+    <Compile Include="Model\MessagePump.cs" />
+    <Compile Include="Model\Pianta.cs" />
+    <Compile Include="Model\PiantaFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\LoginForm.cs">
