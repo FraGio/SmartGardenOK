@@ -31,13 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this._dataGridView = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeComune = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeBotanico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FabbisognoAcqua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Provider = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Visitor = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this._confermaButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._idPianta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._nomeComune = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._nomeBotanico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._fabbisognoAcqua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._mostraGestoriButton = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -61,13 +58,10 @@
             this._dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this._dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.NomeComune,
-            this.NomeBotanico,
-            this.FabbisognoAcqua,
-            this.Provider,
-            this.Visitor,
-            this._confermaButton,
+            this._idPianta,
+            this._nomeComune,
+            this._nomeBotanico,
+            this._fabbisognoAcqua,
             this._mostraGestoriButton});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -84,51 +78,32 @@
             this._dataGridView.Size = new System.Drawing.Size(976, 508);
             this._dataGridView.TabIndex = 1;
             // 
-            // Id
+            // _idPianta
             // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Width = 46;
+            this._idPianta.HeaderText = "Id";
+            this._idPianta.Name = "_idPianta";
+            this._idPianta.ReadOnly = true;
             // 
-            // NomeComune
+            // _nomeComune
             // 
-            this.NomeComune.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NomeComune.HeaderText = "Nome comune";
-            this.NomeComune.Name = "NomeComune";
+            this._nomeComune.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._nomeComune.HeaderText = "Nome comune";
+            this._nomeComune.Name = "_nomeComune";
+            this._nomeComune.ReadOnly = true;
             // 
-            // NomeBotanico
+            // _nomeBotanico
             // 
-            this.NomeBotanico.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NomeBotanico.HeaderText = "Nome Botanico";
-            this.NomeBotanico.Name = "NomeBotanico";
+            this._nomeBotanico.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._nomeBotanico.HeaderText = "Nome Botanico";
+            this._nomeBotanico.Name = "_nomeBotanico";
+            this._nomeBotanico.ReadOnly = true;
             // 
-            // FabbisognoAcqua
+            // _fabbisognoAcqua
             // 
-            this.FabbisognoAcqua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.FabbisognoAcqua.HeaderText = "Fabbisogno acqua";
-            this.FabbisognoAcqua.Name = "FabbisognoAcqua";
-            this.FabbisognoAcqua.Width = 132;
-            // 
-            // Provider
-            // 
-            this.Provider.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Provider.HeaderText = "Provider";
-            this.Provider.Name = "Provider";
-            // 
-            // Visitor
-            // 
-            this.Visitor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Visitor.HeaderText = "Visitor";
-            this.Visitor.Name = "Visitor";
-            // 
-            // _confermaButton
-            // 
-            this._confermaButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this._confermaButton.HeaderText = "";
-            this._confermaButton.Name = "_confermaButton";
-            this._confermaButton.Text = "Conferma";
-            this._confermaButton.Width = 5;
+            this._fabbisognoAcqua.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this._fabbisognoAcqua.HeaderText = "Fabbisogno acqua";
+            this._fabbisognoAcqua.Name = "_fabbisognoAcqua";
+            this._fabbisognoAcqua.Width = 132;
             // 
             // _mostraGestoriButton
             // 
@@ -154,13 +129,10 @@
 
         #endregion
         private System.Windows.Forms.DataGridView _dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeComune;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeBotanico;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FabbisognoAcqua;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Provider;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Visitor;
-        private System.Windows.Forms.DataGridViewButtonColumn _confermaButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _idPianta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _nomeComune;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _nomeBotanico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _fabbisognoAcqua;
         private System.Windows.Forms.DataGridViewButtonColumn _mostraGestoriButton;
     }
 }
