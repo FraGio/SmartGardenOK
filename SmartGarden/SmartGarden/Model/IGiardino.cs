@@ -10,10 +10,14 @@ namespace SmartGarden.Model
     {
         ICisterna Cisterna { get; set; }
 
+        int NumeroPianteTotali { get; }
+
         IEnumerable<string> GetNomiSettori();
 
         ISettore GetSettore(string name);
 
         IEnumerable<TurnoItem> GetTurni(DateTime inizio, DateTime fine);
+
+        
     }
 }

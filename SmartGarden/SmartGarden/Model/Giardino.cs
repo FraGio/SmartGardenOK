@@ -10,6 +10,20 @@ namespace SmartGarden.Model
     class Giardino:IGiardino
     {
         public ICisterna Cisterna { get; set; }
+
+        public int NumeroPianteTotali
+        {
+            get
+            {
+                int tot = 0;
+                foreach(Settore set in _settori.Values)
+                {
+                    tot += set.GetGuidPiante().Count();
+                }
+                return tot;
+            }
+        }
+
         private Dictionary<string,ISettore> _settori;
 
         public Giardino()
