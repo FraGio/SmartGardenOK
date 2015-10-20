@@ -11,7 +11,7 @@ using SmartGarden.Control;
 
 namespace SmartGarden.View
 {
-    public partial class MainView : UserControl
+    partial class MainView : UserControl
     {
         private GestioneGiardino _gestoreGiardino;
         private IController _controller;

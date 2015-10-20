@@ -11,7 +11,7 @@ using System.Timers;
 
 namespace SmartGarden.View
 {
-    public partial class PannelloDestra : MainView
+    partial class PannelloDestra : MainView
     {
         public PannelloDestra()
         {

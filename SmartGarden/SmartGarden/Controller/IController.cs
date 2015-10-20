@@ -1,8 +1,9 @@
 ﻿using System.Windows.Forms;
+using SmartGarden.Model;
 
 namespace SmartGarden.Control
 {
-    public interface IController
+    interface IController
     {
         bool CreateLoginForm();
         void CaricaViewPiante(string nomeSettore);
@@ -12,5 +13,6 @@ namespace SmartGarden.Control
         void SettaTimer();
         void GestisciSettori();
         void NuovoGiardino();
+        void CreaPiantaView(IPianta pianta);
     }
 }

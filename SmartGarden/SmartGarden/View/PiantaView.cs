@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SmartGarden.View;
+using SmartGarden.Model.Gestore_Informazioni;
+using SmartGarden.Model;
 
 namespace SmartGarden.View
 {
-    public partial class PiantaView : MainView
+    partial class PiantaView : MainView
     {
         private IPianta _pianta;
         private Dictionary<Type, Type> _types;
@@ -55,13 +57,13 @@ namespace SmartGarden.View
         {
             IFactoryGestoreInformazioni factoryGestioneInfo = FactoryGestoreInformazioni.GetFactory();
 
-            if (_pianta.Gestore == null)
+            if (_pianta.GestoreInformazioni == null)
             {
-                _pianta.Gestore = factoryGestioneInfo.GetGestore(_types);
+                _pianta.GestoreInformazioni = factoryGestioneInfo.GetGestore(_types);
             }
             else
-            {
-                _pianta.Gestore = factoryGestioneInfo.Modifica(pianta.Gestore, _types);
+            {//TODO modifica gestore informazioni risoluzione interfaccia
+                _pianta.GestoreInformazioni = factoryGestioneInfo.Modifica((GestoreInformazioni)_pianta.GestoreInformazioni, _types);
             }
 
             this.ParentForm.Close();
