@@ -3,9 +3,10 @@
 
 namespace SmartGarden.Model
 {
-    class GestioneGiardino:IGestioneGiardinoData
+    class GestioneGiardino : IGestioneGiardinoData
     {
         public IGiardino Giardino { get; set; }
+        public string Luogo { get; set; }
         public event EventHandler Changed;
         private MyTimer _timers;
         private static GestioneGiardino _instance = null;
