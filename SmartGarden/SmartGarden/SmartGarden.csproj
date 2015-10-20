@@ -117,6 +117,12 @@
     <Compile Include="View\PannelloSinistra.designer.cs">
       <DependentUpon>PannelloSinistra.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\PiantaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\PiantaView.designer.cs">
+      <DependentUpon>PiantaView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PianteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\PannelloSinistra.resx">
       <DependentUpon>PannelloSinistra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PiantaView.resx">
+      <DependentUpon>PiantaView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PianteForm.resx">
       <DependentUpon>PianteForm.cs</DependentUpon>
