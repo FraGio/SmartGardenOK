@@ -66,10 +66,14 @@
     <Compile Include="Model\IDataPianta.cs" />
     <Compile Include="Model\IDataPiantaFlyweight.cs" />
     <Compile Include="Model\IGestioneGiardinoData.cs" />
+    <Compile Include="Model\InvalidDifferenceOfTime.cs" />
+    <Compile Include="Model\IOpenClose.cs" />
     <Compile Include="Model\IPianta.cs" />
     <Compile Include="Model\MessagePump.cs" />
     <Compile Include="Model\Pianta.cs" />
     <Compile Include="Model\PiantaFactory.cs" />
+    <Compile Include="Model\Settore.cs" />
+    <Compile Include="Model\Valvola.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\LoginForm.cs">

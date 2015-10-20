@@ -32,11 +32,18 @@ namespace SmartGarden.Model
             return _inizioPeriodo.CompareTo(data) <= 0 && _finePeriodo.CompareTo(data) >= 0;
         }
 
-        public double GetFabisogno(DateTime inizio, TimeSpan durata)
+        public double GetFabisogno(DateTime inizio, DateTime fine)
         {
             double tot = 0;
+            TimeSpan inter = fine - inizio;
+            if(inter.TotalSeconds<60)
+            {
+                throw new InvalidDifferenceOfTime();
+            }
 
-            return tot;
+            tot = _fabbisognoAcquaGiornaliero * inter.TotalDays;
+
+           return tot ;
         }
     }
 }

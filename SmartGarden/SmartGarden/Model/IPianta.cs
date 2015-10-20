@@ -13,10 +13,10 @@ namespace SmartGarden.Model
         IGestoreInformazioni GestoreInformazioni { get; set; }
         List<FabbisognoGiornalieroPeriodo> FabbisogniPianta{ get; }
         void AddFabisogno(FabbisognoGiornalieroPeriodo fab);
-        double FabbisognoPiantaAttuale(DateTime inizio, TimeSpan durata);
+        double FabbisognoPiantaAttuale(DateTime inizio, DateTime fine);
         Guid Guid { get; }
         double Area { get; set; }
         string NomeComune { get; set; }
-        string NomeBotanico { get; set; }
+        string NomeBotanico { get; set;}
     }
 }

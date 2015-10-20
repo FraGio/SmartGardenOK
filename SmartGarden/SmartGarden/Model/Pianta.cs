@@ -72,18 +72,18 @@ namespace SmartGarden.Model
 
         public void AddFabisogno(FabbisognoGiornalieroPeriodo fab)
         {
-            _data.addFabisognoRelativoPeriodo(fab);
+            _data.AddFabisognoRelativoPeriodo(fab);
         }
 
         //TODO completare il metodo
-        public double FabbisognoPiantaAttuale(DateTime inizio, TimeSpan durata)
+        public double FabbisognoPiantaAttuale(DateTime inizio, DateTime durata)
         {
             double tot = GestoreInformazioni.GetModifierRequirement(this);
             tot += GetFabisogno(inizio, durata);
             return tot;
         }
 
-        private double GetFabisogno(DateTime inizio, TimeSpan durata)
+        private double GetFabisogno(DateTime inizio, DateTime durata)
         {
             double tot = 0;
             foreach (FabbisognoGiornalieroPeriodo fab in FabbisogniPianta)
