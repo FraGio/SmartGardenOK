@@ -1,16 +1,14 @@
 ﻿using System;
-using SmartGarden.View;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using SmartGarden.Model;
+using System.Linq;
 
 namespace SmartGarden.View
 {
-    partial class _settoriView : MainView
+    partial class SettoriView : MainView
     {
-        private List<Settore> _settori;
 
-        public _settoriView()
+        public SettoriView()
         {
             InitializeComponent();
             _dataGridView.CellClick += ApriViewPiante;
@@ -20,13 +18,13 @@ namespace SmartGarden.View
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-
-            _settori = GestoreGiardino.Giardino.Settori.ListaSettori;
-
-            foreach (Settore settore in _settori)
+            
+            foreach (string nomeSettore in GestoreGiardino.Giardino.GetNomiSettori())
             {
-                _dataGridView.Rows.Add(settore.Nome, settore.Piante.ListaPiante.Count,
-                    settore.Piante.GetFabbisognoTotale() + " mm", "3 ore", "Piante");
+                ISettore settore = GestoreGiardino.Giardino.GetSettore(nomeSettore);
+
+                _dataGridView.Rows.Add(settore.Nome, settore.GetGuidPiante().Count().ToString(),
+                    settore.GetFabisogno(DateTime.Now, DateTime.Now.AddDays(1)) + " mm", "3 ore", "Piante");
             }
         }
 

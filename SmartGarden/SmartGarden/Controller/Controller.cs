@@ -82,7 +82,7 @@ namespace SmartGarden.Control
         {
             using (var settoriForm = new Form())
             {
-                _settoriView settoriView = new _settoriView();
+                SettoriView settoriView = new SettoriView();
                 settoriView.GestoreGiardino = _gestioneGiardino;
                 settoriView.Controller = this;
                 settoriView.Dock = DockStyle.Fill;
@@ -113,7 +113,7 @@ namespace SmartGarden.Control
                     if (result2 == DialogResult.OK)
                     {
                        // _gestioneGiardino.ResetGiardino();
-                        _gestioneGiardino.Giardino.Luogo = nuovoGiardinoView.Controls.Find("_provinceComboBox", false)[0].Text;
+                        _gestioneGiardino.Luogo = nuovoGiardinoView.Controls.Find("_provinceComboBox", false)[0].Text;
                        // _gestioneGiardino.AggiornaInfoMeteo();
                     }
                 }
