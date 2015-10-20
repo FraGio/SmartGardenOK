@@ -42,8 +42,8 @@ namespace SmartGarden.View
             _numeroPianteLabel.Text = giardino.NumeroPianteTotali().ToString();
             _capacitàLabel.Text = giardino.Cisterna.Capienza + " l";
             _portataLabel.Text = giardino.Cisterna.Portata + " l/s";
-            _precipitazioniLabel.Text = GestoreGiardino.Precipitazioni + " mm";
-            _temperaturaLabel.Text = GestoreGiardino.Temperatura + " °C";
+            /*_precipitazioniLabel.Text = GestoreGiardino.Precipitazioni + " mm";
+            _temperaturaLabel.Text = GestoreGiardino.Temperatura + " °C";*/
 
             int i = 0;
             if(GestoreGiardino.MyTimer.GetTimerForElement("TimerPrincipale") != null) { 

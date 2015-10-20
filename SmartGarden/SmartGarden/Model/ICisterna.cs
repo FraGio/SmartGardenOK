@@ -9,6 +9,7 @@ namespace SmartGarden.Model
     interface ICisterna
     {
         double Portata { get; set; }
+        double Capienza { get; set; }
         IOpenClose GetOpenClose();
     }
 }
