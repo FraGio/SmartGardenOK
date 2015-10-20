@@ -1,9 +1,10 @@
-﻿using System;
+﻿using SmartGarden.Model.Gestore_Informazioni.Fornitori;
+using System;
 using System.Collections.Generic;
 
 namespace SmartGarden.Model.Gestore_Informazioni
 {
-    class GestoreInformazioni
+    class GestoreInformazioni :IGestoreInformazioni
     {
         private Dictionary<IinformationProvider, IinformationProviderVisitor> _providers;
         private FactoryVisitor _factoryVisitor;
