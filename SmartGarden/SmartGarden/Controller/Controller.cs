@@ -1,10 +1,12 @@
 ﻿using SmartGarden.View;
 using System.Windows.Forms;
 using System.Xml.XPath;
+using SmartGarden.Model;
+using System;
 
 namespace SmartGarden.Control
 {
-    public class Controller : IController
+    class Controller : IController
     {
         private readonly GestioneGiardino _gestioneGiardino; //GestioneGiardino è il model
 
@@ -120,6 +122,21 @@ namespace SmartGarden.Control
                         _gestioneGiardino.AggiornaInfoMeteo();
                     }
                 }
+            }
+        }
+
+        public void CreaPiantaView(IPianta pianta)
+        {
+            using (var piantaForm = new Form())
+            {
+                PiantaView piantaView = new PiantaView(pianta);
+                piantaView.GestoreGiardino = _gestioneGiardino;
+                piantaView.Controller = this;
+                piantaView.Dock = DockStyle.Fill;
+                piantaForm.Text = "Gestione info pianta";
+                piantaForm.Size = new System.Drawing.Size(600, 300);
+                piantaForm.Controls.Add(piantaView);
+                piantaForm.ShowDialog();
             }
         }
     }

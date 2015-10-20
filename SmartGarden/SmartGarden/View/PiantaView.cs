@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SmartGarden.View;
+using SmartGarden.Model.Gestore_Informazioni;
+using SmartGarden.Model;
 
 namespace SmartGarden.View
 {

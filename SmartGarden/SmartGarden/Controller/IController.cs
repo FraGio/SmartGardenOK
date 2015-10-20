@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using SmartGarden.Model;
 
 namespace SmartGarden.Control
 {
@@ -12,5 +13,6 @@ namespace SmartGarden.Control
         void SettaTimer();
         void GestisciSettori();
         void NuovoGiardino();
+        void CreaPiantaView(IPianta pianta);
     }
 }
