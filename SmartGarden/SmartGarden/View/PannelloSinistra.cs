@@ -34,15 +34,17 @@ namespace SmartGarden.View
         {
             _treeView.Nodes.Clear(); //cancello il treeview già esistente per ricrearne uno aggiornato
 
-            Giardino giardino = GestoreGiardino.Giardino;
+            IGiardino giardino = GestoreGiardino.Giardino;
             int index = 0;
 
             _treeView.BeginUpdate();
             _treeView.Nodes.Add("Giardino: " + giardino.Luogo);
             _treeView.EndUpdate();
 
-            foreach(Settore settore in giardino.Settori.ListaSettori)
+            foreach(string nomeSettore in giardino.GetNomiSettori())
             {
+                ISettore settore = giardino.GetSettore(nomeSettore);
+
                 _treeView.Nodes[0].Nodes.Add(settore.Nome);
                 _treeView.Nodes[0].Nodes[index].Nodes.Add("Fabbisogno totale giornaliero: " + settore.Piante.GetFabbisognoTotale() + " mm");
                 _treeView.Nodes[0].Nodes[index].Nodes.Add("Numero piante: " + settore.Piante.ListaPiante.Count);
