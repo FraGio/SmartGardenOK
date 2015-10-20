@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SmartGarden.Control;
+using SmartGarden.Model;
 
 namespace SmartGarden.View
 {
@@ -51,7 +52,7 @@ namespace SmartGarden.View
                     return _controller;
                 else
                 {
-                    _controller = new Controller();
+                    _controller = new Controller(_gestoreGiardino);
                     return _controller;
                 }
             }

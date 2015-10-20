@@ -1,5 +1,6 @@
 ﻿
 using SmartGarden.Control;
+using SmartGarden.Model;
 using System;
 using System.Windows.Forms;
 using System.Xml.XPath;
@@ -25,7 +26,7 @@ namespace SmartGarden
         {
             base.OnLoad(e);
 
-            GestioneGiardino gestoreGiardino = new GestioneGiardino();
+            GestioneGiardino gestoreGiardino = GestioneGiardino.GetGestoreGiardino();
             _controller = new Controller(gestoreGiardino);
 
             bool loginOk = _controller.CreateLoginForm();

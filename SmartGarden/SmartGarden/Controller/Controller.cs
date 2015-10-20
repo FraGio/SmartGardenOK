@@ -10,13 +10,9 @@ namespace SmartGarden.Control
     {
         private readonly GestioneGiardino _gestioneGiardino; //GestioneGiardino è il model
 
-        /* public Controller(GestioneGiardino gestioneGiardino)
-         {
-             _gestioneGiardino = gestioneGiardino;
-         }*/
-        public Controller()
+        public Controller(GestioneGiardino gestioneGiardino)
         {
-            ;
+            _gestioneGiardino = gestioneGiardino;
         }
 
         public bool CreateLoginForm()
@@ -75,12 +71,12 @@ namespace SmartGarden.Control
 
         public void CaricaInfoGiardino()
         {
-            _gestioneGiardino.ProvaCaricamentoInfo();
+            //_gestioneGiardino.ProvaCaricamentoInfo();
         }
 
         public void SettaTimer()
         {
-            _gestioneGiardino.SettaTimer();
+            //_gestioneGiardino.SettaTimer();
         }
 
         public void GestisciSettori()
