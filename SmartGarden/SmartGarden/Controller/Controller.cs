@@ -1,7 +1,4 @@
-﻿
-using SmartGarden.Control;
-using SmartGarden.View;
-using System;
+﻿using SmartGarden.View;
 using System.Windows.Forms;
 using System.Xml.XPath;
 

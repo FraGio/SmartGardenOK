@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1;
 using System.IO;
+using SmartGarden.Model.Gestore_Informazioni;
 
 namespace SmartGarden.View
 {
@@ -16,8 +17,8 @@ namespace SmartGarden.View
     {
         private Settore _settore;
 
-        private FactoryGestoreInformazioni _fac;
-        private TypeProviders _type;
+        private IFactoryGestoreInformazioni _fac;
+        private Dictionary<Type, Type> _type;
         private int id = 1;
 
         public PianteView(Settore settore)
@@ -25,7 +26,7 @@ namespace SmartGarden.View
             InitializeComponent();
             _settore = settore;
             _fac = FactoryGestoreInformazioni.GetFactory();
-            _type = new TypeProviders();
+            _type = new Dictionary<Type, Type>();
         }
 
         protected override void OnLoad(EventArgs e)
@@ -33,7 +34,7 @@ namespace SmartGarden.View
             base.OnLoad(e);
             _dataGridView.CellClick += GestoriInfoPianta;
 
-            //ProviderVisitorInspector insp = ProviderVisitorInspector.Get();
+            IInspector insp = ProviderVisitorInspector.Get();
             
 
             string[] visitors = { "visitor1", "visitor2" };
@@ -45,26 +46,27 @@ namespace SmartGarden.View
                     pianta.FabbisognoPiantaAttuale() + " mm", "", "", "Aggiungi", "Mostra Gestori");
             }
 
-            /*Provider.Items.AddRange(insp.GetListProvider().ToArray());
-            Visitor.Items.AddRange(insp.GetListVisitor().ToArray());*/
-            Visitor.Items.AddRange(visitors);
-            Provider.Items.AddRange(providers);
+            Provider.Items.AddRange(insp.GetListProvider().ToArray());
+            Visitor.Items.AddRange(insp.GetListVisitor().ToArray());
+            /*Visitor.Items.AddRange(visitors);
+            Provider.Items.AddRange(providers);*/
         }
 
         private void GestoriInfoPianta(object sender, DataGridViewCellEventArgs e)
         {
             int idPianta = Int32.Parse(_dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
-            string provider = _dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
-            string visitor = _dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+            Type provider = (Type)_dataGridView.Rows[e.RowIndex].Cells[4].Value;
+            Type visitor = (Type)_dataGridView.Rows[e.RowIndex].Cells[5].Value;
 
             if (_dataGridView.CurrentCell.ColumnIndex.Equals(6) && e.RowIndex != -1 && 
-                !string.IsNullOrWhiteSpace(provider) && !string.IsNullOrWhiteSpace(visitor)) //aggiungi gestore
+                provider != null && visitor != null) //aggiungi gestore
             {
 
                 
 
-                /*_type.AddTypeProvider((Type)provider, (Type)visitor);
-                Pianta.gestoreInfo(_fac.GetGestore(_type));*/
+                _type.Add(provider, visitor);
+                Pianta.gestoreInfo(_fac.GetGestore(_type));
+
                 string salvaGestoriString = idPianta + ";" + provider + ";" + visitor + Environment.NewLine;
                 File.AppendAllText("gestoriPiante", salvaGestoriString);
                 
