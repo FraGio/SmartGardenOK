@@ -7,7 +7,7 @@ using System.Timers;
 
 namespace SmartGarden.Model
 {
-    class Settore
+    class Settore :ISettore
     {
         public IOpenClose _valvolaSettore { get; set; }
         private String _nome;
@@ -64,6 +64,10 @@ namespace SmartGarden.Model
         {
             return _piante.ContainsKey(pianta.Guid);
         }
+        public IPianta GetPianta(Guid guid)
+        {
+            return _piante[guid];
+        }
 
         public double GetFabisogno(DateTime inizio,DateTime fine)
         {
@@ -75,7 +79,7 @@ namespace SmartGarden.Model
             return tot;
         }
 
-        internal double GetPortataVolumetricaSecondo(double portata)
+        public double GetPortataVolumetricaSecondo(double portata)
         {
             throw new NotImplementedException();
         }
