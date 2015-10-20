@@ -17,6 +17,15 @@ namespace SmartGarden.Model
             _settori = new Dictionary<string, ISettore>();
         }
 
+        public IEnumerable<string> GetNomiSettori()
+        {
+            return _settori.Keys;
+        } 
+
+        public ISettore GetSettore(string name)
+        {
+            return _settori[name];
+        }
 
         public IEnumerable<TurnoItem> GetTurni(DateTime inizio,DateTime fine)
         {

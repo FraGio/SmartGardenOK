@@ -25,6 +25,7 @@ namespace SmartGarden.Model
         IOpenClose _valvolaSettore { get; set; }
 
         String Nome { get; }
-        
+
+        IEnumerable<Guid> GetGuidPiante();
     }
 }

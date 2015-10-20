@@ -68,6 +68,10 @@ namespace SmartGarden.Model
         {
             return _piante[guid];
         }
+        public IEnumerable<Guid> GetGuidPiante()
+        {
+            return _piante.Keys;
+        }
 
         public double GetFabisogno(DateTime inizio,DateTime fine)
         {
