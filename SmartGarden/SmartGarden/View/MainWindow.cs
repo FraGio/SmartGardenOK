@@ -1,6 +1,7 @@
 ﻿
 using SmartGarden.Control;
 using SmartGarden.Model;
+using SmartGarden.View;
 using System;
 using System.Windows.Forms;
 using System.Xml.XPath;
@@ -46,6 +47,15 @@ namespace SmartGarden
             _controller.CaricaInfoGiardino();
 
             CaricaProvince();
+
+            GestoreTimerView timerView = new GestoreTimerView();
+            using(Form form = new Form())
+            {
+                timerView.Dock = DockStyle.Fill;
+                form.Size = new System.Drawing.Size(500, 400);
+                form.Controls.Add(timerView);
+                form.ShowDialog();
+            }
 
         }
 
