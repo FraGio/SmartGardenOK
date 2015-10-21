@@ -52,8 +52,7 @@ namespace SmartGarden
             CaricaProvince();
 
             #region TEST
-
-            gestoreGiardino.Giardino = new Giardino();
+            
             Dictionary<Type, Type> type = new Dictionary<Type, Type>();
             type.Add(typeof(ProviderPrecipitazioniDefaultHttp), typeof(StandardInformationVisitor));
             IFactoryGestoreInformazioni fac = FactoryGestoreInformazioni.GetFactory();

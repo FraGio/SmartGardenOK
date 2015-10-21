@@ -33,6 +33,7 @@ namespace SmartGarden.Model
         public Giardino()
         {
             _settori = new Dictionary<string, ISettore>();
+            //OnChanged();
         }
 
         public IEnumerable<string> GetNomiSettori()

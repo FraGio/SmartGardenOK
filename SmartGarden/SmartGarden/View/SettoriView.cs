@@ -23,8 +23,9 @@ namespace SmartGarden.View
             {
                 ISettore settore = GestoreGiardino.Giardino.GetSettore(nomeSettore);
 
+                //TODO ricavare da settore durata irrigazione
                 _dataGridView.Rows.Add(settore.Nome, settore.GetGuidPiante().Count().ToString(),
-                    settore.GetFabisogno(DateTime.Now, DateTime.Now.AddDays(1)) + " mm", "3 ore", "Vedi piante", "Rimuovi settore");
+                    Convert.ToInt32(settore.GetFabisogno(DateTime.Now, DateTime.Now.AddDays(1))) + " mm", "3 ore", "Vedi piante", "Rimuovi settore");
             }
         }
 

@@ -26,7 +26,7 @@ namespace SmartGarden.View
             {
                 IPianta pianta = _settore.GetPianta(guidPianta);
                 _dataGridView.Rows.Add(pianta.Guid, pianta.NomeComune, pianta.NomeBotanico, 
-                    pianta.FabbisognoPiantaAttuale(DateTime.Now, tomorrow) + " mm", "Mostra Gestori");
+                    Convert.ToInt32(pianta.FabbisognoPiantaAttuale(DateTime.Now, tomorrow)) + " mm", "Mostra Gestori");
             }
 
         }

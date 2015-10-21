@@ -31,15 +31,15 @@ namespace SmartGarden.View
             _giardinoNameLabel.Text = GestoreGiardino.Luogo;
             _numeroSettoriLabel.Text = giardino.GetNomiSettori().Count().ToString();
             _numeroPianteLabel.Text = giardino.NumeroPianteTotali.ToString();
-            _capacitàLabel.Text = giardino.Cisterna.Capienza + " l";
-            _portataLabel.Text = giardino.Cisterna.Portata + " l/s";
+            //_capacitàLabel.Text = giardino.Cisterna.Capienza + " l";
+            //_portataLabel.Text = giardino.Cisterna.Portata + " l/s";
 
             /*TODO messagepump
             _precipitazioniLabel.Text = GestoreGiardino.Precipitazioni + " mm";
             _temperaturaLabel.Text = GestoreGiardino.Temperatura + " °C";*/
 
             _prossimaIrrigazioneLabel.Text = GestoreGiardino.OraInizioInnaffiatura.ToString();
-            _intervalloIrrigazione.Text = GestoreGiardino.Intervallo.ToString();
+            _intervalloIrrigazione.Text = GestoreGiardino.Intervallo.TotalHours.ToString() + " h";
 
             SistemaRighe();
         }

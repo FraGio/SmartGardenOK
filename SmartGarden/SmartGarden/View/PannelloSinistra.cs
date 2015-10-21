@@ -47,7 +47,7 @@ namespace SmartGarden.View
 
                 _treeView.Nodes[0].Nodes.Add(settore.Nome);
                 _treeView.Nodes[0].Nodes[index].Nodes.Add("Fabbisogno totale giornaliero: " + 
-                    settore.GetFabisogno(DateTime.Now, DateTime.Now.AddDays(1)) + " mm");
+                    Convert.ToInt32(settore.GetFabisogno(DateTime.Now, DateTime.Now.AddDays(1))) + " mm");
                 _treeView.Nodes[0].Nodes[index].Nodes.Add("Numero piante: " + settore.GetGuidPiante().Count());
                 
                 index++;
