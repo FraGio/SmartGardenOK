@@ -65,6 +65,23 @@ namespace SmartGarden.Model
 
             return turni;
         }
+
+        public bool AddSettore(ISettore settore)
+        {
+            if (_settori.ContainsKey(settore.Nome))
+                return false;
+            _settori.Add(settore.Nome, settore);
+            return false;
+        }
+
+        public bool RemoveSettore(string settore)
+        {
+            if (!_settori.ContainsKey(settore))
+                return false;
+
+            _settori.Remove(settore);
+            return true;
+        }
     }
 
     class TurnoItem
