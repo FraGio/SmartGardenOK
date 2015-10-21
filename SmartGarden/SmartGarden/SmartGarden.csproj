@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\Controller.cs" />
+    <Compile Include="Controller\MyController.cs" />
     <Compile Include="Controller\IController.cs" />
     <Compile Include="Model\Cisterna.cs" />
     <Compile Include="Model\FabbisognoGiornalieroPeriodo.cs" />
@@ -117,6 +117,12 @@
     </Compile>
     <Compile Include="View\MainWindow.designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NuovaPiantaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\NuovaPiantaView.Designer.cs">
+      <DependentUpon>NuovaPiantaView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\NuovoGiardinoView.cs">
       <SubType>UserControl</SubType>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NuovaPiantaView.resx">
+      <DependentUpon>NuovaPiantaView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NuovoGiardinoView.resx">
       <DependentUpon>NuovoGiardinoView.cs</DependentUpon>

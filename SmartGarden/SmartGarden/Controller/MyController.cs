@@ -6,13 +6,21 @@ using System;
 
 namespace SmartGarden.Control
 {
-    class Controller : IController
+    class MyController : IController
     {
         private readonly GestioneGiardino _gestioneGiardino; //GestioneGiardino è il model
+        private static MyController _instance = null;
 
-        public Controller(GestioneGiardino gestioneGiardino)
+        private MyController(GestioneGiardino gestioneGiardino)
         {
             _gestioneGiardino = gestioneGiardino;
+        }
+
+        public static MyController GetController(GestioneGiardino gestioneGiardino)
+        {
+            if (_instance == null)
+                _instance = new MyController(gestioneGiardino);
+            return _instance;
         }
 
         public bool CreateLoginForm()
@@ -41,7 +49,7 @@ namespace SmartGarden.Control
                 PianteView pianteView = new PianteView(settore);
                 pianteView.Dock = DockStyle.Fill;
                 pianteForm.Text = "Piante di " + settore.Nome;
-                pianteForm.Size = new System.Drawing.Size(1000,400);
+                pianteForm.Size = new System.Drawing.Size(900,400);
                 pianteForm.Controls.Add(pianteView);
                 pianteForm.ShowDialog();
             }
@@ -87,7 +95,7 @@ namespace SmartGarden.Control
                 settoriView.Controller = this;
                 settoriView.Dock = DockStyle.Fill;
                 settoriForm.Text = "Gestione settori";
-                settoriForm.Size = new System.Drawing.Size(600, 300);
+                settoriForm.Size = new System.Drawing.Size(900, 300);
                 settoriForm.Controls.Add(settoriView);
                 var result = settoriForm.ShowDialog();
 
@@ -176,6 +184,8 @@ namespace SmartGarden.Control
             using (var form = new Form())
             {
                 GestoreTimerView timerView = new GestoreTimerView();
+                timerView.GestoreGiardino = _gestioneGiardino;
+                timerView.Controller = this;
                 timerView.Dock = DockStyle.Fill;
                 form.Size = new System.Drawing.Size(500, 400);
                 form.Controls.Add(timerView);
@@ -188,11 +198,26 @@ namespace SmartGarden.Control
             using (var form = new Form())
             {
                 GestisciCisternaView cisternaView = new GestisciCisternaView();
+                cisternaView.GestoreGiardino = _gestioneGiardino;
+                cisternaView.Controller = this;
                 cisternaView.Dock = DockStyle.Fill;
                 form.Size = new System.Drawing.Size(500, 400);
                 form.Controls.Add(cisternaView);
                 form.ShowDialog();
             }
+        }
+
+        public void CreaNuovaCisterna(double portata, double capacità)
+        {
+            ICisterna cisterna = new Cisterna(portata, capacità);
+            _gestioneGiardino.Giardino.Cisterna = cisterna;
+        }
+
+        public void CreaNuovaPianta(string nomeBotanico, string nomeComune, double area, string nomeSettore)
+        {
+            IPianta pianta = new Pianta(nomeBotanico, nomeComune, area);
+            ISettore settore = _gestioneGiardino.Giardino.GetSettore(nomeSettore);
+            settore.AddPianta(pianta);
         }
     }
 }

@@ -20,15 +20,8 @@ namespace SmartGarden.View
         {
             base.OnLoad(e);
             _dataGridView.CellClick += MostraGestoriInfoPianta;
-            DateTime tomorrow = DateTime.Now.AddDays(1);
 
-            foreach (Guid guidPianta in _settore.GetGuidPiante())
-            {
-                IPianta pianta = _settore.GetPianta(guidPianta);
-                _dataGridView.Rows.Add(pianta.Guid, pianta.NomeComune, pianta.NomeBotanico, 
-                    Convert.ToInt32(pianta.FabbisognoPiantaAttuale(DateTime.Now, tomorrow)) + " mm", "Mostra Gestori");
-            }
-
+            CaricaPiante();
         }
 
         private void MostraGestoriInfoPianta(object sender, DataGridViewCellEventArgs e)
@@ -40,6 +33,34 @@ namespace SmartGarden.View
             if (_dataGridView.CurrentCell.ColumnIndex.Equals(4) && e.RowIndex != -1) //aggiungi gestore
             {
                 Controller.CreaPiantaView(pianta);
+            }
+        }
+
+        private void _aggiungiPiantaButton_Click(object sender, EventArgs e)
+        {
+            using (var piantaForm = new Form())
+            {
+                NuovaPiantaView nuovaPiantaView = new NuovaPiantaView(_settore.Nome);
+                nuovaPiantaView.Dock = DockStyle.Fill;
+                piantaForm.Text = "Nuova pianta";
+                piantaForm.Size = new System.Drawing.Size(430, 215);
+                piantaForm.Controls.Add(nuovaPiantaView);
+                var result = piantaForm.ShowDialog();
+
+                if(result == DialogResult.OK)
+                {
+                    CaricaPiante(); //aggiorna la tabella
+                }
+            }
+        }
+
+        private void CaricaPiante()
+        {
+            foreach (Guid guidPianta in _settore.GetGuidPiante())
+            {
+                IPianta pianta = _settore.GetPianta(guidPianta);
+                _dataGridView.Rows.Add(pianta.Guid, pianta.NomeComune, pianta.NomeBotanico,
+                    Convert.ToInt32(pianta.FabbisognoPiantaAttuale(DateTime.Now, DateTime.Now.AddDays(1))) + " mm", "Mostra Gestori");
             }
         }
     }

@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this._rimuoviButton = new System.Windows.Forms.Button();
+            this._finalizzaButton = new System.Windows.Forms.Button();
+            this._aggiungiButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this._visitorComboBox = new System.Windows.Forms.ComboBox();
             this._providerComboBox = new System.Windows.Forms.ComboBox();
             this._textBox = new System.Windows.Forms.TextBox();
-            this._aggiungiButton = new System.Windows.Forms.Button();
-            this._finalizzaButton = new System.Windows.Forms.Button();
-            this._rimuoviButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -67,9 +67,36 @@
             this.splitContainer1.SplitterDistance = 240;
             this.splitContainer1.TabIndex = 0;
             // 
+            // _rimuoviButton
+            // 
+            this._rimuoviButton.Location = new System.Drawing.Point(330, 104);
+            this._rimuoviButton.Name = "_rimuoviButton";
+            this._rimuoviButton.Size = new System.Drawing.Size(75, 23);
+            this._rimuoviButton.TabIndex = 10;
+            this._rimuoviButton.Text = "Rimuovi";
+            this._rimuoviButton.UseVisualStyleBackColor = true;
+            this._rimuoviButton.Click += new System.EventHandler(this._rimuoviButton_Click);
+            // 
+            // _finalizzaButton
+            // 
+            this._finalizzaButton.Location = new System.Drawing.Point(235, 151);
+            this._finalizzaButton.Name = "_finalizzaButton";
+            this._finalizzaButton.Size = new System.Drawing.Size(75, 23);
+            this._finalizzaButton.TabIndex = 9;
+            this._finalizzaButton.Text = "Finalizza";
+            this._finalizzaButton.UseVisualStyleBackColor = true;
+            // 
+            // _aggiungiButton
+            // 
+            this._aggiungiButton.Location = new System.Drawing.Point(235, 104);
+            this._aggiungiButton.Name = "_aggiungiButton";
+            this._aggiungiButton.Size = new System.Drawing.Size(75, 23);
+            this._aggiungiButton.TabIndex = 8;
+            this._aggiungiButton.Text = "Aggiungi";
+            this._aggiungiButton.UseVisualStyleBackColor = true;
+            // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(36, 66);
@@ -80,7 +107,6 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(36, 36);
@@ -91,7 +117,6 @@
             // 
             // _visitorComboBox
             // 
-            this._visitorComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._visitorComboBox.FormattingEnabled = true;
             this._visitorComboBox.Location = new System.Drawing.Point(235, 64);
             this._visitorComboBox.Name = "_visitorComboBox";
@@ -100,7 +125,6 @@
             // 
             // _providerComboBox
             // 
-            this._providerComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._providerComboBox.FormattingEnabled = true;
             this._providerComboBox.Location = new System.Drawing.Point(235, 31);
             this._providerComboBox.Name = "_providerComboBox";
@@ -115,36 +139,6 @@
             this._textBox.Name = "_textBox";
             this._textBox.Size = new System.Drawing.Size(584, 106);
             this._textBox.TabIndex = 0;
-            // 
-            // _aggiungiButton
-            // 
-            this._aggiungiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._aggiungiButton.Location = new System.Drawing.Point(235, 104);
-            this._aggiungiButton.Name = "_aggiungiButton";
-            this._aggiungiButton.Size = new System.Drawing.Size(75, 23);
-            this._aggiungiButton.TabIndex = 8;
-            this._aggiungiButton.Text = "Aggiungi";
-            this._aggiungiButton.UseVisualStyleBackColor = true;
-            // 
-            // _finalizzaButton
-            // 
-            this._finalizzaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._finalizzaButton.Location = new System.Drawing.Point(235, 151);
-            this._finalizzaButton.Name = "_finalizzaButton";
-            this._finalizzaButton.Size = new System.Drawing.Size(75, 23);
-            this._finalizzaButton.TabIndex = 9;
-            this._finalizzaButton.Text = "Finalizza";
-            this._finalizzaButton.UseVisualStyleBackColor = true;
-            // 
-            // _rimuoviButton
-            // 
-            this._rimuoviButton.Location = new System.Drawing.Point(330, 104);
-            this._rimuoviButton.Name = "_rimuoviButton";
-            this._rimuoviButton.Size = new System.Drawing.Size(75, 23);
-            this._rimuoviButton.TabIndex = 10;
-            this._rimuoviButton.Text = "Rimuovi";
-            this._rimuoviButton.UseVisualStyleBackColor = true;
-            this._rimuoviButton.Click += new System.EventHandler(this._rimuoviButton_Click);
             // 
             // PiantaView
             // 

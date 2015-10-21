@@ -21,15 +21,24 @@ namespace SmartGarden.View
         {
             base.OnLoad(e);
 
-            _guidCisternaTextBox.Text = GestoreGiardino.Giardino.Cisterna.Guid.ToString();
-            _portataTextBox.Text = GestoreGiardino.Giardino.Cisterna.Portata.ToString();
-            _capacitàTextBox.Text = GestoreGiardino.Giardino.Cisterna.Capienza.ToString();
+            CaricaDatiCisterna();
         }
 
         private void _creaButton_Click(object sender, EventArgs e)
         {
             if(!string.IsNullOrWhiteSpace(_nuovaCapacitàTextBox.Text) && !(string.IsNullOrWhiteSpace(_nuovaPortataTextBox.Text))){
-                _creaButton.Enabled = true;
+                Controller.CreaNuovaCisterna(double.Parse(_nuovaPortataTextBox.Text), double.Parse(_nuovaCapacitàTextBox.Text));
+                this.ParentForm.Close();
+            }
+        }
+
+        private void CaricaDatiCisterna()
+        {
+            if (GestoreGiardino.Giardino.Cisterna != null)
+            {
+                _guidCisternaTextBox.Text = GestoreGiardino.Giardino.Cisterna.Guid.ToString();
+                _portataTextBox.Text = GestoreGiardino.Giardino.Cisterna.Portata.ToString();
+                _capacitàTextBox.Text = GestoreGiardino.Giardino.Cisterna.Capienza.ToString();
             }
         }
     }
