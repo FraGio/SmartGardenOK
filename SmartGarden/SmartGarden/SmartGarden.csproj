@@ -120,6 +120,12 @@
     <Compile Include="View\NuovoGiardinoView.designer.cs">
       <DependentUpon>NuovoGiardinoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\NuovoSettoreView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\NuovoSettoreView.Designer.cs">
+      <DependentUpon>NuovoSettoreView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PannelloDestra.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\NuovoGiardinoView.resx">
       <DependentUpon>NuovoGiardinoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NuovoSettoreView.resx">
+      <DependentUpon>NuovoSettoreView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PannelloDestra.resx">
       <DependentUpon>PannelloDestra.cs</DependentUpon>

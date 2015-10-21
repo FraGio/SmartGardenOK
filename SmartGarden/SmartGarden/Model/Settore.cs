@@ -14,7 +14,7 @@ namespace SmartGarden.Model
         private double _portataImpianto;
         private IDictionary<Guid,IPianta> _piante;
 
-        public Settore(string nome,Double portata=0)
+        public Settore(string nome, double portata=0)
         {
             _nome = nome;
             _portataImpianto = portata;

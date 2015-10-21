@@ -36,6 +36,8 @@
             this._fabbisognoTotaleSettore = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._timerInizio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._pianteButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this._aggiungiSettoreButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,10 +72,10 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this._dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this._dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._dataGridView.Location = new System.Drawing.Point(0, 0);
+            this._dataGridView.Location = new System.Drawing.Point(0, 24);
             this._dataGridView.Name = "_dataGridView";
             this._dataGridView.RowHeadersVisible = false;
-            this._dataGridView.Size = new System.Drawing.Size(587, 400);
+            this._dataGridView.Size = new System.Drawing.Size(587, 376);
             this._dataGridView.TabIndex = 0;
             // 
             // _settoreName
@@ -106,15 +108,37 @@
             this._pianteButton.Name = "_pianteButton";
             this._pianteButton.ReadOnly = true;
             // 
-            // _settoriView
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(587, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // _aggiungiSettoreButton
+            // 
+            this._aggiungiSettoreButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this._aggiungiSettoreButton.Location = new System.Drawing.Point(3, 0);
+            this._aggiungiSettoreButton.Name = "_aggiungiSettoreButton";
+            this._aggiungiSettoreButton.Size = new System.Drawing.Size(111, 23);
+            this._aggiungiSettoreButton.TabIndex = 2;
+            this._aggiungiSettoreButton.Text = "Aggiungi settore";
+            this._aggiungiSettoreButton.UseVisualStyleBackColor = true;
+            this._aggiungiSettoreButton.Click += new System.EventHandler(this._aggiungiSettoreButton_Click);
+            // 
+            // SettoriView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
+            this.Controls.Add(this._aggiungiSettoreButton);
             this.Controls.Add(this._dataGridView);
-            this.Name = "_settoriView";
+            this.Controls.Add(this.menuStrip1);
+            this.Name = "SettoriView";
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -126,5 +150,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn _fabbisognoTotaleSettore;
         private System.Windows.Forms.DataGridViewTextBoxColumn _timerInizio;
         private System.Windows.Forms.DataGridViewButtonColumn _pianteButton;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Button _aggiungiSettoreButton;
     }
 }

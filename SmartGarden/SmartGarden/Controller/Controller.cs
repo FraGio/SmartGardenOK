@@ -89,8 +89,33 @@ namespace SmartGarden.Control
                 settoriForm.Text = "Gestione settori";
                 settoriForm.Size = new System.Drawing.Size(600, 300);
                 settoriForm.Controls.Add(settoriView);
-                settoriForm.ShowDialog();
+                var result = settoriForm.ShowDialog();
+
+                if(result == DialogResult.OK)
+                {
+                    CreaNuovoSettoreView();
+                }
             }
+        }
+
+        private void CreaNuovoSettoreView()
+        {
+            using (var nuovoSettoreForm = new Form())
+            {
+                NuovoSettoreView nuovoSettView = new NuovoSettoreView();
+                nuovoSettView.GestoreGiardino = _gestioneGiardino;
+                nuovoSettView.Controller = this;
+                nuovoSettView.Dock = DockStyle.Fill;
+                nuovoSettoreForm.Text = "Nuovo settore";
+                nuovoSettoreForm.Size = new System.Drawing.Size(350, 220);
+                nuovoSettoreForm.Controls.Add(nuovoSettView);
+                var result = nuovoSettoreForm.ShowDialog();
+            }
+        }
+
+        public void CreaSettore()
+        {
+
         }
 
         public void NuovoGiardino()
@@ -112,7 +137,8 @@ namespace SmartGarden.Control
 
                     if (result2 == DialogResult.OK)
                     {
-                       // _gestioneGiardino.ResetGiardino();
+                        Giardino giardino = new Giardino();
+                        _gestioneGiardino.Giardino = giardino;
                         _gestioneGiardino.Luogo = nuovoGiardinoView.Controls.Find("_provinceComboBox", false)[0].Text;
                        // _gestioneGiardino.AggiornaInfoMeteo();
                     }

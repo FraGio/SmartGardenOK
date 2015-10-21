@@ -36,5 +36,10 @@ namespace SmartGarden.View
                 Controller.CaricaViewPiante(nomeSettore);
             }
         }
+
+        private void _aggiungiSettoreButton_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.Close();
+        }
     }
 }
