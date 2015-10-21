@@ -123,6 +123,11 @@ namespace SmartGarden.Control
             }
         }
 
+        public void CancellaSettore(string nomeSettore)
+        {
+            _gestioneGiardino.Giardino.RemoveSettore(nomeSettore);
+        }
+
         public void NuovoGiardino()
         {
 

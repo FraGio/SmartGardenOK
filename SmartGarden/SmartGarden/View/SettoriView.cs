@@ -11,7 +11,7 @@ namespace SmartGarden.View
         public SettoriView()
         {
             InitializeComponent();
-            _dataGridView.CellClick += ApriViewPiante;
+            _dataGridView.CellClick += GestisciClick;
         }
 
 
@@ -24,16 +24,23 @@ namespace SmartGarden.View
                 ISettore settore = GestoreGiardino.Giardino.GetSettore(nomeSettore);
 
                 _dataGridView.Rows.Add(settore.Nome, settore.GetGuidPiante().Count().ToString(),
-                    settore.GetFabisogno(DateTime.Now, DateTime.Now.AddDays(1)) + " mm", "3 ore", "Piante");
+                    settore.GetFabisogno(DateTime.Now, DateTime.Now.AddDays(1)) + " mm", "3 ore", "Vedi piante", "Rimuovi settore");
             }
         }
 
-        private void ApriViewPiante(object sender, DataGridViewCellEventArgs e)
+        private void GestisciClick(object sender, DataGridViewCellEventArgs e)
         {
+            string nomeSettore = _dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+
             if (_dataGridView.CurrentCell.ColumnIndex.Equals(4) && e.RowIndex != -1)
             {
-                string nomeSettore = _dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
                 Controller.CaricaViewPiante(nomeSettore);
+            }
+            else if (_dataGridView.CurrentCell.ColumnIndex.Equals(4) && e.RowIndex != -1)
+            {
+                Controller.CancellaSettore(nomeSettore);
+                _dataGridView.Update();
+                _dataGridView.Refresh();
             }
         }
 
