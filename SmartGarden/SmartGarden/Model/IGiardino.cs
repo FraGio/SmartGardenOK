@@ -20,6 +20,6 @@ namespace SmartGarden.Model
 
         bool RemoveSettore(string settore);
 
-        bool AddSettore(ISettore settore)
+        bool AddSettore(ISettore settore);
     }
 }
