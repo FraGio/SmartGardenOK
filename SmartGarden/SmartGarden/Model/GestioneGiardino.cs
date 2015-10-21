@@ -3,21 +3,29 @@
 
 namespace SmartGarden.Model
 {
-    class GestioneGiardino : IGestioneGiardinoData
+    class GestioneGiardino : IGestioneGiardinoData,IGestioneGiardino
     {
         public IGiardino Giardino { get; set; }
         public string Luogo { get; set; }
         public event EventHandler Changed;
         private MyTimer _timers;
         private static GestioneGiardino _instance = null;
-        DateTime OraInizioInnaffiatura { get; }
-        TimeSpan Intervallo { get; }
+        private DateTime _oraInizioInnaffiatura;
+        private TimeSpan _intervallo;
 
+        public DateTime OraInizioInnaffiatura
+        {
+            get { return _oraInizioInnaffiatura};
+        }
+        public TimeSpan Intervallo
+        {
+            get { return _intervallo}
+        }
         private GestioneGiardino()
         {
             Giardino = new Giardino();
-            _timers = new MyTimer();
-            OraInizioInnaffiatura = DateTime.Now;
+            _timers = MyTimer.GetMyTimer();
+            _oraInizioInnaffiatura = DateTime.Now;
             TimeSpan ts;
             if(OraInizioInnaffiatura.Hour>19)
             {
@@ -27,8 +35,9 @@ namespace SmartGarden.Model
             {
                 ts = new TimeSpan(19, 0, 0);
             }
-            OraInizioInnaffiatura = OraInizioInnaffiatura.Date + ts;
-            Intervallo = new TimeSpan(1, 0, 0, 0);
+            _oraInizioInnaffiatura = OraInizioInnaffiatura.Date + ts;
+            _intervallo = new TimeSpan(1, 0, 0, 0);
+            _timers.SetTimerPrincipale(OraInizioInnaffiatura, Intervallo);
         }
 
         public static GestioneGiardino GetGestoreGiardino()
@@ -38,6 +47,13 @@ namespace SmartGarden.Model
                 _instance = new GestioneGiardino();
             }
             return _instance;
+        }
+
+        public void SetTimer(DateTime date,TimeSpan intervallo)
+        {
+            _oraInizioInnaffiatura = date;
+            _intervallo = intervallo;
+            _timers.SetTimerPrincipale(date, intervallo);
         }
 
         protected virtual void OnChanged()
@@ -56,14 +72,9 @@ namespace SmartGarden.Model
             foreach(TurnoItem turno in Giardino.GetTurni(inizio,fine))
             {
                 foreach(IOpenClose openclose in turno.Mehtods)
-                _timers.SetTimer(turno.Attesa, turno.Durata,openclose);
+                _timers.SetTimers(turno.Attesa, turno.Durata,openclose);
             }
-        }
+        } 
 
-        public MyTimer MyTimer
-        {
-            get { return _timers; }
-        }
-        
     }
 }

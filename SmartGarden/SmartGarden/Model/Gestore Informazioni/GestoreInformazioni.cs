@@ -66,5 +66,6 @@ namespace SmartGarden.Model.Gestore_Informazioni
 
             return true;
         }
+
     }
 }

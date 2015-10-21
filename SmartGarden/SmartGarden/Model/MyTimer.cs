@@ -7,48 +7,113 @@ namespace SmartGarden.Model
     class MyTimer
     {
         //TODO mettere a posto il timer
-        private Dictionary<string, Timer[]> _timers = new Dictionary<string, Timer[]>();
+        private Dictionary<DateTime, MyInternalTimer> _timers;
+        private MyInternalTimer _timerPrincipale ;
+        private TimeSpan _intervalloPrincipale;
+        private static MyTimer instance = null;
 
-        public void SetTimer(int momentoApertura, int durataApertura, String name,
-            ElapsedEventHandler Apri, ElapsedEventHandler Chiudi)
+        public static MyTimer GetMyTimer()
         {
-            Timer timerApertura = new Timer(momentoApertura);
-            Timer timerChiusura = new Timer(momentoApertura + durataApertura);
-
-            Timer timerprova = new Timer();
-
-            timerApertura.Elapsed += Apri;
-            timerChiusura.Elapsed += Chiudi;
-
-            timerApertura.Start();
-            timerChiusura.Start();
-            timerApertura.AutoReset = false;
-            timerChiusura.AutoReset = false;
-
-            Timer[] timerPerValvola = new Timer[2];
-            timerPerValvola[0] = timerApertura;
-            timerPerValvola[1] = timerChiusura;
-
-            _timers.Add(name, timerPerValvola);
+            if (instance == null)
+                instance = new MyTimer();
+            return instance;
         }
 
-        public Dictionary<string, Timer[]> Timers
+        private MyTimer()
         {
-            get { return _timers; }
+            _timerPrincipale = new MyInternalTimer();
+            _timers = new Dictionary<DateTime, MyInternalTimer>();
+            _intervalloPrincipale = new TimeSpan(1, 0, 0, 0);
         }
 
-        public void SetTimer(DateTime inizio, TimeSpan durata,IOpenClose handlers)
+
+        public bool SetTimers(DateTime inizio, TimeSpan durata,IOpenClose handlers)
         {
-            Timer tim = new Timer();
+            DateTime fine = inizio + durata;
+            return SetTimers(inizio, fine, handlers);
         }
 
-        public Timer[] GetTimerForElement(string element)
+        public bool SetTimers(DateTime inizio,DateTime fine,IOpenClose handlers)
         {
-            Timer[] timersForElement = new Timer[2];
-            _timers.TryGetValue(element, out timersForElement);
+            #region timer apertura
+            SetTimer(inizio, handlers.Open);
+            #endregion
 
-            return timersForElement;
+            #region timer chiusura
+            SetTimer(fine, handlers.Close);
+            #endregion
+
+            return true;
         }
-        
+
+        public bool SetTimer(DateTime data,ElapsedEventHandler ev)
+        {
+            if (!_timers.ContainsKey(data))
+            {
+                MyInternalTimer timerApertura = new MyInternalTimer(data.Millisecond);
+                _timers.Add(data, timerApertura);
+            }
+            _timers[data].AddEventHandler(ev);
+
+            return true;
+        }
+
+        public bool SetTimerPrincipale(DateTime data,TimeSpan intervallo)
+        {
+            _intervalloPrincipale = intervallo;
+            #region deregistro
+            foreach (MyInternalTimer timer in _timers.Values)
+            {
+                _timerPrincipale.RemoveEventHandler(timer.Start);
+            }
+            _timerPrincipale.RemoveEventHandler(SetNextIntervalloPrincipale);
+            _timerPrincipale = new MyInternalTimer(data.Millisecond);
+            #endregion
+
+            #region registro
+            foreach (MyInternalTimer timer in _timers.Values)
+            {
+                _timerPrincipale.AddEventHandler(timer.Start);
+            }
+            _timerPrincipale.AddEventHandler(SetNextIntervalloPrincipale);
+            #endregion
+            return true;
+        }
+
+        private void SetNextIntervalloPrincipale(Object source, ElapsedEventArgs e)
+        {
+            DateTime next = DateTime.Now + _intervalloPrincipale;
+            SetTimerPrincipale(next, _intervalloPrincipale);
+        }
+
+        private class MyInternalTimer
+        {
+            Timer timer;
+
+            public MyInternalTimer(long mills=0)
+            {
+                timer = new Timer(mills);
+            }
+
+            public void SetTimer(long mills)
+            {
+                timer = new Timer(mills);
+            }
+
+            public void AddEventHandler(ElapsedEventHandler ev)
+            {
+                timer.Elapsed += ev;
+            }
+
+            public void RemoveEventHandler(ElapsedEventHandler ev)
+            {
+                timer.Elapsed -= ev;
+            }
+
+            public void Start(Object source, ElapsedEventArgs e)
+            {
+                timer.Start();
+            }
+        }
     }
 }

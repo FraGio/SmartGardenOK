@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Timers;
 
 namespace SmartGarden.Model
 {
@@ -19,24 +20,16 @@ namespace SmartGarden.Model
             }
         }
 
-        public void Apri(object sender, EventArgs e)
-        {
-            Console.WriteLine("sono : " + _name + " mi apro");
-        }
-
-        public void Chiudi(object sender, EventArgs e)
+        public void Close(object source, ElapsedEventArgs e)
         {
             Console.WriteLine("sono : " + _name + " mi chiudo");
         }
 
-        public void Close()
+        public void Open(object source, ElapsedEventArgs e)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("sono : " + _name + " mi apro");
         }
 
-        public void Open()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
