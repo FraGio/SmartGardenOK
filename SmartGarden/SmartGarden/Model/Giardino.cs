@@ -4,9 +4,10 @@ using System.Linq;
 
 namespace SmartGarden.Model
 {
-    class Giardino:IGiardino
+    class Giardino : IGiardino
     {
         public ICisterna Cisterna { get; set; }
+        public event EventHandler Changed;
 
         public int NumeroPianteTotali
         {
@@ -20,6 +21,12 @@ namespace SmartGarden.Model
                 return tot;
             }
         }
+        protected virtual void OnChanged()
+        {
+            if (Changed != null)
+                Changed(this, EventArgs.Empty); //aggiorna la view
+        }
+
 
         private Dictionary<string,ISettore> _settori;
 
@@ -68,7 +75,8 @@ namespace SmartGarden.Model
             if (_settori.ContainsKey(settore.Nome))
                 return false;
             _settori.Add(settore.Nome, settore);
-            return false;
+            OnChanged();
+            return true;
         }
 
         public bool RemoveSettore(string settore)
@@ -77,6 +85,7 @@ namespace SmartGarden.Model
                 return false;
 
             _settori.Remove(settore);
+            OnChanged();
             return true;
         }
     }
