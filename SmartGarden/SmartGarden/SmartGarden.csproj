@@ -72,10 +72,12 @@
     <Compile Include="Model\IGestioneGiardino.cs" />
     <Compile Include="Model\IGestioneGiardinoData.cs" />
     <Compile Include="Model\IGiardino.cs" />
+    <Compile Include="Model\IMessagePump.cs" />
     <Compile Include="Model\InvalidDifferenceOfTime.cs" />
     <Compile Include="Model\IOpenClose.cs" />
     <Compile Include="Model\IPianta.cs" />
     <Compile Include="Model\ISettore.cs" />
+    <Compile Include="Model\IvalvolaDiSicurezza.cs" />
     <Compile Include="Model\MessagePump.cs" />
     <Compile Include="Model\MyTimer.cs" />
     <Compile Include="Model\Pianta.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Model\SensorePressione.cs" />
     <Compile Include="Model\Settore.cs" />
     <Compile Include="Model\Valvola.cs" />
+    <Compile Include="Model\ValvolaDiSicurezza.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\GestisciCisternaView.cs">

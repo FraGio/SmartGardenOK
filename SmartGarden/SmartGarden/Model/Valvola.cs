@@ -3,7 +3,7 @@ using System.Timers;
 
 namespace SmartGarden.Model
 {
-    class Valvola : IOpenClose
+    abstract class Valvola : IOpenClose
     {
         private String _name;
 
@@ -19,14 +19,14 @@ namespace SmartGarden.Model
             }
         }
 
-        public void Close(object source, ElapsedEventArgs e)
+        public virtual void Close(object source, EventArgs e)
         {
-            Console.WriteLine("sono : " + _name + " mi chiudo");
+            MessagePump.SendMessage("sono : " + _name + " mi chiudo");
         }
 
-        public void Open(object source, ElapsedEventArgs e)
+        public virtual void Open(object source, EventArgs e)
         {
-            Console.WriteLine("sono : " + _name + " mi apro");
+            MessagePump.SendMessage("sono : " + _name + " mi chiudo");
         }
 
        
