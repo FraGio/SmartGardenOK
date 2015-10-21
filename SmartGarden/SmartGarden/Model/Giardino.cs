@@ -45,7 +45,7 @@ namespace SmartGarden.Model
         {
             List<TurnoItem> turni = new List<TurnoItem>();
 
-            DateTime turno = new DateTime(0);
+            TimeSpan turno = new TimeSpan(0);
             long tot = 0;
             foreach(Settore settore in _settori.Values)
             {
@@ -54,13 +54,13 @@ namespace SmartGarden.Model
                 double portata = settore.GetPortataVolumetricaSecondo(Cisterna.Portata);
                 long durata = (long)(settore.GetFabisogno(inizio,fine) / portata);
                 tot += durata;
-                TimeSpan dur = new TimeSpan(durata);
+                TimeSpan dur = new TimeSpan(durata*TimeSpan.TicksPerSecond);
                 turnoItem.Durata = dur;
-                turno = turno.AddSeconds(durata);
+                turno = turno.Add(new TimeSpan(durata*TimeSpan.TicksPerSecond));
             }
             TurnoItem itemTurno = new TurnoItem();
-            itemTurno.Attesa = new DateTime(0);
-            itemTurno.Durata = new TimeSpan(tot);
+            itemTurno.Attesa = new TimeSpan(0);
+            itemTurno.Durata = new TimeSpan(tot*TimeSpan.TicksPerSecond);
             turni.Add(itemTurno);
 
             return turni;
@@ -86,10 +86,15 @@ namespace SmartGarden.Model
 
     class TurnoItem
     {
-        public DateTime Attesa { get; set; }
+        public TimeSpan Attesa { get; set; }
         public TimeSpan Durata { get; set; }
         private List<IOpenClose> _methods;
         
+        public TurnoItem()
+        {
+            _methods = new List<IOpenClose>();
+        }
+
         public void AddOpenClose(IOpenClose method)
         {
             _methods.Add(method);

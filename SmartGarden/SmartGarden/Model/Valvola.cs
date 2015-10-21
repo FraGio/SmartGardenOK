@@ -6,7 +6,6 @@ namespace SmartGarden.Model
     class Valvola : IOpenClose
     {
         private String _name;
-        private IDisposable _unsubscriber;
 
         public String Name
         {
