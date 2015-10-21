@@ -48,6 +48,8 @@ namespace SmartGarden
 
             CaricaProvince();
 
+            #region PROVA
+
             GestoreTimerView timerView = new GestoreTimerView();
             using(Form form = new Form())
             {
@@ -57,6 +59,7 @@ namespace SmartGarden
                 form.ShowDialog();
             }
 
+            #endregion
         }
 
         private void toolStripMenuItem11_Click(object sender, EventArgs e)

@@ -25,5 +25,12 @@ namespace SmartGarden.View
             _portataTextBox.Text = GestoreGiardino.Giardino.Cisterna.Portata.ToString();
             _capacitàTextBox.Text = GestoreGiardino.Giardino.Cisterna.Capienza.ToString();
         }
+
+        private void _creaButton_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrWhiteSpace(_nuovaCapacitàTextBox.Text) && !(string.IsNullOrWhiteSpace(_nuovaPortataTextBox.Text))){
+                _creaButton.Enabled = true;
+            }
+        }
     }
 }

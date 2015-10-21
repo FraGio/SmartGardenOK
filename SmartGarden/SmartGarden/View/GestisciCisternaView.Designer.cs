@@ -35,7 +35,7 @@
             this._capacitàTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this._nuovaCisternaTextBox = new System.Windows.Forms.TextBox();
+            this._nuovaCapacitàTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this._nuovaPortataTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -110,7 +110,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this._sensorePressioneComboBox);
             this.groupBox1.Controls.Add(this._creaButton);
-            this.groupBox1.Controls.Add(this._nuovaCisternaTextBox);
+            this.groupBox1.Controls.Add(this._nuovaCapacitàTextBox);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this._nuovaPortataTextBox);
             this.groupBox1.Controls.Add(this.label5);
@@ -121,12 +121,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crea cisterna";
             // 
-            // _nuovaCisternaTextBox
+            // _nuovaCapacitàTextBox
             // 
-            this._nuovaCisternaTextBox.Location = new System.Drawing.Point(145, 66);
-            this._nuovaCisternaTextBox.Name = "_nuovaCisternaTextBox";
-            this._nuovaCisternaTextBox.Size = new System.Drawing.Size(87, 20);
-            this._nuovaCisternaTextBox.TabIndex = 9;
+            this._nuovaCapacitàTextBox.Location = new System.Drawing.Point(145, 66);
+            this._nuovaCapacitàTextBox.Name = "_nuovaCapacitàTextBox";
+            this._nuovaCapacitàTextBox.Size = new System.Drawing.Size(87, 20);
+            this._nuovaCapacitàTextBox.TabIndex = 9;
             // 
             // label4
             // 
@@ -164,6 +164,7 @@
             this._creaButton.TabIndex = 10;
             this._creaButton.Text = "Crea";
             this._creaButton.UseVisualStyleBackColor = true;
+            this._creaButton.Click += new System.EventHandler(this._creaButton_Click);
             // 
             // _sensorePressioneComboBox
             // 
@@ -242,7 +243,7 @@
         private System.Windows.Forms.TextBox _capacitàTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox _nuovaCisternaTextBox;
+        private System.Windows.Forms.TextBox _nuovaCapacitàTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox _nuovaPortataTextBox;
         private System.Windows.Forms.Label label5;
