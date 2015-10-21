@@ -22,7 +22,7 @@ namespace SmartGarden.Model
 
         double PortataImpianto { get; set; }
 
-        IOpenClose _valvolaSettore { get; set; }
+        IOpenClose ValvolaSettore { get; set; }
 
         String Nome { get; }
 

@@ -113,9 +113,14 @@ namespace SmartGarden.Control
             }
         }
 
-        public void CreaSettore()
+        public void CreaSettore(string nomeSettore, double portataImpianto, Valvola valvola)
         {
-
+            ISettore settore = new Settore(nomeSettore, portataImpianto);
+            settore.ValvolaSettore = valvola;
+            if (!_gestioneGiardino.Giardino.AddSettore(settore))
+            {
+                MessageBox.Show("Settore già esistente!");
+            }
         }
 
         public void NuovoGiardino()

@@ -33,7 +33,7 @@
             this._portataImpiantoTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this._valvolaComboBox = new System.Windows.Forms.ComboBox();
             this._aggiungiButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -81,13 +81,13 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Valvola:";
             // 
-            // comboBox1
+            // _valvolaComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(135, 91);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(129, 21);
-            this.comboBox1.TabIndex = 5;
+            this._valvolaComboBox.FormattingEnabled = true;
+            this._valvolaComboBox.Location = new System.Drawing.Point(135, 91);
+            this._valvolaComboBox.Name = "_valvolaComboBox";
+            this._valvolaComboBox.Size = new System.Drawing.Size(129, 21);
+            this._valvolaComboBox.TabIndex = 5;
             // 
             // _aggiungiButton
             // 
@@ -106,7 +106,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.Controls.Add(this._aggiungiButton);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this._valvolaComboBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this._portataImpiantoTextBox);
             this.Controls.Add(this.label2);
@@ -126,7 +126,7 @@
         private System.Windows.Forms.TextBox _portataImpiantoTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox _valvolaComboBox;
         private System.Windows.Forms.Button _aggiungiButton;
     }
 }

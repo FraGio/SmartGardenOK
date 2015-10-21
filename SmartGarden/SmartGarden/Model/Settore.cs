@@ -9,7 +9,7 @@ namespace SmartGarden.Model
 {
     class Settore :ISettore
     {
-        public IOpenClose _valvolaSettore { get; set; }
+        public IOpenClose ValvolaSettore { get; set; }
         private String _nome;
         private double _portataImpianto;
         private IDictionary<Guid,IPianta> _piante;

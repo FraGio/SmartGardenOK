@@ -15,11 +15,11 @@ namespace SmartGarden.Model
 
         public DateTime OraInizioInnaffiatura
         {
-            get { return _oraInizioInnaffiatura};
+            get { return _oraInizioInnaffiatura; }
         }
         public TimeSpan Intervallo
         {
-            get { return _intervallo}
+            get { return _intervallo; }
         }
         private GestioneGiardino()
         {
