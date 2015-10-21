@@ -18,6 +18,8 @@ namespace SmartGarden.Model
 
         IEnumerable<TurnoItem> GetTurni(DateTime inizio, DateTime fine);
 
-        
+        bool RemoveSettore(string settore);
+
+        bool AddSettore(ISettore settore)
     }
 }
