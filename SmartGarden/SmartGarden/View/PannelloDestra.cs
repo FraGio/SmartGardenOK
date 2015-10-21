@@ -46,24 +46,10 @@ namespace SmartGarden.View
             /*TODO messagepump
             _precipitazioniLabel.Text = GestoreGiardino.Precipitazioni + " mm";
             _temperaturaLabel.Text = GestoreGiardino.Temperatura + " °C";*/
+            
+            _prossimaIrrigazioneLabel.Text = GestoreGiardino.OraInizioInnaffiatura.ToString();
+            _intervalloIrrigazione.Text = GestoreGiardino.Intervallo.ToString();
 
-            int i = 0;
-            if(GestoreGiardino.MyTimer.GetTimerForElement("TimerPrincipale") != null) { 
-                foreach (System.Timers.Timer timer in GestoreGiardino.MyTimer.GetTimerForElement("TimerPrincipale"))
-                {
-                    if (i == 0)
-                        _prossimaIrrigazioneLabel.Text = (timer.Interval / 1000) + " secondi";
-                    else
-                        _durataProssimaIrrigazione.Text = (timer.Interval / 1000) + " secondi";
-
-                    i++;
-                }
-            }
-            else
-            {
-                _prossimaIrrigazioneLabel.Text = "Non impostata";
-                _durataProssimaIrrigazione.Text = "Non impostata";
-            }
             SistemaRighe();
         }
 

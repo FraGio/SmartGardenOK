@@ -44,7 +44,7 @@
             this._temperaturaLabel = new System.Windows.Forms.Label();
             this._precipitazioniLabel = new System.Windows.Forms.Label();
             this._prossimaIrrigazioneLabel = new System.Windows.Forms.Label();
-            this._durataProssimaIrrigazione = new System.Windows.Forms.Label();
+            this._intervalloIrrigazione = new System.Windows.Forms.Label();
             this._numeroSettoriLabel = new System.Windows.Forms.Label();
             this._capacitàLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -123,7 +123,7 @@
             this._tableLayoutPanel.Controls.Add(this._temperaturaLabel, 0, 5);
             this._tableLayoutPanel.Controls.Add(this._precipitazioniLabel, 1, 5);
             this._tableLayoutPanel.Controls.Add(this._prossimaIrrigazioneLabel, 0, 7);
-            this._tableLayoutPanel.Controls.Add(this._durataProssimaIrrigazione, 1, 7);
+            this._tableLayoutPanel.Controls.Add(this._intervalloIrrigazione, 1, 7);
             this._tableLayoutPanel.Controls.Add(this._numeroSettoriLabel, 0, 3);
             this._tableLayoutPanel.Controls.Add(this._capacitàLabel, 1, 9);
             this._tableLayoutPanel.Controls.Add(this.label1, 0, 1);
@@ -229,7 +229,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(333, 39);
             this.label8.TabIndex = 18;
-            this.label8.Text = "Fine prossima irrigazione";
+            this.label8.Text = "Intervallo irrigazione";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
@@ -308,17 +308,17 @@
             this._prossimaIrrigazioneLabel.Text = "pross.irrigaz";
             this._prossimaIrrigazioneLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // _durataProssimaIrrigazione
+            // _intervalloIrrigazione
             // 
-            this._durataProssimaIrrigazione.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this._durataProssimaIrrigazione.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._durataProssimaIrrigazione.ForeColor = System.Drawing.Color.White;
-            this._durataProssimaIrrigazione.Location = new System.Drawing.Point(387, 284);
-            this._durataProssimaIrrigazione.Name = "_durataProssimaIrrigazione";
-            this._durataProssimaIrrigazione.Size = new System.Drawing.Size(288, 48);
-            this._durataProssimaIrrigazione.TabIndex = 26;
-            this._durataProssimaIrrigazione.Text = "fine";
-            this._durataProssimaIrrigazione.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this._intervalloIrrigazione.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this._intervalloIrrigazione.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._intervalloIrrigazione.ForeColor = System.Drawing.Color.White;
+            this._intervalloIrrigazione.Location = new System.Drawing.Point(387, 284);
+            this._intervalloIrrigazione.Name = "_intervalloIrrigazione";
+            this._intervalloIrrigazione.Size = new System.Drawing.Size(288, 48);
+            this._intervalloIrrigazione.TabIndex = 26;
+            this._intervalloIrrigazione.Text = "intervallo";
+            this._intervalloIrrigazione.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // _numeroSettoriLabel
             // 
@@ -572,7 +572,7 @@
         private System.Windows.Forms.Label _temperaturaLabel;
         private System.Windows.Forms.Label _precipitazioniLabel;
         private System.Windows.Forms.Label _prossimaIrrigazioneLabel;
-        private System.Windows.Forms.Label _durataProssimaIrrigazione;
+        private System.Windows.Forms.Label _intervalloIrrigazione;
         private System.Windows.Forms.Label _numeroSettoriLabel;
         private System.Windows.Forms.Label _capacitàLabel;
         private System.Windows.Forms.Label label1;
