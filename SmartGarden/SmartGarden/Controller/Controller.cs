@@ -55,7 +55,7 @@ namespace SmartGarden.Control
 
         public void CaricaProvinceComboBox(ComboBox provinceComboBox)
         {
-            XPathDocument doc = new XPathDocument("ProvinceItaliane.xml");
+            XPathDocument doc = new XPathDocument("ProvinceItaliane.xml" );
             XPathNavigator nav = doc.CreateNavigator();
 
             XPathExpression expr = nav.Compile("./italia/provincia");
