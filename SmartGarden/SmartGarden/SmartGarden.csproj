@@ -69,6 +69,7 @@
     <Compile Include="Model\ICisterna.cs" />
     <Compile Include="Model\IDataPianta.cs" />
     <Compile Include="Model\IDataPiantaFlyweight.cs" />
+    <Compile Include="Model\IGestioneGiardino.cs" />
     <Compile Include="Model\IGestioneGiardinoData.cs" />
     <Compile Include="Model\IGiardino.cs" />
     <Compile Include="Model\InvalidDifferenceOfTime.cs" />
