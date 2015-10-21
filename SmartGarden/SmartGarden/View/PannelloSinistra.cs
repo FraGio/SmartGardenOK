@@ -38,7 +38,7 @@ namespace SmartGarden.View
             int index = 0;
 
             _treeView.BeginUpdate();
-            _treeView.Nodes.Add("Giardino: " + giardino.Luogo);
+            _treeView.Nodes.Add("Giardino: " + GestoreGiardino.Luogo);
             _treeView.EndUpdate();
 
             foreach(string nomeSettore in giardino.GetNomiSettori())
@@ -46,8 +46,9 @@ namespace SmartGarden.View
                 ISettore settore = giardino.GetSettore(nomeSettore);
 
                 _treeView.Nodes[0].Nodes.Add(settore.Nome);
-                _treeView.Nodes[0].Nodes[index].Nodes.Add("Fabbisogno totale giornaliero: " + settore.Piante.GetFabbisognoTotale() + " mm");
-                _treeView.Nodes[0].Nodes[index].Nodes.Add("Numero piante: " + settore.Piante.ListaPiante.Count);
+                _treeView.Nodes[0].Nodes[index].Nodes.Add("Fabbisogno totale giornaliero: " + 
+                    settore.GetFabisogno(DateTime.Now, DateTime.Now.AddDays(1)) + " mm");
+                _treeView.Nodes[0].Nodes[index].Nodes.Add("Numero piante: " + settore.GetGuidPiante().Count());
                 
                 index++;
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartGarden.Model;
+using System;
 using System.Windows.Forms;
 
 namespace SmartGarden
@@ -13,6 +14,13 @@ namespace SmartGarden
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            #region TEST
+
+            GestioneGiardino gestioneGiardino = GestioneGiardino.GetGestoreGiardino();
+
+            #endregion
+
             Application.Run(new MainWindow());
         }
     }

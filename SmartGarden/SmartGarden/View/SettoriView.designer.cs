@@ -1,6 +1,6 @@
 ﻿namespace SmartGarden.View
 {
-    partial class _settoriView
+    partial class SettoriView
     {
         /// <summary> 
         /// Required designer variable.

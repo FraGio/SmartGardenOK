@@ -85,6 +85,18 @@
     <Compile Include="Model\Valvola.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\GestisciCisternaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\GestisciCisternaView.Designer.cs">
+      <DependentUpon>GestisciCisternaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GestoreTimerView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\GestoreTimerView.Designer.cs">
+      <DependentUpon>GestoreTimerView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +166,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\GestisciCisternaView.resx">
+      <DependentUpon>GestisciCisternaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GestoreTimerView.resx">
+      <DependentUpon>GestoreTimerView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
