@@ -90,7 +90,7 @@ namespace SmartGarden.Model
         {
             Timer timer;
 
-            public MyInternalTimer(long mills=0)
+            public MyInternalTimer(long mills=1000) //messo 1000 con 0 crashava
             {
                 timer = new Timer(mills);
             }
