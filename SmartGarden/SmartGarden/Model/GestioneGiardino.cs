@@ -26,7 +26,7 @@ namespace SmartGarden.Model
             _timers = MyTimer.GetMyTimer();
             _oraInizioInnaffiatura = DateTime.Now;
             TimeSpan ts;
-            if(OraInizioInnaffiatura.Hour>19)
+            if(OraInizioInnaffiatura.Hour>=19)
             {
                 ts = new TimeSpan(1, 19, 0, 0);
             }
