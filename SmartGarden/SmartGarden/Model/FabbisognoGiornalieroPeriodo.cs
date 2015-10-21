@@ -25,7 +25,7 @@ namespace SmartGarden.Model
 
             InizioPeriodo = inizio;
             FinePeriodo = fine;
-            FabbisognoAcquaGiornaliero = fabbisognoGiornaliero;
+            _fabbisognoAcquaGiornaliero = fabbisognoGiornaliero;
         }
         private bool IsInPeriod(DateTime data)
         {
