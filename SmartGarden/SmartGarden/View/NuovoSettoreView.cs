@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SmartGarden.Model;
 
 namespace SmartGarden.View
 {
@@ -21,6 +22,7 @@ namespace SmartGarden.View
         {
             if(!string.IsNullOrWhiteSpace(_nomeTextBox.Text) && !string.IsNullOrWhiteSpace(_portataImpiantoTextBox.Text))
             {
+                Controller.CreaSettore(_nomeTextBox.Text, double.Parse(_portataImpiantoTextBox.Text), (Valvola)_valvolaComboBox.SelectedValue);
                 this.ParentForm.Close();
             }
         }
