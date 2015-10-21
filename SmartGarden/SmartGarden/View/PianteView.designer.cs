@@ -36,6 +36,8 @@
             this._nomeBotanico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._fabbisognoAcqua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._mostraGestoriButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this._aggiungiPiantaButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,8 +45,6 @@
             // 
             this._dataGridView.AllowUserToAddRows = false;
             this._dataGridView.AllowUserToDeleteRows = false;
-            this._dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this._dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this._dataGridView.BackgroundColor = System.Drawing.Color.Silver;
             this._dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -71,11 +71,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this._dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this._dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this._dataGridView.Location = new System.Drawing.Point(1, 0);
+            this._dataGridView.Location = new System.Drawing.Point(0, 24);
             this._dataGridView.Name = "_dataGridView";
             this._dataGridView.RowHeadersVisible = false;
-            this._dataGridView.Size = new System.Drawing.Size(976, 508);
+            this._dataGridView.Size = new System.Drawing.Size(979, 487);
             this._dataGridView.TabIndex = 1;
             // 
             // _idPianta
@@ -112,18 +113,40 @@
             this._mostraGestoriButton.Name = "_mostraGestoriButton";
             this._mostraGestoriButton.Width = 5;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(979, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // _aggiungiPiantaButton
+            // 
+            this._aggiungiPiantaButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this._aggiungiPiantaButton.Location = new System.Drawing.Point(3, 0);
+            this._aggiungiPiantaButton.Name = "_aggiungiPiantaButton";
+            this._aggiungiPiantaButton.Size = new System.Drawing.Size(137, 23);
+            this._aggiungiPiantaButton.TabIndex = 3;
+            this._aggiungiPiantaButton.Text = "Aggiungi pianta";
+            this._aggiungiPiantaButton.UseVisualStyleBackColor = true;
+            this._aggiungiPiantaButton.Click += new System.EventHandler(this._aggiungiPiantaButton_Click);
+            // 
             // PianteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Silver;
+            this.Controls.Add(this._aggiungiPiantaButton);
             this.Controls.Add(this._dataGridView);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "PianteView";
             this.Size = new System.Drawing.Size(979, 511);
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -134,5 +157,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn _nomeBotanico;
         private System.Windows.Forms.DataGridViewTextBoxColumn _fabbisognoAcqua;
         private System.Windows.Forms.DataGridViewButtonColumn _mostraGestoriButton;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Button _aggiungiPiantaButton;
     }
 }

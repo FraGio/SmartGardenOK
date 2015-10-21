@@ -6,7 +6,7 @@ namespace SmartGarden.Model
 {
     class Giardino : IGiardino
     {
-        public ICisterna Cisterna { get; set; }
+        private ICisterna _cisterna;
         public event EventHandler Changed;
 
         public int NumeroPianteTotali
@@ -33,7 +33,6 @@ namespace SmartGarden.Model
         public Giardino()
         {
             _settori = new Dictionary<string, ISettore>();
-            //OnChanged();
         }
 
         public IEnumerable<string> GetNomiSettori()
@@ -89,6 +88,16 @@ namespace SmartGarden.Model
             OnChanged();
             return true;
         }
+
+        public ICisterna Cisterna
+        {
+            get { return _cisterna; }
+            set
+            {
+                _cisterna = value;
+                OnChanged();
+            }
+        }
     }
 
     class TurnoItem
@@ -114,8 +123,9 @@ namespace SmartGarden.Model
                 return _methods;
             }
         }
+
     }
 
 
-    
+
 }

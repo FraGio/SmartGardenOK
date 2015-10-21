@@ -37,9 +37,9 @@
             this.button3.BackColor = System.Drawing.Color.CadetBlue;
             this.button3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 243);
+            this.button3.Location = new System.Drawing.Point(0, 350);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(232, 23);
+            this.button3.Size = new System.Drawing.Size(244, 23);
             this.button3.TabIndex = 1;
             this.button3.Text = "Esci";
             this.button3.UseVisualStyleBackColor = false;
@@ -54,7 +54,7 @@
             this._treeView.ForeColor = System.Drawing.Color.Black;
             this._treeView.Location = new System.Drawing.Point(0, 0);
             this._treeView.Name = "_treeView";
-            this._treeView.Size = new System.Drawing.Size(232, 175);
+            this._treeView.Size = new System.Drawing.Size(244, 332);
             this._treeView.TabIndex = 0;
             // 
             // PannelloSinistra
@@ -65,7 +65,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this._treeView);
             this.Name = "PannelloSinistra";
-            this.Size = new System.Drawing.Size(232, 266);
+            this.Size = new System.Drawing.Size(244, 373);
             this.ResumeLayout(false);
 
         }
