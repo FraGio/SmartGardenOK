@@ -10,6 +10,7 @@ namespace SmartGarden.Model
     {
         double Portata { get; set; }
         double Capienza { get; set; }
+        Guid Guid { get; }
         IOpenClose GetOpenClose();
     }
 }
