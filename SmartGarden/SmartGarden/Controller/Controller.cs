@@ -170,5 +170,29 @@ namespace SmartGarden.Control
                 piantaForm.ShowDialog();
             }
         }
+
+        public void GestisciTimer()
+        {
+            using (var form = new Form())
+            {
+                GestoreTimerView timerView = new GestoreTimerView();
+                timerView.Dock = DockStyle.Fill;
+                form.Size = new System.Drawing.Size(500, 400);
+                form.Controls.Add(timerView);
+                form.ShowDialog();
+            }
+        }
+
+        public void GestisciCisterna()
+        {
+            using (var form = new Form())
+            {
+                GestisciCisternaView cisternaView = new GestisciCisternaView();
+                cisternaView.Dock = DockStyle.Fill;
+                form.Size = new System.Drawing.Size(500, 400);
+                form.Controls.Add(cisternaView);
+                form.ShowDialog();
+            }
+        }
     }
 }

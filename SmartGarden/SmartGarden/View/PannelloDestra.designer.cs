@@ -447,6 +447,7 @@
             this._cisternaPicture.TabIndex = 6;
             this._cisternaPicture.TabStop = false;
             this.toolTip1.SetToolTip(this._cisternaPicture, "Vai a gestione Csterna");
+            this._cisternaPicture.Click += new System.EventHandler(this._cisternaPicture_Click);
             // 
             // label13
             // 
@@ -474,6 +475,7 @@
             this._timerPicture.TabIndex = 4;
             this._timerPicture.TabStop = false;
             this.toolTip1.SetToolTip(this._timerPicture, "Vai a Timer Generale");
+            this._timerPicture.Click += new System.EventHandler(this._timerPicture_Click);
             // 
             // label12
             // 

@@ -47,19 +47,7 @@ namespace SmartGarden
             _controller.CaricaInfoGiardino();
 
             CaricaProvince();
-
-            #region PROVA
-
-            GestoreTimerView timerView = new GestoreTimerView();
-            using(Form form = new Form())
-            {
-                timerView.Dock = DockStyle.Fill;
-                form.Size = new System.Drawing.Size(500, 400);
-                form.Controls.Add(timerView);
-                form.ShowDialog();
-            }
-
-            #endregion
+            
         }
 
         private void toolStripMenuItem11_Click(object sender, EventArgs e)
@@ -87,6 +75,11 @@ namespace SmartGarden
         private void gestisciGiardinoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _controller.GestisciSettori();
+        }
+
+        private void _pannelloDestra_Load(object sender, EventArgs e)
+        {
+            //
         }
     }
 }

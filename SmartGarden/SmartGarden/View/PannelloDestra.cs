@@ -67,5 +67,15 @@ namespace SmartGarden.View
         {
             Controller.NuovoGiardino();
         }
+
+        private void _timerPicture_Click(object sender, EventArgs e)
+        {
+            Controller.GestisciTimer();
+        }
+
+        private void _cisternaPicture_Click(object sender, EventArgs e)
+        {
+            Controller.GestisciCisterna();
+        }
     }
 }

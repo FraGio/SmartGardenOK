@@ -202,6 +202,7 @@
             this._pannelloDestra.Name = "_pannelloDestra";
             this._pannelloDestra.Size = new System.Drawing.Size(923, 616);
             this._pannelloDestra.TabIndex = 0;
+            this._pannelloDestra.Load += new System.EventHandler(this._pannelloDestra_Load);
             // 
             // MainWindow
             // 

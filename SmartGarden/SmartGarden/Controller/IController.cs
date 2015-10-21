@@ -16,5 +16,7 @@ namespace SmartGarden.Control
         void CreaPiantaView(IPianta pianta);
         void CreaSettore(string nomeSettore, double portataImpianto, Valvola valvola);
         void CancellaSettore(string nomeSettore);
+        void GestisciTimer();
+        void GestisciCisterna();
     }
 }
