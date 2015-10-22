@@ -164,7 +164,7 @@ namespace SmartGarden.Control
             }
         }
 
-        public void CreaPiantaView(IPianta pianta)
+        public void GestioneInfoPiantaView(IPianta pianta)
         {
             using (var piantaForm = new Form())
             {
@@ -213,10 +213,11 @@ namespace SmartGarden.Control
             _gestioneGiardino.Giardino.Cisterna = cisterna;
         }
 
-        public void CreaNuovaPianta(string nomeBotanico, string nomeComune, double area, string nomeSettore)
+        public void CreaNuovaPianta(string nomeBotanico, string nomeComune, double area, string nomeSettore, FabbisognoGiornalieroPeriodo fabbisognoPeriodo)
         {
             IPianta pianta = new Pianta(nomeBotanico, nomeComune, area);
             ISettore settore = _gestioneGiardino.Giardino.GetSettore(nomeSettore);
+            pianta.AddFabisogno(fabbisognoPeriodo);
             settore.AddPianta(pianta);
         }
 

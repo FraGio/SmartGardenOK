@@ -31,18 +31,15 @@ namespace SmartGarden.View
 
             IInspector insp = ProviderVisitorInspector.GetInspector();
 
-            _aggiungiButton.Click += AggiungiProviderVisitor;
-            _finalizzaButton.Click += FinalizzaGestore;
-
-            /*foreach(Type type in insp.GetListProvider())
+            if(_pianta.GestoreInformazioni != null)
             {
-                _providerComboBox.Items.Add(type.Name);
+                _types = _pianta.GestoreInformazioni.GetTypeProviders();
+
+                AggiornaTextBox();
             }
 
-            foreach (Type type in insp.GetListVisitor())
-            {
-                _visitorComboBox.Items.Add(type.Name);
-            }*/
+            _aggiungiButton.Click += AggiungiProviderVisitor;
+            _finalizzaButton.Click += FinalizzaGestore;
 
             _providerComboBox.Items.AddRange(insp.GetListProvider().ToArray());
             _visitorComboBox.Items.AddRange(insp.GetListVisitor().ToArray());
@@ -57,7 +54,7 @@ namespace SmartGarden.View
                 if (!_types.ContainsKey(provider))
                 { 
                     _types.Add(provider, visitor);
-                    _textBox.AppendText("Provider: " + provider.Name.ToString() + " ; " + "Visitor: " + visitor.Name.ToString() + Environment.NewLine);
+                    _textBox.AppendText("Provider: " + provider.Name + " ; " + "Visitor: " + visitor.Name + Environment.NewLine);
                 }
             }
         }
@@ -89,12 +86,18 @@ namespace SmartGarden.View
                     _types.Remove(provider);
                     _textBox.Clear();
                 }
-                foreach(Type prov in _types.Keys)
-                {
-                    Type vis;
-                    _types.TryGetValue(prov, out vis);
-                    _textBox.AppendText("Provider: " + prov.Name.ToString() + " ; " + "Visitor: " + vis.Name.ToString());
-                }
+
+                AggiornaTextBox();
+            }
+        }
+
+        private void AggiornaTextBox()
+        {
+            foreach (Type prov in _types.Keys)
+            {
+                Type vis;
+                _types.TryGetValue(prov, out vis);
+                _textBox.AppendText("Provider: " + prov.Name + " ; " + "Visitor: " + vis.Name);
             }
         }
     }

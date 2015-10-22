@@ -7,8 +7,6 @@ namespace SmartGarden.View
     partial class PianteView : MainView
     {
         private ISettore _settore;
-        
-        private int id = 1;
 
         public PianteView(ISettore settore)
         {
@@ -32,12 +30,11 @@ namespace SmartGarden.View
 
             if (_dataGridView.CurrentCell.ColumnIndex.Equals(4) && e.RowIndex != -1) //aggiungi gestore
             {
-                Controller.CreaPiantaView(pianta);
+                Controller.GestioneInfoPiantaView(pianta);
             }
             else if(_dataGridView.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1) //cancella pianta
             {
                 Controller.CancellaPianta(pianta, _settore);
-                _dataGridView.Rows.Clear();
                 CaricaPiante();
             }
         }
@@ -49,7 +46,7 @@ namespace SmartGarden.View
                 NuovaPiantaView nuovaPiantaView = new NuovaPiantaView(_settore.Nome);
                 nuovaPiantaView.Dock = DockStyle.Fill;
                 piantaForm.Text = "Nuova pianta";
-                piantaForm.Size = new System.Drawing.Size(350, 550);
+                piantaForm.Size = new System.Drawing.Size(450, 550);
                 piantaForm.Controls.Add(nuovaPiantaView);
                 var result = piantaForm.ShowDialog();
 
@@ -62,6 +59,8 @@ namespace SmartGarden.View
 
         private void CaricaPiante()
         {
+            _dataGridView.Rows.Clear();
+
             foreach (Guid guidPianta in _settore.GetGuidPiante())
             {
                 IPianta pianta = _settore.GetPianta(guidPianta);

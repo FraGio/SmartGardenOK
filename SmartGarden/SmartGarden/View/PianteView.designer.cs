@@ -31,15 +31,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this._dataGridView = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this._aggiungiPiantaButton = new System.Windows.Forms.Button();
-            this._homeButton = new System.Windows.Forms.Button();
             this._idPianta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._nomeComune = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._nomeBotanico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._fabbisognoAcqua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._mostraGestoriButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this._rimuoviPiantaButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this._aggiungiPiantaButton = new System.Windows.Forms.Button();
+            this._homeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,35 +82,6 @@
             this._dataGridView.Size = new System.Drawing.Size(979, 487);
             this._dataGridView.TabIndex = 1;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(979, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // _aggiungiPiantaButton
-            // 
-            this._aggiungiPiantaButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this._aggiungiPiantaButton.Location = new System.Drawing.Point(3, 0);
-            this._aggiungiPiantaButton.Name = "_aggiungiPiantaButton";
-            this._aggiungiPiantaButton.Size = new System.Drawing.Size(137, 23);
-            this._aggiungiPiantaButton.TabIndex = 3;
-            this._aggiungiPiantaButton.Text = "Aggiungi pianta";
-            this._aggiungiPiantaButton.UseVisualStyleBackColor = true;
-            this._aggiungiPiantaButton.Click += new System.EventHandler(this._aggiungiPiantaButton_Click);
-            // 
-            // _homeButton
-            // 
-            this._homeButton.Location = new System.Drawing.Point(159, 0);
-            this._homeButton.Name = "_homeButton";
-            this._homeButton.Size = new System.Drawing.Size(57, 23);
-            this._homeButton.TabIndex = 4;
-            this._homeButton.Text = "HOME";
-            this._homeButton.UseVisualStyleBackColor = true;
-            this._homeButton.Click += new System.EventHandler(this._homeButton_Click);
-            // 
             // _idPianta
             // 
             this._idPianta.HeaderText = "Id";
@@ -152,6 +123,37 @@
             this._rimuoviPiantaButton.Name = "_rimuoviPiantaButton";
             this._rimuoviPiantaButton.ReadOnly = true;
             this._rimuoviPiantaButton.Width = 5;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(979, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // _aggiungiPiantaButton
+            // 
+            this._aggiungiPiantaButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this._aggiungiPiantaButton.Location = new System.Drawing.Point(3, 0);
+            this._aggiungiPiantaButton.Name = "_aggiungiPiantaButton";
+            this._aggiungiPiantaButton.Size = new System.Drawing.Size(137, 23);
+            this._aggiungiPiantaButton.TabIndex = 3;
+            this._aggiungiPiantaButton.Text = "Aggiungi pianta";
+            this._aggiungiPiantaButton.UseVisualStyleBackColor = true;
+            this._aggiungiPiantaButton.Click += new System.EventHandler(this._aggiungiPiantaButton_Click);
+            // 
+            // _homeButton
+            // 
+            this._homeButton.Enabled = false;
+            this._homeButton.Location = new System.Drawing.Point(159, 0);
+            this._homeButton.Name = "_homeButton";
+            this._homeButton.Size = new System.Drawing.Size(57, 23);
+            this._homeButton.TabIndex = 4;
+            this._homeButton.Text = "HOME";
+            this._homeButton.UseVisualStyleBackColor = true;
+            this._homeButton.Visible = false;
+            this._homeButton.Click += new System.EventHandler(this._homeButton_Click);
             // 
             // PianteView
             // 

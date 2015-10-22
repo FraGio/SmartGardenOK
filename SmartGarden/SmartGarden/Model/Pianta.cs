@@ -74,11 +74,16 @@ namespace SmartGarden.Model
         {
             _data.AddFabisognoRelativoPeriodo(fab);
         }
-
-        //TODO completare il metodo
+        
+        //TODO aggiungere controlli esistenza fabbisogni e gestore
         public double FabbisognoPiantaAttuale(DateTime inizio, DateTime durata)
         {
-            double tot = GestoreInformazioni.GetModifierRequirement(this);
+            double tot = 0;
+
+            if (GestoreInformazioni != null)
+            {
+                tot = GestoreInformazioni.GetModifierRequirement(this);
+            }
             tot += GetFabisogno(inizio, durata);
             return tot;
         }

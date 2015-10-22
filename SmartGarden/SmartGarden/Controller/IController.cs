@@ -13,13 +13,13 @@ namespace SmartGarden.Control
         void SettaTimer();
         void GestisciSettori();
         void NuovoGiardino();
-        void CreaPiantaView(IPianta pianta);
+        void GestioneInfoPiantaView(IPianta pianta);
         void CreaSettore(string nomeSettore, double portataImpianto, Valvola valvola);
         void CancellaSettore(string nomeSettore);
         void GestisciTimer();
         void GestisciCisterna();
         void CreaNuovaCisterna(double portata, double capacità);
-        void CreaNuovaPianta(string nomeBotanico, string nomeComune, double area, string nomeSettore);
+        void CreaNuovaPianta(string nomeBotanico, string nomeComune, double area, string nomeSettore, FabbisognoGiornalieroPeriodo fabbisognoPeriodo);
         void CancellaPianta(IPianta pianta, ISettore settore);
     }
 }
