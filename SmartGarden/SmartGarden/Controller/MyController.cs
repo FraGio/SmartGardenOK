@@ -219,5 +219,10 @@ namespace SmartGarden.Control
             ISettore settore = _gestioneGiardino.Giardino.GetSettore(nomeSettore);
             settore.AddPianta(pianta);
         }
+
+        public void CancellaPianta(IPianta pianta, ISettore settore)
+        {
+            settore.RemovePianta(pianta);
+        }
     }
 }

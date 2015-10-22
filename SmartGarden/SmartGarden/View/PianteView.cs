@@ -34,6 +34,12 @@ namespace SmartGarden.View
             {
                 Controller.CreaPiantaView(pianta);
             }
+            else if(_dataGridView.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1) //cancella pianta
+            {
+                Controller.CancellaPianta(pianta, _settore);
+                _dataGridView.Rows.Clear();
+                CaricaPiante();
+            }
         }
 
         private void _aggiungiPiantaButton_Click(object sender, EventArgs e)
@@ -43,7 +49,7 @@ namespace SmartGarden.View
                 NuovaPiantaView nuovaPiantaView = new NuovaPiantaView(_settore.Nome);
                 nuovaPiantaView.Dock = DockStyle.Fill;
                 piantaForm.Text = "Nuova pianta";
-                piantaForm.Size = new System.Drawing.Size(430, 215);
+                piantaForm.Size = new System.Drawing.Size(350, 550);
                 piantaForm.Controls.Add(nuovaPiantaView);
                 var result = piantaForm.ShowDialog();
 

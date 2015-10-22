@@ -1,5 +1,6 @@
 ﻿using System;
 using SmartGarden.Model;
+using System.Collections.Generic;
 
 namespace SmartGarden.View
 {
@@ -14,15 +15,15 @@ namespace SmartGarden.View
         {
             base.OnLoad(e);
 
-            /*List<Valvola> valvoleSettore = new List<Valvola>();
-            Valvola valvola = new Valvola();
+            List<ValvolaDiSettore> valvoleSettore = new List<ValvolaDiSettore>();
+            ValvolaDiSettore valvola = new ValvolaDiSettore();
             valvola.Name = "Valvola SETT-01";
-            valvole.Add(valvola);
-            valvola = new ValvolaDiSicurezza();
-            valvola.Name = "Valvola ETR-45";
-            valvole.Add(valvola);
+            valvoleSettore.Add(valvola);
+            valvola = new ValvolaDiSettore();
+            valvola.Name = "Valvola SETT-02";
+            valvoleSettore.Add(valvola);
             
-            _valvolaComboBox.Items.AddRange(valvoleSettore.ToArray());*/
+            _valvolaComboBox.Items.AddRange(valvoleSettore.ToArray());
         }
 
         private void _aggiungiButton_Click(object sender, EventArgs e)

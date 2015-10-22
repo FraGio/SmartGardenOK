@@ -20,5 +20,6 @@ namespace SmartGarden.Control
         void GestisciCisterna();
         void CreaNuovaCisterna(double portata, double capacità);
         void CreaNuovaPianta(string nomeBotanico, string nomeComune, double area, string nomeSettore);
+        void CancellaPianta(IPianta pianta, ISettore settore);
     }
 }

@@ -7,12 +7,19 @@ using System.Timers;
 
 namespace SmartGarden.Model
 {
-    class Settore :ISettore
+    class Settore : ISettore
     {
         public IOpenClose ValvolaSettore { get; set; }
         private String _nome;
         private double _portataImpianto;
         private IDictionary<Guid,IPianta> _piante;
+
+        /*public event EventHandler Changed;
+        protected virtual void OnChanged()
+        {
+            if (Changed != null)
+                Changed(this, EventArgs.Empty); //aggiorna la view
+        }*/
 
         public Settore(string nome, double portata=0)
         {
