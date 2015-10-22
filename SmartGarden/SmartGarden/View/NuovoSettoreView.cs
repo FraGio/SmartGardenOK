@@ -15,8 +15,7 @@ namespace SmartGarden.View
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-
-            //List<ValvolaDiSettore> valvoleSettore = new List<ValvolaDiSettore>();
+            
             Dictionary<string, ValvolaDiSettore> dizionarioValvole = new Dictionary<string, ValvolaDiSettore>();
             ValvolaDiSettore valvola = new ValvolaDiSettore();
             valvola.Name = "Valvola SETT-01";
@@ -28,7 +27,6 @@ namespace SmartGarden.View
             _valvolaComboBox.DataSource = new BindingSource(dizionarioValvole, null);
             _valvolaComboBox.DisplayMember = "Key";
             _valvolaComboBox.ValueMember = "Value";
-            //_valvolaComboBox.Items.AddRange(valvoleSettore.ToArray());
         }
 
         private void _aggiungiButton_Click(object sender, EventArgs e)
