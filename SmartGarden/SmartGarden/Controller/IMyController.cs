@@ -5,7 +5,7 @@ using SmartGarden.Controller;
 
 namespace SmartGarden.Control
 {
-    interface IController : IControllerData, IControllerView
+    interface IMyController : IControllerData, IControllerView
     {
         bool CreaLoginForm();
     }

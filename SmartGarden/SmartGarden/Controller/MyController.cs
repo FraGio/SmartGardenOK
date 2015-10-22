@@ -6,7 +6,7 @@ using SmartGarden.Controller;
 
 namespace SmartGarden.Control
 {
-    class MyController : IController
+    class MyController : IMyController
     {
         private readonly GestioneGiardino _gestioneGiardino; //GestioneGiardino è il model
         private static MyController _instance = null;

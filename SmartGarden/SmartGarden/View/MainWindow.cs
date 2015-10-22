@@ -13,7 +13,7 @@ namespace SmartGarden
 {
     partial class MainWindow : System.Windows.Forms.Form
     {
-        private IController _controller;
+        private IMyController _controller;
         private GestioneGiardino _gestioneGiardino;
         private static MainWindow _instance = null;
 
@@ -40,7 +40,7 @@ namespace SmartGarden
             return _instance;
         }
 
-        public IController Controller
+        public IMyController Controller
         {
             get { return _controller; }
         }
