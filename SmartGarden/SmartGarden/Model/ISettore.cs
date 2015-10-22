@@ -27,5 +27,7 @@ namespace SmartGarden.Model
         String Nome { get; }
 
         IEnumerable<Guid> GetGuidPiante();
+
+        event EventHandler SettoreUpdated;
     }
 }
