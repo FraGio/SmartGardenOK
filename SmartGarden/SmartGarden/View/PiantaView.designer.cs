@@ -79,7 +79,7 @@
             // 
             // _finalizzaButton
             // 
-            this._finalizzaButton.Location = new System.Drawing.Point(235, 151);
+            this._finalizzaButton.Location = new System.Drawing.Point(235, 147);
             this._finalizzaButton.Name = "_finalizzaButton";
             this._finalizzaButton.Size = new System.Drawing.Size(75, 23);
             this._finalizzaButton.TabIndex = 9;

@@ -74,7 +74,7 @@ namespace SmartGarden.View
                 if (!_types.ContainsKey(provider))
                 { 
                     _types.Add(provider, visitor);
-                    _textBox.Text += "Provider: " + provider.Name + " ; " + "Visitor: " + visitor.Name +  Environment.NewLine;
+                    _textBox.Text += "Provider: " + provider.Name + " ; " + "Visitor: " + visitor.Name + Environment.NewLine;
                 }
             }
         }
@@ -117,7 +117,7 @@ namespace SmartGarden.View
             {
                 Type vis;
                 _types.TryGetValue(prov, out vis);
-                _textBox.AppendText("Provider: " + prov.Name + " ; " + "Visitor: " + vis.Name);
+                _textBox.AppendText("Provider: " + prov.Name + " ; " + "Visitor: " + vis.Name + Environment.NewLine);
             }
         }
     }
