@@ -42,6 +42,16 @@ namespace SmartGarden.View
                         _gestoreGiardino.Changed += OnModelChanged;
                     }
                 }
+                else
+                {
+                    _gestoreGiardino = value;
+
+                    if (_gestoreGiardino != null)
+                    {
+                        _gestoreGiardino.Giardino.Changed += OnModelChanged; //registrazione al model
+                        _gestoreGiardino.Changed += OnModelChanged;
+                    }
+                }
             }
         }
 

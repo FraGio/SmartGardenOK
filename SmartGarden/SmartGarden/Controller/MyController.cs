@@ -165,6 +165,8 @@ namespace SmartGarden.Control
                         Giardino giardino = new Giardino();
                         _gestioneGiardino.Giardino = giardino;
                         _gestioneGiardino.Luogo = nuovoGiardinoView.Controls.Find("_provinceComboBox", false)[0].Text;
+                        MainWindow mainWindow = MainWindow.GetMainWindow();
+                        mainWindow.GestioneGiardino = _gestioneGiardino;
                        // _gestioneGiardino.AggiornaInfoMeteo();
                     }
                 }

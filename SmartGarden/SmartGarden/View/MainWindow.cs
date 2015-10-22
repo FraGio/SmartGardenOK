@@ -14,11 +14,30 @@ namespace SmartGarden
     partial class MainWindow : System.Windows.Forms.Form
     {
         private IController _controller;
+        private GestioneGiardino _gestioneGiardino;
+        private static MainWindow _instance = null;
 
-        public MainWindow()
+
+        /**public MainWindow()
         {
             InitializeComponent();
             _provinceComboBox.SelectedIndexChanged += CambiaProvincia;
+            _gestioneGiardino = GestioneGiardino.GetGestoreGiardino();
+        }*/
+
+        private MainWindow()
+        {
+            InitializeComponent();
+            _provinceComboBox.SelectedIndexChanged += CambiaProvincia;
+            _gestioneGiardino = GestioneGiardino.GetGestoreGiardino();
+        }
+        public static MainWindow GetMainWindow()
+        {
+            if (_instance == null)
+            {
+                _instance = new MainWindow();
+            }
+            return _instance;
         }
 
         public IController Controller
@@ -30,19 +49,13 @@ namespace SmartGarden
         {
             base.OnLoad(e);
 
-            GestioneGiardino gestoreGiardino = GestioneGiardino.GetGestoreGiardino();
-            _controller =  MyController.GetController(gestoreGiardino);
+            _controller =  MyController.GetController(_gestioneGiardino);
 
             bool loginOk = _controller.CreateLoginForm();
             if (!loginOk)
                 this.Close();
-            
-            
-            _pannelloDestra.GestoreGiardino = gestoreGiardino; //set del model
-            _pannelloDestra.Controller = _controller; //set del controller
-            _treeView.GestoreGiardino = gestoreGiardino;
-            _treeView.Controller = _controller;
-           
+
+            AggiornaViews();
 
             _dateStatusBar.Text = DateTime.Now.ToShortDateString();
 
@@ -58,9 +71,9 @@ namespace SmartGarden
             type.Add(typeof(ProviderPrecipitazioniDefaultHttp), typeof(StandardInformationVisitor));
             IFactoryGestoreInformazioni fac = FactoryGestoreInformazioni.GetFactory();
 
-            gestoreGiardino.Luogo = "Modena";
+            _gestioneGiardino.Luogo = "Modena";
             ICisterna cisterna = new Cisterna(20, 30);
-            gestoreGiardino.Giardino.Cisterna = cisterna;
+            _gestioneGiardino.Giardino.Cisterna = cisterna;
             ISettore settore = new Settore("Settore nord", 200);
             ISettore settore2 = new Settore("Settore sud", 100);
             IPianta pianta1 = new Pianta("Solanum lycopersicum", "Pomodoro", 0.50);
@@ -77,12 +90,30 @@ namespace SmartGarden
             settore.AddPianta(pianta1);
             settore.AddPianta(pianta2);
             settore2.AddPianta(pianta3);
-            gestoreGiardino.Giardino.AddSettore(settore);
-            gestoreGiardino.Giardino.AddSettore(settore2);
+            _gestioneGiardino.Giardino.AddSettore(settore);
+            _gestioneGiardino.Giardino.AddSettore(settore2);
             
             #endregion
 
 
+        }
+
+        public GestioneGiardino GestioneGiardino
+        {
+            get { return _gestioneGiardino; }
+            set
+            {
+                _gestioneGiardino = GestioneGiardino;
+                AggiornaViews();
+            }
+        }
+
+        private void AggiornaViews()
+        {
+            _pannelloDestra.GestoreGiardino = GestioneGiardino; //set del model
+            _pannelloDestra.Controller = _controller; //set del controller
+            _treeView.GestoreGiardino = GestioneGiardino;
+            _treeView.Controller = _controller;
         }
 
         private void toolStripMenuItem11_Click(object sender, EventArgs e)

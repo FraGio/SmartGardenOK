@@ -31,11 +31,6 @@ namespace SmartGarden.View
                 IGiardino giardino = GestoreGiardino.Giardino;
 
                 PescaInfoDaModel();
-
-                _capacitàLabel.Text = giardino.Cisterna.Capienza + " l";
-                _portataLabel.Text = giardino.Cisterna.Portata + " l/s";
-
-                SistemaRighe();
             }
             else
             {
@@ -47,6 +42,12 @@ namespace SmartGarden.View
         private void PescaInfoDaModel()
         {
             IGiardino giardino = GestoreGiardino.Giardino;
+
+            if(giardino.Cisterna != null)
+            { 
+                _capacitàLabel.Text = giardino.Cisterna.Capienza + " l";
+                _portataLabel.Text = giardino.Cisterna.Portata + " l/s";
+            }
 
             _numeroSettoriLabel.Text = giardino.GetNomiSettori().Count().ToString();
             _numeroPianteLabel.Text = giardino.NumeroPianteTotali.ToString();
