@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using SmartGarden.Model;
 
 namespace SmartGarden.View
@@ -16,6 +8,21 @@ namespace SmartGarden.View
         public NuovoSettoreView()
         {
             InitializeComponent();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            /*List<Valvola> valvoleSettore = new List<Valvola>();
+            Valvola valvola = new Valvola();
+            valvola.Name = "Valvola SETT-01";
+            valvole.Add(valvola);
+            valvola = new ValvolaDiSicurezza();
+            valvola.Name = "Valvola ETR-45";
+            valvole.Add(valvola);
+            
+            _valvolaComboBox.Items.AddRange(valvoleSettore.ToArray());*/
         }
 
         private void _aggiungiButton_Click(object sender, EventArgs e)
