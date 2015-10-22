@@ -85,6 +85,7 @@
     <Compile Include="Model\SensorePressione.cs" />
     <Compile Include="Model\Settore.cs" />
     <Compile Include="Model\Valvola.cs" />
+    <Compile Include="Model\ValvolaDiSettore.cs" />
     <Compile Include="Model\ValvolaDiSicurezza.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
