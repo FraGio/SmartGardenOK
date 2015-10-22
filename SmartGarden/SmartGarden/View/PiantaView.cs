@@ -41,20 +41,40 @@ namespace SmartGarden.View
             _aggiungiButton.Click += AggiungiProviderVisitor;
             _finalizzaButton.Click += FinalizzaGestore;
 
-            _providerComboBox.Items.AddRange(insp.GetListProvider().ToArray());
-            _visitorComboBox.Items.AddRange(insp.GetListVisitor().ToArray());
+            /*_providerComboBox.Items.AddRange(insp.GetListProvider().ToArray());
+            _visitorComboBox.Items.AddRange(insp.GetListVisitor().ToArray());*/
+
+            #region PROVA CARICAMENTO COMBO ALTERNATIVA
+            Dictionary<string, Type> providers = new Dictionary<string, Type>();
+            foreach (Type prov in insp.GetListProvider())
+            {
+                providers.Add(prov.Name, prov);
+            }
+            _providerComboBox.DataSource = new BindingSource(providers, null);
+            _providerComboBox.DisplayMember = "Key";
+            _providerComboBox.ValueMember = "Value";
+
+            Dictionary<string, Type> visitors = new Dictionary<string, Type>();
+            foreach (Type visit in insp.GetListVisitor())
+            {
+                visitors.Add(visit.Name, visit);
+            }
+            _visitorComboBox.DataSource = new BindingSource(visitors, null);
+            _visitorComboBox.DisplayMember = "Key";
+            _visitorComboBox.ValueMember = "Value";
+            #endregion
         }
 
         private void AggiungiProviderVisitor(object sender, EventArgs e)
         {
             if(_providerComboBox.SelectedItem != null && _visitorComboBox.SelectedItem != null)
             {
-                Type provider = (Type)_providerComboBox.SelectedItem;
-                Type visitor = (Type)_visitorComboBox.SelectedItem;
+                Type provider = ((KeyValuePair<string, Type>)_providerComboBox.SelectedItem).Value;
+                Type visitor = ((KeyValuePair<string, Type>)_visitorComboBox.SelectedItem).Value;
                 if (!_types.ContainsKey(provider))
                 { 
                     _types.Add(provider, visitor);
-                    _textBox.AppendText("Provider: " + provider.Name + " ; " + "Visitor: " + visitor.Name + Environment.NewLine);
+                    _textBox.Text += "Provider: " + provider.Name + " ; " + "Visitor: " + visitor.Name +  Environment.NewLine;
                 }
             }
         }
@@ -79,8 +99,8 @@ namespace SmartGarden.View
         {
             if (_providerComboBox.SelectedItem != null && _visitorComboBox.SelectedItem != null)
             {
-                Type provider = (Type)_providerComboBox.SelectedItem;
-                Type visitor = (Type)_visitorComboBox.SelectedItem;
+                Type provider = ((KeyValuePair<string, Type>)_providerComboBox.SelectedItem).Value;
+                Type visitor = ((KeyValuePair<string, Type>)_visitorComboBox.SelectedItem).Value;
                 if (_types.ContainsKey(provider))
                 {
                     _types.Remove(provider);
