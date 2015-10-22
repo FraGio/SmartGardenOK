@@ -8,6 +8,6 @@ namespace SmartGarden.Model
 {
     class ValvolaDiSettore : Valvola
     {
-            
+           
     }
 }
