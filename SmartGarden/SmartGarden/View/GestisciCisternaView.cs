@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SmartGarden.Model;
 
 namespace SmartGarden.View
 {
@@ -21,15 +22,37 @@ namespace SmartGarden.View
         {
             base.OnLoad(e);
 
-            _guidCisternaTextBox.Text = GestoreGiardino.Giardino.Cisterna.Guid.ToString();
-            _portataTextBox.Text = GestoreGiardino.Giardino.Cisterna.Portata.ToString();
-            _capacitàTextBox.Text = GestoreGiardino.Giardino.Cisterna.Capienza.ToString();
+            CaricaDatiCisterna();
+
+            List<IvalvolaDiSicurezza> valvole = new List<IvalvolaDiSicurezza>();
+            ValvolaDiSicurezza valvola = new ValvolaDiSicurezza();
+            valvola.Name = "Valvola FGH-02";
+            valvole.Add(valvola);
+            valvola = new ValvolaDiSicurezza();
+            valvola.Name = "Valvola ETR-45";
+            valvole.Add(valvola);
+
+            //TODO interfaccia sensore
+            //List<SensorePressione> sensori = new List<SensorePressione>();
+            //_sensorePressioneComboBox
         }
 
         private void _creaButton_Click(object sender, EventArgs e)
         {
             if(!string.IsNullOrWhiteSpace(_nuovaCapacitàTextBox.Text) && !(string.IsNullOrWhiteSpace(_nuovaPortataTextBox.Text))){
-                _creaButton.Enabled = true;
+                Controller.CreaNuovaCisterna(double.Parse(_nuovaPortataTextBox.Text), double.Parse(_nuovaCapacitàTextBox.Text));
+                this.ParentForm.Close();
+            }
+        }
+
+        private void CaricaDatiCisterna()
+        {
+            if (GestoreGiardino.Giardino.Cisterna != null)
+            {
+                _portataTextBox.Text = GestoreGiardino.Giardino.Cisterna.Portata.ToString();
+                _capacitàTextBox.Text = GestoreGiardino.Giardino.Cisterna.Capienza.ToString();
+
+                //TODO modificare ICisterna per poter inserire la valvola
             }
         }
     }

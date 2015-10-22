@@ -34,6 +34,15 @@ namespace SmartGarden.View
             _aggiungiButton.Click += AggiungiProviderVisitor;
             _finalizzaButton.Click += FinalizzaGestore;
 
+            /*foreach(Type type in insp.GetListProvider())
+            {
+                _providerComboBox.Items.Add(type.Name);
+            }
+
+            foreach (Type type in insp.GetListVisitor())
+            {
+                _visitorComboBox.Items.Add(type.Name);
+            }*/
 
             _providerComboBox.Items.AddRange(insp.GetListProvider().ToArray());
             _visitorComboBox.Items.AddRange(insp.GetListVisitor().ToArray());
@@ -41,14 +50,14 @@ namespace SmartGarden.View
 
         private void AggiungiProviderVisitor(object sender, EventArgs e)
         {
-            if(_providerComboBox.SelectedValue != null && _visitorComboBox.SelectedValue != null)
+            if(_providerComboBox.SelectedItem != null && _visitorComboBox.SelectedItem != null)
             {
-                Type provider = (Type)_providerComboBox.SelectedValue;
-                Type visitor = (Type)_visitorComboBox.SelectedValue;
+                Type provider = (Type)_providerComboBox.SelectedItem;
+                Type visitor = (Type)_visitorComboBox.SelectedItem;
                 if (!_types.ContainsKey(provider))
                 { 
                     _types.Add(provider, visitor);
-                    _textBox.AppendText("Provider: " + provider.ToString() + " ; " + "Visitor: " + visitor.ToString());
+                    _textBox.AppendText("Provider: " + provider.Name.ToString() + " ; " + "Visitor: " + visitor.Name.ToString() + Environment.NewLine);
                 }
             }
         }
@@ -71,10 +80,10 @@ namespace SmartGarden.View
 
         private void _rimuoviButton_Click(object sender, EventArgs e)
         {
-            if (_providerComboBox.SelectedValue != null && _visitorComboBox.SelectedValue != null)
+            if (_providerComboBox.SelectedItem != null && _visitorComboBox.SelectedItem != null)
             {
-                Type provider = (Type)_providerComboBox.SelectedValue;
-                Type visitor = (Type)_visitorComboBox.SelectedValue;
+                Type provider = (Type)_providerComboBox.SelectedItem;
+                Type visitor = (Type)_visitorComboBox.SelectedItem;
                 if (_types.ContainsKey(provider))
                 {
                     _types.Remove(provider);
@@ -84,7 +93,7 @@ namespace SmartGarden.View
                 {
                     Type vis;
                     _types.TryGetValue(prov, out vis);
-                    _textBox.AppendText("Provider: " + prov.ToString() + " ; " + "Visitor: " + vis.ToString());
+                    _textBox.AppendText("Provider: " + prov.Name.ToString() + " ; " + "Visitor: " + vis.Name.ToString());
                 }
             }
         }

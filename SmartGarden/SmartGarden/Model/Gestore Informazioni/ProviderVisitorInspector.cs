@@ -11,8 +11,8 @@ namespace SmartGarden.Model.Gestore_Informazioni
     class ProviderVisitorInspector : IInspector
     {
         //TODO cambiare interfaccia con interf 
-        private readonly string @namespaceVisitor = "SmartGarden.Fornitori";
-        private readonly string @namespaceProvider = "SmartGarden.Fornitori";
+        private readonly string @namespaceVisitor = "SmartGarden.Model.Gestore_Informazioni";
+        private readonly string @namespaceProvider = "SmartGarden.Model.Gestore_Informazioni.Fornitori";
         private readonly Type interfaceVisitor = typeof(IinformationProviderVisitor);
         private readonly Type interfaceProvider = typeof(IinformationProvider);
         private static ProviderVisitorInspector instance = null;

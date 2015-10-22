@@ -39,10 +39,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this._minutiInizioCombobox = new System.Windows.Forms.ComboBox();
-            this._oreInizioComboBox = new System.Windows.Forms.ComboBox();
             this._giornoTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this._oreInizioComboBox = new System.Windows.Forms.ComboBox();
+            this._minutiInizioCombobox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +65,7 @@
             // 
             // _irrigazioneTextBox
             // 
+            this._irrigazioneTextBox.Enabled = false;
             this._irrigazioneTextBox.Location = new System.Drawing.Point(267, 208);
             this._irrigazioneTextBox.Name = "_irrigazioneTextBox";
             this._irrigazioneTextBox.ReadOnly = true;
@@ -158,6 +159,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Intervallo ripetizione";
             // 
+            // _giornoTextBox
+            // 
+            this._giornoTextBox.Location = new System.Drawing.Point(76, 29);
+            this._giornoTextBox.Name = "_giornoTextBox";
+            this._giornoTextBox.Size = new System.Drawing.Size(78, 20);
+            this._giornoTextBox.TabIndex = 9;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label6);
@@ -171,14 +179,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ora inizio irrigazione";
             // 
-            // _minutiInizioCombobox
-            // 
-            this._minutiInizioCombobox.FormattingEnabled = true;
-            this._minutiInizioCombobox.Location = new System.Drawing.Point(76, 56);
-            this._minutiInizioCombobox.Name = "_minutiInizioCombobox";
-            this._minutiInizioCombobox.Size = new System.Drawing.Size(78, 21);
-            this._minutiInizioCombobox.TabIndex = 12;
-            // 
             // _oreInizioComboBox
             // 
             this._oreInizioComboBox.FormattingEnabled = true;
@@ -187,12 +187,13 @@
             this._oreInizioComboBox.Size = new System.Drawing.Size(78, 21);
             this._oreInizioComboBox.TabIndex = 11;
             // 
-            // _giornoTextBox
+            // _minutiInizioCombobox
             // 
-            this._giornoTextBox.Location = new System.Drawing.Point(76, 29);
-            this._giornoTextBox.Name = "_giornoTextBox";
-            this._giornoTextBox.Size = new System.Drawing.Size(78, 20);
-            this._giornoTextBox.TabIndex = 9;
+            this._minutiInizioCombobox.FormattingEnabled = true;
+            this._minutiInizioCombobox.Location = new System.Drawing.Point(76, 56);
+            this._minutiInizioCombobox.Name = "_minutiInizioCombobox";
+            this._minutiInizioCombobox.Size = new System.Drawing.Size(78, 21);
+            this._minutiInizioCombobox.TabIndex = 12;
             // 
             // GestoreTimerView
             // 

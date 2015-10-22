@@ -31,13 +31,13 @@ namespace SmartGarden.View
                 {
                     if (_gestoreGiardino != null)
                     {
-                        _gestoreGiardino.Changed -= OnModelChanged; // deregistrazione
+                        _gestoreGiardino.Giardino.Changed -= OnModelChanged; // deregistrazione
                     }
                     _gestoreGiardino = value;
 
                     if (_gestoreGiardino != null)
                     {
-                        _gestoreGiardino.Changed += OnModelChanged; //registrazione al model
+                        _gestoreGiardino.Giardino.Changed += OnModelChanged; //registrazione al model
                     }
                 }
             }
@@ -47,15 +47,13 @@ namespace SmartGarden.View
         {
             get
             {
-                if (_controller != null)
-                    return _controller;
-                else
-                {
-                    _controller = new Controller(_gestoreGiardino);
-                    return _controller;
-                }
+                _controller = MyController.GetController(_gestoreGiardino);
+                return _controller;
             }
-            set { _controller = value; }
+            set
+            {
+                _controller = value;
+            }
         }
 
         protected virtual void OnModelChanged(object sender, EventArgs e)

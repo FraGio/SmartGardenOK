@@ -19,20 +19,11 @@ namespace SmartGarden.View
             InitializeComponent();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        protected override void OnLoad(EventArgs e)
         {
-            //
+            base.OnLoad(e);
         }
 
-        private void _tableLayoutPanel_Paint(object sender, PaintEventArgs e)
-        {
-            //
-        }
-
-        private void _tableLayoutPanel_Paint_1(object sender, PaintEventArgs e)
-        {
-            //
-        }
         protected override void OnModelChanged(object sender, EventArgs e)
         {
             IGiardino giardino = GestoreGiardino.Giardino;
@@ -46,12 +37,17 @@ namespace SmartGarden.View
             /*TODO messagepump
             _precipitazioniLabel.Text = GestoreGiardino.Precipitazioni + " mm";
             _temperaturaLabel.Text = GestoreGiardino.Temperatura + " °C";*/
-            
+
             _prossimaIrrigazioneLabel.Text = GestoreGiardino.OraInizioInnaffiatura.ToString();
-            _intervalloIrrigazione.Text = GestoreGiardino.Intervallo.ToString();
+            _intervalloIrrigazione.Text = GestoreGiardino.Intervallo.TotalHours.ToString() + " h";
 
             SistemaRighe();
         }
+
+       /* private void PescaInfoDaModel()
+        {
+            
+        }*/
 
         private void SistemaRighe()
         {
@@ -76,6 +72,20 @@ namespace SmartGarden.View
         private void _cisternaPicture_Click(object sender, EventArgs e)
         {
             Controller.GestisciCisterna();
+        }
+        private void label4_Click(object sender, EventArgs e)
+        {
+            //
+        }
+
+        private void _tableLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+            //
+        }
+
+        private void _tableLayoutPanel_Paint_1(object sender, PaintEventArgs e)
+        {
+            //
         }
     }
 }

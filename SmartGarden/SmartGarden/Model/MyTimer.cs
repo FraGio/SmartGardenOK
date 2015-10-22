@@ -7,7 +7,7 @@ namespace SmartGarden.Model
     class MyTimer
     {
         //TODO mettere a posto il timer
-        private Dictionary<DateTime, MyInternalTimer> _timers;
+        private Dictionary<TimeSpan, MyInternalTimer> _timers;
         private MyInternalTimer _timerPrincipale ;
         private TimeSpan _intervalloPrincipale;
         private static MyTimer instance = null;
@@ -21,20 +21,16 @@ namespace SmartGarden.Model
 
         private MyTimer()
         {
-            _timerPrincipale = new MyInternalTimer();
-            _timers = new Dictionary<DateTime, MyInternalTimer>();
+            _timerPrincipale = new MyInternalTimer(10000);
+            _timers = new Dictionary<TimeSpan, MyInternalTimer>();
             _intervalloPrincipale = new TimeSpan(1, 0, 0, 0);
         }
 
 
-        public bool SetTimers(DateTime inizio, TimeSpan durata,IOpenClose handlers)
+        public bool SetTimers(TimeSpan inizio, TimeSpan durata,IOpenClose handlers)
         {
-            DateTime fine = inizio + durata;
-            return SetTimers(inizio, fine, handlers);
-        }
+            TimeSpan  fine = inizio + durata;
 
-        public bool SetTimers(DateTime inizio,DateTime fine,IOpenClose handlers)
-        {
             #region timer apertura
             SetTimer(inizio, handlers.Open);
             #endregion
@@ -46,11 +42,11 @@ namespace SmartGarden.Model
             return true;
         }
 
-        public bool SetTimer(DateTime data,ElapsedEventHandler ev)
+        public bool SetTimer(TimeSpan data,ElapsedEventHandler ev)
         {
             if (!_timers.ContainsKey(data))
             {
-                MyInternalTimer timerApertura = new MyInternalTimer(data.Millisecond);
+                MyInternalTimer timerApertura = new MyInternalTimer((long)data.TotalMilliseconds);
                 _timers.Add(data, timerApertura);
             }
             _timers[data].AddEventHandler(ev);
@@ -58,8 +54,9 @@ namespace SmartGarden.Model
             return true;
         }
 
-        public bool SetTimerPrincipale(DateTime data,TimeSpan intervallo)
+        public bool SetTimerPrincipale(DateTime date,TimeSpan intervallo)
         {
+            TimeSpan data = date - DateTime.Now;
             _intervalloPrincipale = intervallo;
             #region deregistro
             foreach (MyInternalTimer timer in _timers.Values)
@@ -67,7 +64,7 @@ namespace SmartGarden.Model
                 _timerPrincipale.RemoveEventHandler(timer.Start);
             }
             _timerPrincipale.RemoveEventHandler(SetNextIntervalloPrincipale);
-            _timerPrincipale = new MyInternalTimer(data.Millisecond);
+            _timerPrincipale = new MyInternalTimer((long)data.TotalMilliseconds);
             #endregion
 
             #region registro
@@ -90,7 +87,7 @@ namespace SmartGarden.Model
         {
             Timer timer;
 
-            public MyInternalTimer(long mills=1000) //messo 1000 con 0 crashava
+            public MyInternalTimer(long mills) 
             {
                 timer = new Timer(mills);
             }

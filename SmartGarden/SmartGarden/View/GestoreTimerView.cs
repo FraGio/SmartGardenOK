@@ -42,6 +42,8 @@ namespace SmartGarden.View
             }
             _minutiComboBox.SelectedIndex = 0;
             _minutiInizioCombobox.SelectedIndex = 0;
+
+            _irrigazioneTextBox.Text = GestoreGiardino.OraInizioInnaffiatura.ToString();
         }
 
         private void _confermaButton_Click(object sender, EventArgs e)

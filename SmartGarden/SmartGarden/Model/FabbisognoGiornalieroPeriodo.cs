@@ -13,7 +13,7 @@ namespace SmartGarden.Model
 
         public DateTime InizioPeriodo { get;}
         public DateTime FinePeriodo { get;}
-        public double FabbisognoAcquaGiornaliero { get;}
+        public double FabbisognoAcquaGiornaliero { get { return _fabbisognoAcquaGiornaliero; }}
         
 
         public FabbisognoGiornalieroPeriodo(DateTime inizio, DateTime fine, double fabbisognoGiornaliero)
@@ -25,7 +25,7 @@ namespace SmartGarden.Model
 
             InizioPeriodo = inizio;
             FinePeriodo = fine;
-            FabbisognoAcquaGiornaliero = fabbisognoGiornaliero;
+            _fabbisognoAcquaGiornaliero = fabbisognoGiornaliero;
         }
         private bool IsInPeriod(DateTime data)
         {

@@ -10,7 +10,6 @@ namespace SmartGarden.Model
     {
         IGiardino Giardino { get; set; }
         string Luogo { get; set; }
-        event EventHandler Changed;
         DateTime OraInizioInnaffiatura { get; }
         TimeSpan Intervallo { get; }
         void SetTimer(DateTime date, TimeSpan intervallo);

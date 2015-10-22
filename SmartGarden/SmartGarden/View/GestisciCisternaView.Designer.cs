@@ -28,48 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this._guidCisternaTextBox = new System.Windows.Forms.TextBox();
             this._portataTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this._capacitàTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this._valvolaSicurezzaComboBox = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this._sensorePressioneComboBox = new System.Windows.Forms.ComboBox();
+            this._creaButton = new System.Windows.Forms.Button();
             this._nuovaCapacitàTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this._nuovaPortataTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this._creaButton = new System.Windows.Forms.Button();
-            this._sensorePressioneComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this._valvolaSicurezzaComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Id cisterna:";
-            // 
-            // _guidCisternaTextBox
-            // 
-            this._guidCisternaTextBox.Location = new System.Drawing.Point(103, 24);
-            this._guidCisternaTextBox.Name = "_guidCisternaTextBox";
-            this._guidCisternaTextBox.ReadOnly = true;
-            this._guidCisternaTextBox.Size = new System.Drawing.Size(85, 20);
-            this._guidCisternaTextBox.TabIndex = 1;
-            // 
             // _portataTextBox
             // 
-            this._portataTextBox.Location = new System.Drawing.Point(103, 61);
+            this._portataTextBox.Location = new System.Drawing.Point(103, 24);
             this._portataTextBox.Name = "_portataTextBox";
             this._portataTextBox.ReadOnly = true;
             this._portataTextBox.Size = new System.Drawing.Size(85, 20);
@@ -79,7 +59,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 63);
+            this.label2.Location = new System.Drawing.Point(6, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 15);
             this.label2.TabIndex = 2;
@@ -87,7 +67,7 @@
             // 
             // _capacitàTextBox
             // 
-            this._capacitàTextBox.Location = new System.Drawing.Point(103, 101);
+            this._capacitàTextBox.Location = new System.Drawing.Point(103, 64);
             this._capacitàTextBox.Name = "_capacitàTextBox";
             this._capacitàTextBox.ReadOnly = true;
             this._capacitàTextBox.Size = new System.Drawing.Size(85, 20);
@@ -97,7 +77,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 103);
+            this.label3.Location = new System.Drawing.Point(6, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 15);
             this.label3.TabIndex = 4;
@@ -120,6 +100,52 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crea cisterna";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 141);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(133, 15);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Valvola sicurezza:";
+            // 
+            // _valvolaSicurezzaComboBox
+            // 
+            this._valvolaSicurezzaComboBox.FormattingEnabled = true;
+            this._valvolaSicurezzaComboBox.Location = new System.Drawing.Point(145, 139);
+            this._valvolaSicurezzaComboBox.Name = "_valvolaSicurezzaComboBox";
+            this._valvolaSicurezzaComboBox.Size = new System.Drawing.Size(87, 21);
+            this._valvolaSicurezzaComboBox.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(133, 15);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Sensore pressione:";
+            // 
+            // _sensorePressioneComboBox
+            // 
+            this._sensorePressioneComboBox.FormattingEnabled = true;
+            this._sensorePressioneComboBox.Location = new System.Drawing.Point(145, 102);
+            this._sensorePressioneComboBox.Name = "_sensorePressioneComboBox";
+            this._sensorePressioneComboBox.Size = new System.Drawing.Size(87, 21);
+            this._sensorePressioneComboBox.TabIndex = 7;
+            // 
+            // _creaButton
+            // 
+            this._creaButton.Location = new System.Drawing.Point(89, 179);
+            this._creaButton.Name = "_creaButton";
+            this._creaButton.Size = new System.Drawing.Size(75, 23);
+            this._creaButton.TabIndex = 10;
+            this._creaButton.Text = "Crea";
+            this._creaButton.UseVisualStyleBackColor = true;
+            this._creaButton.Click += new System.EventHandler(this._creaButton_Click);
             // 
             // _nuovaCapacitàTextBox
             // 
@@ -155,29 +181,8 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Portata:";
             // 
-            // _creaButton
-            // 
-            this._creaButton.Enabled = false;
-            this._creaButton.Location = new System.Drawing.Point(89, 179);
-            this._creaButton.Name = "_creaButton";
-            this._creaButton.Size = new System.Drawing.Size(75, 23);
-            this._creaButton.TabIndex = 10;
-            this._creaButton.Text = "Crea";
-            this._creaButton.UseVisualStyleBackColor = true;
-            this._creaButton.Click += new System.EventHandler(this._creaButton_Click);
-            // 
-            // _sensorePressioneComboBox
-            // 
-            this._sensorePressioneComboBox.FormattingEnabled = true;
-            this._sensorePressioneComboBox.Location = new System.Drawing.Point(145, 102);
-            this._sensorePressioneComboBox.Name = "_sensorePressioneComboBox";
-            this._sensorePressioneComboBox.Size = new System.Drawing.Size(87, 21);
-            this._sensorePressioneComboBox.TabIndex = 7;
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this._guidCisternaTextBox);
             this.groupBox2.Controls.Add(this._capacitàTextBox);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label3);
@@ -188,34 +193,6 @@
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cisterna attuale";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 104);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 15);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Sensore pressione:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 141);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 15);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Valvola sicurezza:";
-            // 
-            // _valvolaSicurezzaComboBox
-            // 
-            this._valvolaSicurezzaComboBox.FormattingEnabled = true;
-            this._valvolaSicurezzaComboBox.Location = new System.Drawing.Point(145, 139);
-            this._valvolaSicurezzaComboBox.Name = "_valvolaSicurezzaComboBox";
-            this._valvolaSicurezzaComboBox.Size = new System.Drawing.Size(87, 21);
-            this._valvolaSicurezzaComboBox.TabIndex = 12;
             // 
             // GestisciCisternaView
             // 
@@ -235,9 +212,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox _guidCisternaTextBox;
         private System.Windows.Forms.TextBox _portataTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox _capacitàTextBox;
