@@ -233,5 +233,24 @@ namespace SmartGarden.Control
         {
             settore.RemovePianta(pianta);
         }
+
+        public void AggiungiPiantaView(string nomeSettore, Form parentForm)
+        {
+
+            if (parentForm != null)
+                parentForm.Dispose();
+
+            using (var piantaForm = new Form())
+            {
+                NuovaPiantaView nuovaPiantaView = new NuovaPiantaView(nomeSettore);
+                nuovaPiantaView.Dock = DockStyle.Fill;
+                piantaForm.Text = "Nuova pianta";
+                piantaForm.Size = new System.Drawing.Size(450, 550);
+                piantaForm.Controls.Add(nuovaPiantaView);
+                var result = piantaForm.ShowDialog();
+            }
+
+            CaricaViewPiante(nomeSettore, null);
+        }
     }
 }

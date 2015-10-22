@@ -41,20 +41,8 @@ namespace SmartGarden.View
 
         private void _aggiungiPiantaButton_Click(object sender, EventArgs e)
         {
-            using (var piantaForm = new Form())
-            {
-                NuovaPiantaView nuovaPiantaView = new NuovaPiantaView(_settore.Nome);
-                nuovaPiantaView.Dock = DockStyle.Fill;
-                piantaForm.Text = "Nuova pianta";
-                piantaForm.Size = new System.Drawing.Size(450, 550);
-                piantaForm.Controls.Add(nuovaPiantaView);
-                var result = piantaForm.ShowDialog();
-
-                if(result == DialogResult.OK)
-                {
-                    CaricaPiante(); //aggiorna la tabella
-                }
-            }
+            Controller.AggiungiPiantaView(_settore.Nome, this.ParentForm);
+           
         }
 
         private void CaricaPiante()

@@ -22,5 +22,6 @@ namespace SmartGarden.Control
         void CreaNuovaPianta(string nomeBotanico, string nomeComune, double area, string nomeSettore, FabbisognoGiornalieroPeriodo fabbisognoPeriodo);
         void CaricaViewPiante(string nomeSettore, Form settoriForm = null);
         void CancellaPianta(IPianta pianta, ISettore settore);
+        void AggiungiPiantaView(string nome, Form parentForm);
     }
 }
