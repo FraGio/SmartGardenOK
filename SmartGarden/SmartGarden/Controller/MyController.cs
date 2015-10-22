@@ -40,8 +40,14 @@ namespace SmartGarden.Control
             }
         }
 
-        public void CaricaViewPiante(string nomeSettore)
+        public void CaricaViewPiante(string nomeSettore, Form settoriForm)
         {
+
+            if (settoriForm != null)
+            {
+                settoriForm.Dispose();
+            }
+
             ISettore settore = _gestioneGiardino.Giardino.GetSettore(nomeSettore);
 
             using (var pianteForm = new Form())
@@ -53,6 +59,8 @@ namespace SmartGarden.Control
                 pianteForm.Controls.Add(pianteView);
                 pianteForm.ShowDialog();
             }
+
+            GestisciSettori();
         }
 
         public void CambiaProvincia(string provincia)

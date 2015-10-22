@@ -14,7 +14,7 @@ namespace SmartGarden.Model
             get
             {
                 int tot = 0;
-                foreach(Settore set in _settori.Values)
+                foreach(Settore set in Settori.Values)
                 {
                     tot += set.GetGuidPiante().Count();
                 }
@@ -28,21 +28,21 @@ namespace SmartGarden.Model
         }
 
 
-        private Dictionary<string,ISettore> _settori;
+        private Dictionary<string,ISettore> Settori;
 
         public Giardino()
         {
-            _settori = new Dictionary<string, ISettore>();
+            Settori = new Dictionary<string, ISettore>();
         }
 
         public IEnumerable<string> GetNomiSettori()
         {
-            return _settori.Keys;
+            return Settori.Keys;
         } 
 
         public ISettore GetSettore(string name)
         {
-            return _settori[name];
+            return Settori[name];
         }
 
         public IEnumerable<TurnoItem> GetTurni(DateTime inizio,DateTime fine)
@@ -51,7 +51,7 @@ namespace SmartGarden.Model
 
             TimeSpan turno = new TimeSpan(0);
             long tot = 0;
-            foreach(Settore settore in _settori.Values)
+            foreach(Settore settore in Settori.Values)
             {
                TurnoItem turnoItem = new TurnoItem();
                 turnoItem.Attesa = turno;
@@ -72,19 +72,24 @@ namespace SmartGarden.Model
 
         public bool AddSettore(ISettore settore)
         {
-            if (_settori.ContainsKey(settore.Nome))
+            if (Settori.ContainsKey(settore.Nome))
                 return false;
-            _settori.Add(settore.Nome, settore);
+            settore.SettoreUpdated += InvocaOnChanged;
+            Settori.Add(settore.Nome, settore);
             OnChanged();
             return true;
         }
 
+        private void InvocaOnChanged(object sender, EventArgs e)
+        {
+            OnChanged();
+        }
+
         public bool RemoveSettore(string settore)
         {
-            if (!_settori.ContainsKey(settore))
+            if (!Settori.ContainsKey(settore))
                 return false;
-
-            _settori.Remove(settore);
+            Settori.Remove(settore);
             OnChanged();
             return true;
         }

@@ -29,7 +29,7 @@ namespace SmartGarden.View
 
             if (_dataGridView.CurrentCell.ColumnIndex.Equals(4) && e.RowIndex != -1) //carica view piante
             {
-                Controller.CaricaViewPiante(nomeSettore);
+                Controller.CaricaViewPiante(nomeSettore, this.ParentForm);
             }
             else if (_dataGridView.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1) //cancella settore
             {
@@ -46,6 +46,8 @@ namespace SmartGarden.View
 
         private void CaricaDati()
         {
+            _dataGridView.Rows.Clear();
+
             foreach (string nomeSettore in GestoreGiardino.Giardino.GetNomiSettori())
             {
                 ISettore settore = GestoreGiardino.Giardino.GetSettore(nomeSettore);

@@ -11,7 +11,7 @@ using System.Xml.XPath;
 
 namespace SmartGarden
 {
-    partial class MainWindow : Form
+    partial class MainWindow : System.Windows.Forms.Form
     {
         private IController _controller;
 

@@ -1,12 +1,12 @@
 ﻿using System.Windows.Forms;
 using SmartGarden.Model;
+using SmartGarden.View;
 
 namespace SmartGarden.Control
 {
     interface IController
     {
         bool CreateLoginForm();
-        void CaricaViewPiante(string nomeSettore);
         void CambiaProvincia(string provincia);
         void CaricaProvinceComboBox(ComboBox provinceComboBox);
         void CaricaInfoGiardino();
@@ -20,6 +20,7 @@ namespace SmartGarden.Control
         void GestisciCisterna();
         void CreaNuovaCisterna(double portata, double capacità);
         void CreaNuovaPianta(string nomeBotanico, string nomeComune, double area, string nomeSettore, FabbisognoGiornalieroPeriodo fabbisognoPeriodo);
+        void CaricaViewPiante(string nomeSettore, Form settoriForm = null);
         void CancellaPianta(IPianta pianta, ISettore settore);
     }
 }
