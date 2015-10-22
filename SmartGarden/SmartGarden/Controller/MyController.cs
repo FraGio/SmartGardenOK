@@ -57,10 +57,10 @@ namespace SmartGarden.Control
                 pianteForm.Text = "Piante di " + settore.Nome;
                 pianteForm.Size = new System.Drawing.Size(900,400);
                 pianteForm.Controls.Add(pianteView);
-                pianteForm.ShowDialog();
+                var result = pianteForm.ShowDialog();
+                if (result == DialogResult.Cancel)
+                    GestisciSettori();
             }
-
-            GestisciSettori();
         }
 
         public void CambiaProvincia(string provincia)
