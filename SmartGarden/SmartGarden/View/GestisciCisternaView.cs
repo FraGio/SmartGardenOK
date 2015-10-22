@@ -32,6 +32,8 @@ namespace SmartGarden.View
             valvola.Name = "Valvola ETR-45";
             valvole.Add(valvola);
 
+            _valvolaSicurezzaComboBox.Items.AddRange(valvole.ToArray());
+
             //TODO interfaccia sensore
             //List<SensorePressione> sensori = new List<SensorePressione>();
             //_sensorePressioneComboBox
