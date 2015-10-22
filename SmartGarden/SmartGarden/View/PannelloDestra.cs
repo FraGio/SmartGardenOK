@@ -48,6 +48,11 @@ namespace SmartGarden.View
                 _capacitàLabel.Text = giardino.Cisterna.Capienza + " l";
                 _portataLabel.Text = giardino.Cisterna.Portata + " l/s";
             }
+            else
+            {
+                _capacitàLabel.Text = "*cisterna non presente*";
+                _portataLabel.Text = "*cisterna non presente*";
+            }
 
             _numeroSettoriLabel.Text = giardino.GetNomiSettori().Count().ToString();
             _numeroPianteLabel.Text = giardino.NumeroPianteTotali.ToString();
