@@ -14,12 +14,12 @@ namespace SmartGarden.Model
         private double _portataImpianto;
         private IDictionary<Guid,IPianta> _piante;
 
-        /*public event EventHandler Changed;
-        protected virtual void OnChanged()
+        public event EventHandler SettoreUpdated;
+        protected virtual void OnSettoreUpdated()
         {
-            if (Changed != null)
-                Changed(this, EventArgs.Empty); //aggiorna la view
-        }*/
+            if (SettoreUpdated != null)
+                SettoreUpdated(this, EventArgs.Empty); //aggiorna la view
+        }
 
         public Settore(string nome, double portata=0)
         {
@@ -52,6 +52,7 @@ namespace SmartGarden.Model
             else
             {
                 _piante.Add(pianta.Guid, pianta);
+                OnSettoreUpdated();
             }
             return true;
         }
@@ -64,6 +65,7 @@ namespace SmartGarden.Model
             else
             {
                 _piante.Remove(pianta.Guid);
+                OnSettoreUpdated();
             }
             return true;
         }
