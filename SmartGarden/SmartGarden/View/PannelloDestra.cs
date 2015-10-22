@@ -26,13 +26,30 @@ namespace SmartGarden.View
 
         protected override void OnModelChanged(object sender, EventArgs e)
         {
+            if (sender is IGiardino)
+            { 
+                IGiardino giardino = GestoreGiardino.Giardino;
+
+                PescaInfoDaModel();
+
+                _capacitàLabel.Text = giardino.Cisterna.Capienza + " l";
+                _portataLabel.Text = giardino.Cisterna.Portata + " l/s";
+
+                SistemaRighe();
+            }
+            else
+            {
+                _giardinoNameLabel.Text = GestoreGiardino.Luogo;
+                PescaInfoDaModel();
+            }
+        }
+
+        private void PescaInfoDaModel()
+        {
             IGiardino giardino = GestoreGiardino.Giardino;
 
-            _giardinoNameLabel.Text = GestoreGiardino.Luogo;
             _numeroSettoriLabel.Text = giardino.GetNomiSettori().Count().ToString();
             _numeroPianteLabel.Text = giardino.NumeroPianteTotali.ToString();
-            _capacitàLabel.Text = giardino.Cisterna.Capienza + " l";
-            _portataLabel.Text = giardino.Cisterna.Portata + " l/s";
 
             /*TODO messagepump
             _precipitazioniLabel.Text = GestoreGiardino.Precipitazioni + " mm";
@@ -43,11 +60,6 @@ namespace SmartGarden.View
 
             SistemaRighe();
         }
-
-       /* private void PescaInfoDaModel()
-        {
-            
-        }*/
 
         private void SistemaRighe()
         {

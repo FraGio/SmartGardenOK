@@ -32,12 +32,14 @@ namespace SmartGarden.View
                     if (_gestoreGiardino != null)
                     {
                         _gestoreGiardino.Giardino.Changed -= OnModelChanged; // deregistrazione
+                        _gestoreGiardino.Changed -= OnModelChanged;
                     }
                     _gestoreGiardino = value;
 
                     if (_gestoreGiardino != null)
                     {
                         _gestoreGiardino.Giardino.Changed += OnModelChanged; //registrazione al model
+                        _gestoreGiardino.Changed += OnModelChanged;
                     }
                 }
             }

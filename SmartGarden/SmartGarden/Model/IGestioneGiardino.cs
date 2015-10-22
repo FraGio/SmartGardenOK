@@ -13,6 +13,6 @@ namespace SmartGarden.Model
         DateTime OraInizioInnaffiatura { get; }
         TimeSpan Intervallo { get; }
         void SetTimer(DateTime date, TimeSpan intervallo);
-  
+        event EventHandler Changed;
     }
 }

@@ -5,12 +5,14 @@ namespace SmartGarden.Model
 {
     class GestioneGiardino : IGestioneGiardinoData,IGestioneGiardino
     {
-        public IGiardino Giardino { get; set; }
-        public string Luogo { get; set; }
+        private IGiardino _giardino;
+        private string _luogo;
         private MyTimer _timers;
         private static GestioneGiardino _instance = null;
         private DateTime _oraInizioInnaffiatura;
         private TimeSpan _intervallo;
+
+        public event EventHandler Changed;
 
         public DateTime OraInizioInnaffiatura
         {
@@ -22,7 +24,7 @@ namespace SmartGarden.Model
         }
         private GestioneGiardino()
         {
-            Giardino = new Giardino();
+            _giardino = new Giardino();
             _timers = MyTimer.GetMyTimer();
             _oraInizioInnaffiatura = DateTime.Now;
             TimeSpan ts;
@@ -37,6 +39,32 @@ namespace SmartGarden.Model
             _oraInizioInnaffiatura = OraInizioInnaffiatura.Date + ts;
             _intervallo = new TimeSpan(1, 0, 0, 0);
             _timers.SetTimerPrincipale(OraInizioInnaffiatura, Intervallo);
+        }
+
+        protected virtual void OnChanged()
+        {
+            if (Changed != null)
+                Changed(this, EventArgs.Empty); //aggiorna la view
+        }
+
+        public IGiardino Giardino
+        {
+            get { return _giardino; }
+            set
+            {
+                _giardino = value;
+                OnChanged();
+            }
+        }
+
+        public string Luogo
+        {
+            get { return _luogo; }
+            set
+            {
+                _luogo = value;
+                OnChanged();
+            }
         }
 
         public static GestioneGiardino GetGestoreGiardino()
