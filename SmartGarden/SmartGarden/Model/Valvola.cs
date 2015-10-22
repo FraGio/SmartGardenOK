@@ -29,6 +29,9 @@ namespace SmartGarden.Model
             MessagePump.SendMessage("sono : " + _name + " mi chiudo");
         }
 
-       
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
