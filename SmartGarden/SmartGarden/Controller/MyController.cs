@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Xml.XPath;
 using SmartGarden.Model;
+using SmartGarden.Controller;
 
 namespace SmartGarden.Control
 {
@@ -22,7 +23,7 @@ namespace SmartGarden.Control
             return _instance;
         }
 
-        public bool CreateLoginForm()
+        public bool CreaLoginForm()
         {
             using (var loginForm = new LoginForm())
             {
@@ -39,7 +40,7 @@ namespace SmartGarden.Control
             }
         }
 
-        public void CaricaViewPiante(string nomeSettore, Form settoriForm)
+        public void CreaPianteView(string nomeSettore, Form settoriForm)
         {
 
             if (settoriForm != null)
@@ -58,7 +59,7 @@ namespace SmartGarden.Control
                 pianteForm.Controls.Add(pianteView);
                 var result = pianteForm.ShowDialog();
                 if (result == DialogResult.Cancel)
-                    GestisciSettori();
+                    CreaSettoriView();
             }
         }
 
@@ -83,17 +84,7 @@ namespace SmartGarden.Control
             }
         }
 
-        public void CaricaInfoGiardino()
-        {
-            //_gestioneGiardino.ProvaCaricamentoInfo();
-        }
-
-        public void SettaTimer()
-        {
-            //_gestioneGiardino.SettaTimer();
-        }
-
-        public void GestisciSettori()
+        public void CreaSettoriView()
         {
             using (var settoriForm = new Form())
             {
@@ -128,7 +119,7 @@ namespace SmartGarden.Control
             }
         }
 
-        public void CreaSettore(string nomeSettore, double portataImpianto, Valvola valvola)
+        public void CreaSettoreView(string nomeSettore, double portataImpianto, Valvola valvola)
         {
             ISettore settore = new Settore(nomeSettore, portataImpianto);
             settore.ValvolaSettore = valvola;
@@ -173,7 +164,7 @@ namespace SmartGarden.Control
             }
         }
 
-        public void GestioneInfoPiantaView(IPianta pianta)
+        public void CreaGestioneInfoPiantaView(IPianta pianta)
         {
             using (var piantaForm = new Form())
             {
@@ -202,7 +193,7 @@ namespace SmartGarden.Control
             }
         }
 
-        public void GestisciCisterna()
+        public void CreaGestisciCisternaView()
         {
             using (var form = new Form())
             {
@@ -235,7 +226,7 @@ namespace SmartGarden.Control
             settore.RemovePianta(pianta);
         }
 
-        public void AggiungiPiantaView(string nomeSettore, Form parentForm)
+        public void CreaAggiungiPiantaView(string nomeSettore, Form parentForm)
         {
 
             if (parentForm != null)
@@ -251,7 +242,7 @@ namespace SmartGarden.Control
                 var result = piantaForm.ShowDialog();
             }
 
-            CaricaViewPiante(nomeSettore, null);
+            CreaPianteView(nomeSettore, null);
         }
     }
 }

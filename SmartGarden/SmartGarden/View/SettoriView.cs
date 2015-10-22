@@ -29,7 +29,7 @@ namespace SmartGarden.View
 
             if (_dataGridView.CurrentCell.ColumnIndex.Equals(4) && e.RowIndex != -1) //carica view piante
             {
-                Controller.CaricaViewPiante(nomeSettore, this.ParentForm);
+                Controller.CreaPianteView(nomeSettore, this.ParentForm);
             }
             else if (_dataGridView.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1) //cancella settore
             {

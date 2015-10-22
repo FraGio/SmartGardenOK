@@ -30,7 +30,7 @@ namespace SmartGarden.View
         {
             if(!string.IsNullOrWhiteSpace(_nomeTextBox.Text) && !string.IsNullOrWhiteSpace(_portataImpiantoTextBox.Text))
             {
-                Controller.CreaSettore(_nomeTextBox.Text, double.Parse(_portataImpiantoTextBox.Text), (Valvola)_valvolaComboBox.SelectedValue);
+                Controller.CreaSettoreView(_nomeTextBox.Text, double.Parse(_portataImpiantoTextBox.Text), (Valvola)_valvolaComboBox.SelectedValue);
                 this.ParentForm.Close();
             }
         }

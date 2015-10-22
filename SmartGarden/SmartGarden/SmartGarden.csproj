@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\IControllerData.cs" />
+    <Compile Include="Controller\IControllerView.cs" />
     <Compile Include="Controller\MyController.cs" />
     <Compile Include="Controller\IController.cs" />
     <Compile Include="Model\Cisterna.cs" />

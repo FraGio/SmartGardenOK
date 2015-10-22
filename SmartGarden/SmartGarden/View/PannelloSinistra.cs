@@ -27,7 +27,7 @@ namespace SmartGarden.View
         private void ChangeSettore(object sender, TreeViewEventArgs e)
         {
             if(e.Node.Level == 1)
-                Controller.CaricaViewPiante(_treeView.SelectedNode.Text);
+                Controller.CreaPianteView(_treeView.SelectedNode.Text);
         }
 
         protected override void OnModelChanged(object sender, EventArgs e)

@@ -51,17 +51,13 @@ namespace SmartGarden
 
             _controller =  MyController.GetController(_gestioneGiardino);
 
-            bool loginOk = _controller.CreateLoginForm();
+            bool loginOk = _controller.CreaLoginForm();
             if (!loginOk)
                 this.Close();
 
             AggiornaViews();
 
             _dateStatusBar.Text = DateTime.Now.ToShortDateString();
-
-            _controller.SettaTimer();
-
-            _controller.CaricaInfoGiardino();
 
             CaricaProvince();
 
@@ -140,7 +136,7 @@ namespace SmartGarden
 
         private void gestisciGiardinoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _controller.GestisciSettori();
+            _controller.CreaSettoriView();
         }
 
         private void _pannelloDestra_Load(object sender, EventArgs e)

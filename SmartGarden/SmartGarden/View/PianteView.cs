@@ -30,7 +30,7 @@ namespace SmartGarden.View
 
             if (_dataGridView.CurrentCell.ColumnIndex.Equals(4) && e.RowIndex != -1) //aggiungi gestore
             {
-                Controller.GestioneInfoPiantaView(pianta);
+                Controller.CreaGestioneInfoPiantaView(pianta);
             }
             else if(_dataGridView.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1) //cancella pianta
             {
@@ -41,7 +41,7 @@ namespace SmartGarden.View
 
         private void _aggiungiPiantaButton_Click(object sender, EventArgs e)
         {
-            Controller.AggiungiPiantaView(_settore.Nome, this.ParentForm);
+            Controller.CreaAggiungiPiantaView(_settore.Nome, this.ParentForm);
            
         }
 

@@ -74,7 +74,7 @@ namespace SmartGarden.View
 
         private void _settoriPicture_Click(object sender, EventArgs e)
         {
-            Controller.GestisciSettori();
+            Controller.CreaSettoriView();
         }
 
         private void _nuovoGiardinoPicture_Click(object sender, EventArgs e)
@@ -89,8 +89,10 @@ namespace SmartGarden.View
 
         private void _cisternaPicture_Click(object sender, EventArgs e)
         {
-            Controller.GestisciCisterna();
+            Controller.CreaGestisciCisternaView();
         }
+
+        #region useless
         private void label4_Click(object sender, EventArgs e)
         {
             //
@@ -105,5 +107,6 @@ namespace SmartGarden.View
         {
             //
         }
+        #endregion
     }
 }
