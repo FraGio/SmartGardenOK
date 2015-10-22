@@ -38,6 +38,7 @@
             this._mostraGestoriButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this._aggiungiPiantaButton = new System.Windows.Forms.Button();
+            this._homeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,12 +133,23 @@
             this._aggiungiPiantaButton.UseVisualStyleBackColor = true;
             this._aggiungiPiantaButton.Click += new System.EventHandler(this._aggiungiPiantaButton_Click);
             // 
+            // _homeButton
+            // 
+            this._homeButton.Location = new System.Drawing.Point(159, 0);
+            this._homeButton.Name = "_homeButton";
+            this._homeButton.Size = new System.Drawing.Size(57, 23);
+            this._homeButton.TabIndex = 4;
+            this._homeButton.Text = "HOME";
+            this._homeButton.UseVisualStyleBackColor = true;
+            this._homeButton.Click += new System.EventHandler(this._homeButton_Click);
+            // 
             // PianteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Silver;
+            this.Controls.Add(this._homeButton);
             this.Controls.Add(this._aggiungiPiantaButton);
             this.Controls.Add(this._dataGridView);
             this.Controls.Add(this.menuStrip1);
@@ -159,5 +171,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn _mostraGestoriButton;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button _aggiungiPiantaButton;
+        private System.Windows.Forms.Button _homeButton;
     }
 }

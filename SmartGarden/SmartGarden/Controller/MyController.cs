@@ -201,7 +201,7 @@ namespace SmartGarden.Control
                 cisternaView.GestoreGiardino = _gestioneGiardino;
                 cisternaView.Controller = this;
                 cisternaView.Dock = DockStyle.Fill;
-                form.Size = new System.Drawing.Size(500, 400);
+                form.Size = new System.Drawing.Size(600, 300);
                 form.Controls.Add(cisternaView);
                 form.ShowDialog();
             }

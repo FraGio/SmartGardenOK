@@ -63,5 +63,10 @@ namespace SmartGarden.View
                     Convert.ToInt32(pianta.FabbisognoPiantaAttuale(DateTime.Now, DateTime.Now.AddDays(1))) + " mm", "Mostra Gestori");
             }
         }
+
+        private void _homeButton_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.ParentForm.Close();
+        }
     }
 }

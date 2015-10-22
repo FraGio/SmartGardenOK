@@ -120,7 +120,7 @@
             this._visitorComboBox.FormattingEnabled = true;
             this._visitorComboBox.Location = new System.Drawing.Point(235, 64);
             this._visitorComboBox.Name = "_visitorComboBox";
-            this._visitorComboBox.Size = new System.Drawing.Size(170, 21);
+            this._visitorComboBox.Size = new System.Drawing.Size(282, 21);
             this._visitorComboBox.TabIndex = 5;
             // 
             // _providerComboBox
@@ -128,7 +128,7 @@
             this._providerComboBox.FormattingEnabled = true;
             this._providerComboBox.Location = new System.Drawing.Point(235, 31);
             this._providerComboBox.Name = "_providerComboBox";
-            this._providerComboBox.Size = new System.Drawing.Size(170, 21);
+            this._providerComboBox.Size = new System.Drawing.Size(282, 21);
             this._providerComboBox.TabIndex = 4;
             // 
             // _textBox
