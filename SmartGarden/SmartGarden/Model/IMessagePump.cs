@@ -14,6 +14,6 @@ namespace SmartGarden.Model
 
         void DeleteMessages();
 
-        Enumerable GetAllMEssages();
+        List<string> GetAllMEssages();
     }
 }
