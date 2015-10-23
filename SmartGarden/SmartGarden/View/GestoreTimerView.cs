@@ -22,9 +22,6 @@ namespace SmartGarden.View
         {
             base.OnLoad(e);
 
-            //TODO sistemare funzione
-            //GestoreGiardino.MyTimer.GetTimerForElement("TimerPrincipale");
-
             int daysInMonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
 
             for(int i=0; i<24; i++)

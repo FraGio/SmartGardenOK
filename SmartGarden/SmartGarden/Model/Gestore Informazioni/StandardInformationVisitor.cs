@@ -13,7 +13,7 @@ namespace SmartGarden.Model.Gestore_Informazioni
         double tot;
         IDataPianta _pianta;
         IGestioneGiardinoData _gestore;
-
+        IMessagePump mess= MessagePump.GetMessagePump();
 
         public double GetRequiredWater()
         {
@@ -35,7 +35,7 @@ namespace SmartGarden.Model.Gestore_Informazioni
         #region VisitSpecialization
         private void VisitSpecialization(FintoFornitoreInformazioni informationProvider )
         {
-            MessagePump.SendMessage("visitato finto informatore ");
+            mess.SendMessage("visitato finto informatore ");
         }
 
         private void VisitSpecialization(ProviderPrecipitazioniDefaultHttp informationProvider)

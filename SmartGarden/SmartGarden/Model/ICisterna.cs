@@ -12,5 +12,6 @@ namespace SmartGarden.Model
         double Capienza { get; set; }
         Guid Guid { get; }
         IOpenClose GetOpenClose();
+        IvalvolaDiSicurezza ValvolaSicurezza { get; set; }
     }
 }

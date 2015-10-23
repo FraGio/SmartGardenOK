@@ -43,7 +43,7 @@ namespace SmartGarden.Model.Gestore_Informazioni
             return gestore;
         }
 
-        //TODO gestire rimozione settore pianta giardino
+
         public GestoreInformazioni Modifica(GestoreInformazioni OldGestore, Dictionary<Type, Type> typeProviders)
         {
             _gestori[OldGestore]--;

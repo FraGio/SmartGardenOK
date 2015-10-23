@@ -79,6 +79,7 @@
     <Compile Include="Model\InvalidDifferenceOfTime.cs" />
     <Compile Include="Model\IOpenClose.cs" />
     <Compile Include="Model\IPianta.cs" />
+    <Compile Include="Model\IRilevatorePressione.cs" />
     <Compile Include="Model\ISettore.cs" />
     <Compile Include="Model\IvalvolaDiSicurezza.cs" />
     <Compile Include="Model\MessagePump.cs" />

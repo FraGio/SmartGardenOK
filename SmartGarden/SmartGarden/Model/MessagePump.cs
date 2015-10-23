@@ -6,11 +6,39 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    class MessagePump
+    class MessagePump:IMessagePump
     {
-        public static void SendMessage(string v)
+        public event EventHandler newMessage;
+        private List<String> _messages;
+        private static MessagePump instance = null;
+
+        public static MessagePump GetMessagePump()
         {
-            throw new NotImplementedException();
+            if (instance == null)
+                instance = new MessagePump();
+            return instance;
+        }
+
+        private MessagePump()
+        {
+            _messages = new List<string>();
+        }
+
+        protected virtual void OnNewMessage()
+        {
+            if (newMessage != null)
+                newMessage(this, EventArgs.Empty);
+        }
+
+        public void SendMessage(string mess)
+        {
+            _messages.Add(mess);
+            OnNewMessage();
+        }
+
+        public void DeleteMessages()
+        {
+            _messages = new List<string>();
         }
     }
 }

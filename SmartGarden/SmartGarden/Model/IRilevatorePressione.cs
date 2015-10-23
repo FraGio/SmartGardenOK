@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    interface IMessagePump
+    interface IRilevatorePressione
     {
-        event EventHandler newMessage;
-
-        void SendMessage(string mess);
-
-        void DeleteMessages();
-        
+        event EventHandler pressionChanged;
+        string Descrizione { get; set; }
     }
 }

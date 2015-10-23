@@ -6,6 +6,7 @@ namespace SmartGarden.Model
     abstract class Valvola : IOpenClose
     {
         private String _name;
+        protected IMessagePump _mess= MessagePump.GetMessagePump();
 
         public String Name
         {
@@ -21,12 +22,12 @@ namespace SmartGarden.Model
 
         public virtual void Close(object source, EventArgs e)
         {
-            MessagePump.SendMessage("sono : " + _name + " mi chiudo");
+            _mess.SendMessage("sono : " + _name + " mi chiudo");
         }
 
         public virtual void Open(object source, EventArgs e)
         {
-            MessagePump.SendMessage("sono : " + _name + " mi chiudo");
+            _mess.SendMessage("sono : " + _name + " mi chiudo");
         }
 
         public override string ToString()

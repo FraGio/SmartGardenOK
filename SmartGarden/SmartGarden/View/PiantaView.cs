@@ -88,7 +88,7 @@ namespace SmartGarden.View
                 _pianta.GestoreInformazioni = factoryGestioneInfo.GetGestore(_types);
             }
             else
-            {//TODO modifica gestore informazioni risoluzione interfaccia
+            {
                 _pianta.GestoreInformazioni = factoryGestioneInfo.Modifica((GestoreInformazioni)_pianta.GestoreInformazioni, _types);
             }
 
