@@ -5,7 +5,7 @@ using System.Xml;
 using System.Xml.XPath;
 
 namespace SmartGarden.Model.Gestore_Informazioni.Fornitori
-{ //deve diventare un singleton ci si deve lavorare per soddisfare richieste
+{ 
      class FornitoreInformazioniMeteoHttp
     {
         private XmlDocument _xmlDati;
