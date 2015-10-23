@@ -32,10 +32,14 @@ namespace SmartGarden.View
             {
                 Controller.CreaGestioneInfoPiantaView(pianta);
             }
-            else if(_dataGridView.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1) //cancella pianta
+            else if(_dataGridView.CurrentCell.ColumnIndex.Equals(6) && e.RowIndex != -1) //cancella pianta
             {
                 Controller.CancellaPianta(pianta, _settore);
                 CaricaPiante();
+            }
+            else if (_dataGridView.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1)
+            {
+                Controller.CreaGestoreFabbisognoPiantaView(pianta);
             }
         }
 
@@ -53,7 +57,8 @@ namespace SmartGarden.View
             {
                 IPianta pianta = _settore.GetPianta(guidPianta);
                 _dataGridView.Rows.Add(pianta.Guid, pianta.NomeComune, pianta.NomeBotanico,
-                    Convert.ToInt32(pianta.FabbisognoPiantaAttuale(DateTime.Now, DateTime.Now.AddDays(1))) + " mm", "Mostra Gestori", "Elimina pianta");
+                    Convert.ToInt32(pianta.FabbisognoPiantaAttuale(DateTime.Now, DateTime.Now.AddDays(1))) + 
+                    " mm", "Mostra Gestori", "Gestione Fabbisogno","Elimina pianta");
             }
         }
 
