@@ -55,6 +55,9 @@ namespace SmartGarden.View
             if (!loginOk)
                 this.Close();
 
+            IGiardino giardino = new Giardino();
+            _gestioneGiardino.Giardino = giardino;
+
             AggiornaViews();
 
             _dateStatusBar.Text = DateTime.Now.ToShortDateString();
