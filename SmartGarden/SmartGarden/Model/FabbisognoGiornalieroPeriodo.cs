@@ -7,6 +7,8 @@ namespace SmartGarden.Model
 {
     class FabbisognoGiornalieroPeriodo
     {
+        //TODO gestire correttamente i periodi, ad esempio quando si aggiunge un fabbisogno nuovo
+
         private DateTime _inizioPeriodo = new DateTime();
         private DateTime _finePeriodo = new DateTime();
         private double _fabbisognoAcquaGiornaliero = 0;
