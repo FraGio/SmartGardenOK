@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Timers;
 
-namespace SmartGarden
+namespace SmartGarden.Model
 {
     class SensorePressione :IRilevatorePressione
     {

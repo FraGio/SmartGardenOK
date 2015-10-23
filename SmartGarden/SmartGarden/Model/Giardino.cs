@@ -14,7 +14,7 @@ namespace SmartGarden.Model
             get
             {
                 int tot = 0;
-                foreach(Settore set in Settori.Values)
+                foreach(ISettore set in Settori.Values)
                 {
                     tot += set.GetGuidPiante().Count();
                 }
