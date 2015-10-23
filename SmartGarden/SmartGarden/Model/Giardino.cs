@@ -52,7 +52,7 @@ namespace SmartGarden.Model
 
             TimeSpan turno = new TimeSpan(0);
             long tot = 0;
-            foreach(Settore settore in Settori.Values)
+            foreach(ISettore settore in Settori.Values)
             {
                TurnoItem turnoItem = new TurnoItem();
                 turnoItem.Attesa = turno;
