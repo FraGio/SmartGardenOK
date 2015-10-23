@@ -98,6 +98,12 @@
     <Compile Include="View\GestisciCisternaView.Designer.cs">
       <DependentUpon>GestisciCisternaView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\GestisciFabbisognoPiantaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\GestisciFabbisognoPiantaView.Designer.cs">
+      <DependentUpon>GestisciFabbisognoPiantaView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\GestoreTimerView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </Compile>
     <EmbeddedResource Include="View\GestisciCisternaView.resx">
       <DependentUpon>GestisciCisternaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GestisciFabbisognoPiantaView.resx">
+      <DependentUpon>GestisciFabbisognoPiantaView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\GestoreTimerView.resx">
       <DependentUpon>GestoreTimerView.cs</DependentUpon>

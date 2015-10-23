@@ -154,6 +154,7 @@ namespace SmartGarden.Control
 
                     if (result2 == DialogResult.OK)
                     {
+                        _gestioneGiardino.Giardino.Delete();
                         Giardino giardino = new Giardino();
                         _gestioneGiardino.Giardino = giardino;
                         _gestioneGiardino.Luogo = nuovoGiardinoView.Controls.Find("_provinceComboBox", false)[0].Text;
