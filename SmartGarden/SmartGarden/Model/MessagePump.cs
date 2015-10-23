@@ -40,5 +40,10 @@ namespace SmartGarden.Model
         {
             _messages = new List<string>();
         }
+
+        public Enumerable GetAllMEssages()
+        {
+            return _messages;
+        }
     }
 }

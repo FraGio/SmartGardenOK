@@ -13,6 +13,7 @@ namespace SmartGarden.Model
         void SendMessage(string mess);
 
         void DeleteMessages();
-        
+
+        Enumerable GetAllMEssages();
     }
 }
