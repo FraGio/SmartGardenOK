@@ -6,7 +6,6 @@ namespace SmartGarden.Model
 {
     class MyTimer
     {
-        //TODO mettere a posto il timer
         private Dictionary<TimeSpan, MyInternalTimer> _timers;
         private MyInternalTimer _timerPrincipale ;
         private TimeSpan _intervalloPrincipale;

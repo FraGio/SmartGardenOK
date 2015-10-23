@@ -8,14 +8,15 @@ namespace SmartGarden.Model
 {
     class ValvolaDiSettore : Valvola
     {
+
         public override void Open(object source, EventArgs e)
         {
-            MessagePump.SendMessage("sono la valvola di settore " + Name + "mi apro");
+            _mess.SendMessage("sono la valvola di settore " + Name + "mi apro");
         }
 
         public override void Close(object source, EventArgs e)
         {
-            MessagePump.SendMessage("sono la valvola di settore " + Name + "mi chiudo");
+            _mess.SendMessage("sono la valvola di settore " + Name + "mi chiudo");
         }
     }
 }

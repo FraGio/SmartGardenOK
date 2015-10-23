@@ -10,11 +10,12 @@ namespace SmartGarden.Model
     class Cisterna : ICisterna
     {
         private Guid _guid;
-        private SensorePressione _sensorePressione ;
+        private IRilevatorePressione _sensorePressione ;
         public IvalvolaDiSicurezza _valvolaSicurezza;
         public double Portata { get; set; }
         public double Capienza { get; set; }
         private bool attivata=false;
+        private IMessagePump _mess;
 
         public Guid Guid
         {
@@ -23,7 +24,7 @@ namespace SmartGarden.Model
                return _guid;
             }
         }
-        public SensorePressione SensorePressione
+        public IRilevatorePressione SensorePressione
         {
             get
             {
@@ -62,6 +63,7 @@ namespace SmartGarden.Model
         {
             if(attivata==false)
             {
+                _mess.SendMessage("ho avuto un cambiamento di pressione inaspettato richiesto intervento utente");
                 _valvolaSicurezza.Close(source, e);
             }
             
@@ -83,6 +85,7 @@ namespace SmartGarden.Model
             Portata = portata;
             Capienza = capienza;
             _guid = new Guid();
+            _mess = MessagePump.GetMessagePump();
         }
 
         public IOpenClose GetOpenClose()

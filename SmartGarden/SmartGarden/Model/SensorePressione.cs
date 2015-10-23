@@ -1,22 +1,25 @@
-﻿using System;
+﻿using SmartGarden.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Timers;
 
 namespace SmartGarden
 {
-    class SensorePressione
+    class SensorePressione :IRilevatorePressione
     {
         public event EventHandler pressionChanged;
-       //TODO event pression change
         public string Descrizione { get; set; }
+        private IMessagePump mess;
 
         public SensorePressione(string descrizione = null)
         {
             Descrizione = descrizione;
-            Thread io = new Thread(CambiamentoPressione);
+            Random ran = new Random();
+            Timer timer = new Timer(ran.Next(120*1000,600*1000));
+            timer.Elapsed += CambiamentoPressione;
+            mess = MessagePump.GetMessagePump();
         }
 
         protected virtual void OnpressionChanged()
@@ -25,9 +28,10 @@ namespace SmartGarden
                 pressionChanged(this, EventArgs.Empty);
         }
 
-        public void CambiamentoPressione()
+        private void CambiamentoPressione(object e,EventArgs ev)
         {
-            
+            OnpressionChanged();
+            mess.SendMessage("sono il sensore di pressione è cambiata la pressione");
         }
         
     }
