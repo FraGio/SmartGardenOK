@@ -94,6 +94,14 @@ namespace SmartGarden.Model
             OnChanged();
             return true;
         }
+        //TODO da invocare in giardino
+        public void Delete()
+        {
+            foreach(ISettore settore in Settori.Values)
+            {
+                settore.Delete();
+            }
+        }
 
         public ICisterna Cisterna
         {

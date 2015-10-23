@@ -61,6 +61,7 @@
     <Compile Include="Model\Gestore Informazioni\Fornitori\ProviderPrecipitazioniDefaultHttp.cs" />
     <Compile Include="Model\Gestore Informazioni\Fornitori\ProviderTemperaturaDefaultHttp.cs" />
     <Compile Include="Model\Gestore Informazioni\GestoreInformazioni.cs" />
+    <Compile Include="Model\Gestore Informazioni\IFactoryGestioneInfoRef.cs" />
     <Compile Include="Model\Gestore Informazioni\IFactoryGestoreInformazioni.cs" />
     <Compile Include="Model\Gestore Informazioni\IGestoreInformazioni.cs" />
     <Compile Include="Model\Gestore Informazioni\IinformationProviderVisitor.cs" />
