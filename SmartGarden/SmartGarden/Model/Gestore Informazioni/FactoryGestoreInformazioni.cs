@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace SmartGarden.Model.Gestore_Informazioni
 {  
-    class FactoryGestoreInformazioni:IFactoryGestoreInformazioni //Pattern Singleton
+    class FactoryGestoreInformazioni:IFactoryGestoreInformazioni,IFactoryGestioneInfoRef //Pattern Singleton
     { 
 
         private Dictionary<GestoreInformazioni,int> _gestori;
@@ -54,6 +54,15 @@ namespace SmartGarden.Model.Gestore_Informazioni
 
             return GetGestore(typeProviders);
         }
-           
+
+        public void Remove(IGestoreInformazioni gestore)
+        {
+            GestoreInformazioni gest = (GestoreInformazioni)gestore;
+            _gestori[gest]--;
+            if (_gestori[gest] < 1)
+            {
+                _gestori.Remove(gest);
+            };
+        }
     }
 }

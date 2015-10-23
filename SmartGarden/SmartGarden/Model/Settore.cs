@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartGarden.Model.Gestore_Informazioni;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,6 +65,8 @@ namespace SmartGarden.Model
             }
             else
             {
+                IFactoryGestioneInfoRef fac = FactoryGestoreInformazioni.GetFactory();
+                fac.Remove(pianta.GestoreInformazioni);
                 _piante.Remove(pianta.Guid);
                 OnSettoreUpdated();
             }
@@ -80,6 +83,15 @@ namespace SmartGarden.Model
         public IEnumerable<Guid> GetGuidPiante()
         {
             return _piante.Keys;
+        }
+
+        public void Delete()
+        {
+            IFactoryGestioneInfoRef fac = FactoryGestoreInformazioni.GetFactory();
+            foreach (IPianta pianta in _piante.Values)
+            {
+                fac.Remove(pianta.GestoreInformazioni);
+            }
         }
 
         public double GetFabisogno(DateTime inizio,DateTime fine)
