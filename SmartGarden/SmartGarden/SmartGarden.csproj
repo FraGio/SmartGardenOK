@@ -129,6 +129,12 @@
     <Compile Include="View\MainWindow.designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\NotificheView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\NotificheView.Designer.cs">
+      <DependentUpon>NotificheView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\NuovaPiantaView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NotificheView.resx">
+      <DependentUpon>NotificheView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NuovaPiantaView.resx">
       <DependentUpon>NuovaPiantaView.cs</DependentUpon>
