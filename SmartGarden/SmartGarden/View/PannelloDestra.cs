@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
 using SmartGarden.Model;
+using SmartGarden.Model.Gestore_Informazioni.Fornitori;
 
 namespace SmartGarden.View
 {
@@ -57,9 +58,16 @@ namespace SmartGarden.View
             _numeroSettoriLabel.Text = giardino.GetNomiSettori().Count().ToString();
             _numeroPianteLabel.Text = giardino.NumeroPianteTotali.ToString();
 
-            /*TODO messagepump
-            _precipitazioniLabel.Text = GestoreGiardino.Precipitazioni + " mm";
-            _temperaturaLabel.Text = GestoreGiardino.Temperatura + " °C";*/
+            //prendi info meteo
+            FornitoreInformazioniMeteoHttp fornitoreMeteo = FornitoreInformazioniMeteoHttp.GetFornitore();
+            fornitoreMeteo.AggiornaDatiMeteo(GestoreGiardino.Luogo);
+
+            double temperatura = fornitoreMeteo.GetDato("temperature");
+            double precipitazioni = fornitoreMeteo.GetDato("precipitation");
+
+            _temperaturaLabel.Text = temperatura.ToString() + " °C";
+            _precipitazioniLabel.Text = precipitazioni.ToString() + " mm";
+
 
             _prossimaIrrigazioneLabel.Text = GestoreGiardino.OraInizioInnaffiatura.ToString();
             _intervalloIrrigazione.Text = GestoreGiardino.Intervallo.TotalHours.ToString() + " h";

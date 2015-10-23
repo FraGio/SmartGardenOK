@@ -46,6 +46,7 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this._treeView = new SmartGarden.View.PannelloSinistra();
             this._pannelloDestra = new SmartGarden.View.PannelloDestra();
+            this.visualizzaNotificheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this._statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -86,7 +87,8 @@
             this.giardinoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aggiungiGiardinoToolStripMenuItem,
             this.gestisciGiardinoToolStripMenuItem,
-            this.modificaTimerGeneraleToolStripMenuItem});
+            this.modificaTimerGeneraleToolStripMenuItem,
+            this.visualizzaNotificheToolStripMenuItem});
             this.giardinoToolStripMenuItem.Name = "giardinoToolStripMenuItem";
             this.giardinoToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.giardinoToolStripMenuItem.Text = "Giardino";
@@ -204,6 +206,13 @@
             this._pannelloDestra.TabIndex = 0;
             this._pannelloDestra.Load += new System.EventHandler(this._pannelloDestra_Load);
             // 
+            // visualizzaNotificheToolStripMenuItem
+            // 
+            this.visualizzaNotificheToolStripMenuItem.Name = "visualizzaNotificheToolStripMenuItem";
+            this.visualizzaNotificheToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.visualizzaNotificheToolStripMenuItem.Text = "Visualizza notifiche";
+            this.visualizzaNotificheToolStripMenuItem.Click += new System.EventHandler(this.visualizzaNotificheToolStripMenuItem_Click);
+            // 
             // MainWindow
             // 
             this.ClientSize = new System.Drawing.Size(1264, 662);
@@ -277,5 +286,6 @@
         private System.Windows.Forms.ToolStripMenuItem modificaCittàToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox _provinceComboBox;
         private System.Windows.Forms.ToolStripMenuItem _resetToolStrip;
+        private System.Windows.Forms.ToolStripMenuItem visualizzaNotificheToolStripMenuItem;
     }
 }

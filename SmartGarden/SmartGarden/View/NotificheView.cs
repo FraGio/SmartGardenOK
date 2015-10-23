@@ -22,7 +22,11 @@ namespace SmartGarden.View
         private void RefreshNotifiche(object sender, EventArgs e)
         {
             _notificheTextBox.Clear();
-            _messagePump.GetAllMEssages();
+            foreach(string notifica in _messagePump.GetAllMEssages())
+            {
+                _notificheTextBox.AppendText(notifica + Environment.NewLine);
+            }
+
         }
 
         private void _pulisciButton_Click(object sender, EventArgs e)

@@ -4,6 +4,7 @@ using System.Xml.XPath;
 using SmartGarden.Model;
 using SmartGarden.Controller;
 using System.Drawing;
+using System;
 
 namespace SmartGarden.Control
 {
@@ -245,6 +246,19 @@ namespace SmartGarden.Control
             }
 
             CreaPianteView(nomeSettore, null);
+        }
+
+        public void CreaNotificheView()
+        {
+            using (var notificheForm = new Form())
+            {
+                NotificheView notificheView = new NotificheView();
+                notificheView.Dock = DockStyle.Fill;
+                notificheForm.Text = "Notifiche";
+                notificheForm.Size = new System.Drawing.Size(500, 400);
+                notificheForm.Controls.Add(notificheView);
+                var result = notificheForm.ShowDialog();
+            }
         }
     }
 }
