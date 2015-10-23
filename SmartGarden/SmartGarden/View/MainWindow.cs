@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Xml.XPath;
 
-namespace SmartGarden
+namespace SmartGarden.View
 {
     partial class MainWindow : System.Windows.Forms.Form
     {
