@@ -60,7 +60,7 @@ namespace SmartGarden.Model
                 get{ return _nomeBotanico;}
                 set { _nomeBotanico = value; }
             }
-
+            //TODO da cambiare e non esporre lista
             public List<FabbisognoGiornalieroPeriodo> Fabisogni
             {
                 get
