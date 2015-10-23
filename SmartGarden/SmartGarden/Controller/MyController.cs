@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Xml.XPath;
 using SmartGarden.Model;
 using SmartGarden.Controller;
+using System.Drawing;
 
 namespace SmartGarden.Control
 {
