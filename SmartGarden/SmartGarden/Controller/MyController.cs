@@ -4,6 +4,7 @@ using System.Xml.XPath;
 using SmartGarden.Model;
 using SmartGarden.Controller;
 using System.Drawing;
+using System;
 
 namespace SmartGarden.Control
 {
@@ -56,7 +57,7 @@ namespace SmartGarden.Control
                 PianteView pianteView = new PianteView(settore);
                 pianteView.Dock = DockStyle.Fill;
                 pianteForm.Text = "Piante di " + settore.Nome;
-                pianteForm.Size = new System.Drawing.Size(900,400);
+                pianteForm.Size = new System.Drawing.Size(1000,400);
                 pianteForm.Controls.Add(pianteView);
                 var result = pianteForm.ShowDialog();
                 if (result == DialogResult.Cancel)
@@ -245,6 +246,32 @@ namespace SmartGarden.Control
             }
 
             CreaPianteView(nomeSettore, null);
+        }
+
+        public void CreaNotificheView()
+        {
+            using (var notificheForm = new Form())
+            {
+                NotificheView notificheView = new NotificheView();
+                notificheView.Dock = DockStyle.Fill;
+                notificheForm.Text = "Notifiche";
+                notificheForm.Size = new System.Drawing.Size(500, 400);
+                notificheForm.Controls.Add(notificheView);
+                var result = notificheForm.ShowDialog();
+            }
+        }
+
+        public void CreaGestoreFabbisognoPiantaView(IPianta pianta)
+        {
+            using (var fabbisognoForm = new Form())
+            {
+                GestisciFabbisognoPiantaView fabbView = new GestisciFabbisognoPiantaView(pianta);
+                fabbView.Dock = DockStyle.Fill;
+                fabbView.Text = "Gestione fabbisogno pianta [" + pianta.NomeBotanico + ", " + pianta.NomeComune + "]";
+                fabbisognoForm.Size = new System.Drawing.Size(500, 400);
+                fabbisognoForm.Controls.Add(fabbView);
+                var result = fabbisognoForm.ShowDialog();
+            }
         }
     }
 }

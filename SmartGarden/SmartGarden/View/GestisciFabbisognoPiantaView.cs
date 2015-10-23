@@ -26,6 +26,14 @@ namespace SmartGarden.View
             base.OnLoad(e);
 
             _idPiantaTextBox.Text = _pianta.Guid.ToString();
+
+           /* if(_pianta.FabbisogniPianta.Count != 0)
+            {
+                foreach (FabbisognoGiornalieroPeriodo fabbisogno in _pianta.)
+                {
+
+                }
+            }*/
         }
 
         private void _aggiungiButton_Click(object sender, EventArgs e)

@@ -5,7 +5,7 @@ using System.Xml;
 using System.Xml.XPath;
 
 namespace SmartGarden.Model.Gestore_Informazioni.Fornitori
-{ //deve diventare un singleton ci si deve lavorare per soddisfare richieste
+{ 
      class FornitoreInformazioniMeteoHttp
     {
         private XmlDocument _xmlDati;
@@ -72,8 +72,10 @@ namespace SmartGarden.Model.Gestore_Informazioni.Fornitori
         public double GetDato(string datoRichiesto)  //funzione generica per prendere dati
         {
             double dato = 0;
+
             if (!File.Exists("DatiMeteo.xml"))
                 return 0;
+
             XPathDocument doc = new XPathDocument("DatiMeteo.xml");
             XPathNavigator nav = doc.CreateNavigator();
 

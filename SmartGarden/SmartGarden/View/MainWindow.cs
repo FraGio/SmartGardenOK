@@ -143,5 +143,10 @@ namespace SmartGarden
         {
             //
         }
+
+        private void visualizzaNotificheToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Controller.CreaNotificheView();
+        }
     }
 }
