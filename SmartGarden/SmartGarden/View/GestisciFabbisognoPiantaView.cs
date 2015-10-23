@@ -43,8 +43,14 @@ namespace SmartGarden.View
 
             if (!string.IsNullOrWhiteSpace(_quantitàAcquaTextBox.Text) && dataInizio < dataFine)
             {
-                _pianta.AddFabisogno(new FabbisognoGiornalieroPeriodo(dataInizio, dataFine, double.Parse(_quantitàAcquaTextBox.Text)));
-                AggiungiFabbisogno(dataInizio, dataFine, double.Parse(_quantitàAcquaTextBox.Text));
+                try {
+                    _pianta.AddFabisogno(new FabbisognoGiornalieroPeriodo(dataInizio, dataFine, double.Parse(_quantitàAcquaTextBox.Text)));
+                    AggiungiFabbisogno(dataInizio, dataFine, double.Parse(_quantitàAcquaTextBox.Text));
+                }
+                catch
+                {
+                    MessageBox.Show("Quantità d'acqua deve essere un valore numerico!");
+                }
             }
         }
 

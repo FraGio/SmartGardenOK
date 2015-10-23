@@ -36,7 +36,6 @@
             this._settoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._numPiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._fabbisognoTotaleSettore = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._timerInizio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._pianteButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this._eliminaSettoreButton = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).BeginInit();
@@ -62,7 +61,6 @@
             this._settoreName,
             this._numPiante,
             this._fabbisognoTotaleSettore,
-            this._timerInizio,
             this._pianteButton,
             this._eliminaSettoreButton});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -117,12 +115,6 @@
             this._fabbisognoTotaleSettore.Name = "_fabbisognoTotaleSettore";
             this._fabbisognoTotaleSettore.ReadOnly = true;
             // 
-            // _timerInizio
-            // 
-            this._timerInizio.HeaderText = "Durata irrigazione";
-            this._timerInizio.Name = "_timerInizio";
-            this._timerInizio.ReadOnly = true;
-            // 
             // _pianteButton
             // 
             this._pianteButton.HeaderText = "";
@@ -157,7 +149,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn _settoreName;
         private System.Windows.Forms.DataGridViewTextBoxColumn _numPiante;
         private System.Windows.Forms.DataGridViewTextBoxColumn _fabbisognoTotaleSettore;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _timerInizio;
         private System.Windows.Forms.DataGridViewButtonColumn _pianteButton;
         private System.Windows.Forms.DataGridViewButtonColumn _eliminaSettoreButton;
     }

@@ -33,17 +33,29 @@ namespace SmartGarden.View
             valvole.Add(valvola);
 
             _valvolaSicurezzaComboBox.Items.AddRange(valvole.ToArray());
+            
+            List<IRilevatorePressione> sensori = new List<IRilevatorePressione>();
+            IRilevatorePressione sensore = new SensorePressione("Sensore S01");
+            sensori.Add(sensore);
+            sensore = new SensorePressione("Sensore S02");
+            sensori.Add(sensore);
 
-            //TODO interfaccia sensore
-            //List<SensorePressione> sensori = new List<SensorePressione>();
-            //_sensorePressioneComboBox
+            _sensorePressioneComboBox.Items.AddRange(sensori.ToArray());
         }
 
         private void _creaButton_Click(object sender, EventArgs e)
         {
             if(!string.IsNullOrWhiteSpace(_nuovaCapacitàTextBox.Text) && !(string.IsNullOrWhiteSpace(_nuovaPortataTextBox.Text))){
-                Controller.CreaNuovaCisterna(double.Parse(_nuovaPortataTextBox.Text), double.Parse(_nuovaCapacitàTextBox.Text));
-                this.ParentForm.Close();
+                try {
+                    Controller.CreaNuovaCisterna(double.Parse(_nuovaPortataTextBox.Text), double.Parse(_nuovaCapacitàTextBox.Text));
+                    GestoreGiardino.Giardino.Cisterna.ValvolaSicurezza = (IvalvolaDiSicurezza)_valvolaSicurezzaComboBox.SelectedValue;
+                    GestoreGiardino.Giardino.Cisterna.SensorePressione = (IRilevatorePressione)_sensorePressioneComboBox.SelectedValue;
+                    this.ParentForm.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Portata e capacità devono essere valori numerici!");
+                }
             }
         }
 
@@ -53,8 +65,6 @@ namespace SmartGarden.View
             {
                 _portataTextBox.Text = GestoreGiardino.Giardino.Cisterna.Portata.ToString();
                 _capacitàTextBox.Text = GestoreGiardino.Giardino.Cisterna.Capienza.ToString();
-
-                //TODO modificare ICisterna per poter inserire la valvola
             }
         }
     }

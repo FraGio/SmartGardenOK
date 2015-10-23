@@ -27,11 +27,11 @@ namespace SmartGarden.View
         {
             string nomeSettore = _dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-            if (_dataGridView.CurrentCell.ColumnIndex.Equals(4) && e.RowIndex != -1) //carica view piante
+            if (_dataGridView.CurrentCell.ColumnIndex.Equals(3) && e.RowIndex != -1) //carica view piante
             {
                 Controller.CreaPianteView(nomeSettore, this.ParentForm);
             }
-            else if (_dataGridView.CurrentCell.ColumnIndex.Equals(5) && e.RowIndex != -1) //cancella settore
+            else if (_dataGridView.CurrentCell.ColumnIndex.Equals(4) && e.RowIndex != -1) //cancella settore
             {
                 Controller.CancellaSettore(nomeSettore);
                 _dataGridView.Rows.Clear();
@@ -52,7 +52,7 @@ namespace SmartGarden.View
             {
                 ISettore settore = GestoreGiardino.Giardino.GetSettore(nomeSettore);
                 _dataGridView.Rows.Add(settore.Nome, settore.GetGuidPiante().Count().ToString(),
-                    Convert.ToInt32(settore.GetFabisogno(DateTime.Now, DateTime.Now.AddDays(1))) + " mm", "3 ore", "Vedi piante", "Rimuovi settore");
+                    Convert.ToInt32(settore.GetFabisogno(DateTime.Now, DateTime.Now.AddDays(1))) + " mm", "Vedi piante", "Rimuovi settore");
             }
         }
     }

@@ -33,8 +33,17 @@ namespace SmartGarden.View
         {
             if(!string.IsNullOrWhiteSpace(_nomeTextBox.Text) && !string.IsNullOrWhiteSpace(_portataImpiantoTextBox.Text))
             {
-                Controller.CreaSettoreView(_nomeTextBox.Text, double.Parse(_portataImpiantoTextBox.Text), (Valvola)_valvolaComboBox.SelectedValue);
-                this.ParentForm.Close();
+                double portata = 0;
+                try
+                {
+                    portata = double.Parse(_portataImpiantoTextBox.Text);
+                    Controller.CreaSettoreView(_nomeTextBox.Text, portata, (Valvola)_valvolaComboBox.SelectedValue);
+                    this.ParentForm.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("La portata deve essere un valore numerico!");
+                }
             }
         }
     }

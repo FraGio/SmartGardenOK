@@ -13,5 +13,6 @@ namespace SmartGarden.Model
         Guid Guid { get; }
         IOpenClose GetOpenClose();
         IvalvolaDiSicurezza ValvolaSicurezza { get; set; }
+        IRilevatorePressione SensorePressione { get; set; }
     }
 }

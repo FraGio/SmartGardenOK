@@ -1,5 +1,6 @@
 ﻿using SmartGarden.Model;
 using System;
+using System.Windows.Forms;
 
 namespace SmartGarden.View
 {
@@ -19,10 +20,15 @@ namespace SmartGarden.View
             if (!string.IsNullOrWhiteSpace(_nomeBotanicoTextBox.Text) && !string.IsNullOrWhiteSpace(_nomeComuneTextBox.Text) && 
                 _inizioDatePicker.Value < _fineDatePicker.Value)
             {
-                double area = double.Parse(_areaTextBox.Text);
-                double fabbisogno = double.Parse(_fabbisognoTextBox.Text);
-                FabbisognoGiornalieroPeriodo fabbisognoGiornalieroPianta = new FabbisognoGiornalieroPeriodo(_inizioDatePicker.Value, _fineDatePicker.Value, fabbisogno);
-                Controller.CreaNuovaPianta(_nomeBotanicoTextBox.Text, _nomeComuneTextBox.Text, area, _nomeSettore, fabbisognoGiornalieroPianta);
+                try { double area = double.Parse(_areaTextBox.Text);
+                    double fabbisogno = double.Parse(_fabbisognoTextBox.Text);
+                    FabbisognoGiornalieroPeriodo fabbisognoGiornalieroPianta = new FabbisognoGiornalieroPeriodo(_inizioDatePicker.Value, _fineDatePicker.Value, fabbisogno);
+                    Controller.CreaNuovaPianta(_nomeBotanicoTextBox.Text, _nomeComuneTextBox.Text, area, _nomeSettore, fabbisognoGiornalieroPianta);
+                }
+                catch
+                {
+                    MessageBox.Show("Area e fabbisogno devono essere dei valori numerici!");
+                }
             }
         }
     }

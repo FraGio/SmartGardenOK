@@ -24,7 +24,6 @@ namespace SmartGarden.Model
         }
         private GestioneGiardino()
         {
-            //_giardino = new Giardino();
             _timers = MyTimer.GetMyTimer();
             _oraInizioInnaffiatura = DateTime.Now;
             TimeSpan ts;
