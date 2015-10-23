@@ -27,13 +27,13 @@ namespace SmartGarden.View
 
             _idPiantaTextBox.Text = _pianta.Guid.ToString();
 
-           /* if(_pianta.FabbisogniPianta.Count != 0)
+            if(_pianta.FabbisogniPianta.Count != 0)
             {
-                foreach (FabbisognoGiornalieroPeriodo fabbisogno in _pianta.)
+                foreach (FabbisognoGiornalieroPeriodo fabbisogno in _pianta.FabbisogniPianta)
                 {
-
+                    AggiungiFabbisogno(fabbisogno.InizioPeriodo, fabbisogno.FinePeriodo, fabbisogno.FabbisognoAcquaGiornaliero);
                 }
-            }*/
+            }
         }
 
         private void _aggiungiButton_Click(object sender, EventArgs e)
@@ -43,8 +43,16 @@ namespace SmartGarden.View
 
             if (!string.IsNullOrWhiteSpace(_quantitàAcquaTextBox.Text) && dataInizio < dataFine)
             {
-                _fabbisogniTextBox.AppendText("ID: " + _pianta + " ; " + "");
+                _pianta.AddFabisogno(new FabbisognoGiornalieroPeriodo(dataInizio, dataFine, double.Parse(_quantitàAcquaTextBox.Text)));
+                AggiungiFabbisogno(dataInizio, dataFine, double.Parse(_quantitàAcquaTextBox.Text));
             }
+        }
+
+        private void AggiungiFabbisogno(DateTime inizio, DateTime fine, double quantitàAcqua)
+        {
+            _fabbisogniTextBox.AppendText("Inizio: " + inizio.ToShortDateString() +
+                        " ; " + "Fine: " + fine.ToShortDateString() + " ; " +
+                        "Fabbisogno giornaliero (mm): " + quantitàAcqua + Environment.NewLine);
         }
 
         private void label2_Click(object sender, EventArgs e)

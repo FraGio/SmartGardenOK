@@ -267,7 +267,7 @@ namespace SmartGarden.Control
             {
                 GestisciFabbisognoPiantaView fabbView = new GestisciFabbisognoPiantaView(pianta);
                 fabbView.Dock = DockStyle.Fill;
-                fabbView.Text = "Gestione fabbisogno pianta [" + pianta.NomeBotanico + ", " + pianta.NomeComune + "]";
+                fabbisognoForm.Text = "Fabbisogni di: [" + pianta.NomeBotanico + ", " + pianta.NomeComune + "]";
                 fabbisognoForm.Size = new System.Drawing.Size(500, 400);
                 fabbisognoForm.Controls.Add(fabbView);
                 var result = fabbisognoForm.ShowDialog();

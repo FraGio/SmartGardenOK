@@ -1,4 +1,5 @@
 ﻿using SmartGarden.Model;
+using SmartGarden.View;
 using System;
 using System.Windows.Forms;
 
