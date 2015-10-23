@@ -14,7 +14,7 @@ namespace SmartGarden.Model
             get
             {
                 int tot = 0;
-                foreach(Settore set in Settori.Values)
+                foreach(ISettore set in Settori.Values)
                 {
                     tot += set.GetGuidPiante().Count();
                 }
@@ -52,7 +52,7 @@ namespace SmartGarden.Model
 
             TimeSpan turno = new TimeSpan(0);
             long tot = 0;
-            foreach(Settore settore in Settori.Values)
+            foreach(ISettore settore in Settori.Values)
             {
                TurnoItem turnoItem = new TurnoItem();
                 turnoItem.Attesa = turno;
