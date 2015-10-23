@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this._aggiungiButton = new System.Windows.Forms.Button();
+            this._idPiantaTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this._quantitàAcquaTextBox = new System.Windows.Forms.TextBox();
+            this._fineDatePicker = new System.Windows.Forms.DateTimePicker();
+            this._inizioDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this._fabbisogniTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this._inizioDatePicker = new System.Windows.Forms.DateTimePicker();
-            this._fineDatePicker = new System.Windows.Forms.DateTimePicker();
-            this._quantitàAcquaTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this._idPiantaTextBox = new System.Windows.Forms.TextBox();
-            this._aggiungiButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -71,6 +71,76 @@
             this.splitContainer1.SplitterDistance = 279;
             this.splitContainer1.TabIndex = 0;
             // 
+            // _aggiungiButton
+            // 
+            this._aggiungiButton.Location = new System.Drawing.Point(219, 215);
+            this._aggiungiButton.Name = "_aggiungiButton";
+            this._aggiungiButton.Size = new System.Drawing.Size(75, 23);
+            this._aggiungiButton.TabIndex = 8;
+            this._aggiungiButton.Text = "Aggiungi";
+            this._aggiungiButton.UseVisualStyleBackColor = true;
+            this._aggiungiButton.Click += new System.EventHandler(this._aggiungiButton_Click);
+            // 
+            // _idPiantaTextBox
+            // 
+            this._idPiantaTextBox.Location = new System.Drawing.Point(219, 45);
+            this._idPiantaTextBox.Name = "_idPiantaTextBox";
+            this._idPiantaTextBox.ReadOnly = true;
+            this._idPiantaTextBox.Size = new System.Drawing.Size(200, 20);
+            this._idPiantaTextBox.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(136, 47);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 15);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "ID pianta:";
+            // 
+            // _quantitàAcquaTextBox
+            // 
+            this._quantitàAcquaTextBox.Location = new System.Drawing.Point(219, 85);
+            this._quantitàAcquaTextBox.Name = "_quantitàAcquaTextBox";
+            this._quantitàAcquaTextBox.Size = new System.Drawing.Size(200, 20);
+            this._quantitàAcquaTextBox.TabIndex = 5;
+            // 
+            // _fineDatePicker
+            // 
+            this._fineDatePicker.Location = new System.Drawing.Point(219, 166);
+            this._fineDatePicker.Name = "_fineDatePicker";
+            this._fineDatePicker.Size = new System.Drawing.Size(200, 20);
+            this._fineDatePicker.TabIndex = 4;
+            // 
+            // _inizioDatePicker
+            // 
+            this._inizioDatePicker.Location = new System.Drawing.Point(219, 127);
+            this._inizioDatePicker.Name = "_inizioDatePicker";
+            this._inizioDatePicker.Size = new System.Drawing.Size(200, 20);
+            this._inizioDatePicker.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(136, 171);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 15);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Data fine:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(122, 132);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Data inizio:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -89,76 +159,6 @@
             this._fabbisogniTextBox.Name = "_fabbisogniTextBox";
             this._fabbisogniTextBox.Size = new System.Drawing.Size(535, 117);
             this._fabbisogniTextBox.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(122, 132);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Data inizio:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(136, 171);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Data fine:";
-            // 
-            // _inizioDatePicker
-            // 
-            this._inizioDatePicker.Location = new System.Drawing.Point(219, 127);
-            this._inizioDatePicker.Name = "_inizioDatePicker";
-            this._inizioDatePicker.Size = new System.Drawing.Size(200, 20);
-            this._inizioDatePicker.TabIndex = 3;
-            // 
-            // _fineDatePicker
-            // 
-            this._fineDatePicker.Location = new System.Drawing.Point(219, 166);
-            this._fineDatePicker.Name = "_fineDatePicker";
-            this._fineDatePicker.Size = new System.Drawing.Size(200, 20);
-            this._fineDatePicker.TabIndex = 4;
-            // 
-            // _quantitàAcquaTextBox
-            // 
-            this._quantitàAcquaTextBox.Location = new System.Drawing.Point(219, 85);
-            this._quantitàAcquaTextBox.Name = "_quantitàAcquaTextBox";
-            this._quantitàAcquaTextBox.Size = new System.Drawing.Size(100, 20);
-            this._quantitàAcquaTextBox.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(136, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 15);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "ID pianta:";
-            // 
-            // _idPiantaTextBox
-            // 
-            this._idPiantaTextBox.Location = new System.Drawing.Point(219, 45);
-            this._idPiantaTextBox.Name = "_idPiantaTextBox";
-            this._idPiantaTextBox.ReadOnly = true;
-            this._idPiantaTextBox.Size = new System.Drawing.Size(100, 20);
-            this._idPiantaTextBox.TabIndex = 7;
-            // 
-            // _aggiungiButton
-            // 
-            this._aggiungiButton.Location = new System.Drawing.Point(219, 215);
-            this._aggiungiButton.Name = "_aggiungiButton";
-            this._aggiungiButton.Size = new System.Drawing.Size(75, 23);
-            this._aggiungiButton.TabIndex = 8;
-            this._aggiungiButton.Text = "Aggiungi";
-            this._aggiungiButton.UseVisualStyleBackColor = true;
-            this._aggiungiButton.Click += new System.EventHandler(this._aggiungiButton_Click);
             // 
             // GestisciFabbisognoPiantaView
             // 
