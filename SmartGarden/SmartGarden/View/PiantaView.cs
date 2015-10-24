@@ -126,8 +126,11 @@ namespace SmartGarden.View
             {
                 string fileName = _openFileDialog.SafeFileName;
 
-                _insp.GetProviderFromFile(fileName);
-                _insp.GetVisitorFromFile(fileName);
+                List<Type> providers = _insp.GetProviderFromFile(fileName);
+                List<Type> visitors =_insp.GetVisitorFromFile(fileName);
+
+                _providerComboBox.Items.AddRange(providers.ToArray());
+                _visitorComboBox.Items.AddRange(visitors.ToArray());
             }
         }
     }
