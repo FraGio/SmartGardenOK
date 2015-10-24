@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this._caricaFileButton = new System.Windows.Forms.Button();
             this._rimuoviButton = new System.Windows.Forms.Button();
             this._finalizzaButton = new System.Windows.Forms.Button();
             this._aggiungiButton = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             this._visitorComboBox = new System.Windows.Forms.ComboBox();
             this._providerComboBox = new System.Windows.Forms.ComboBox();
             this._textBox = new System.Windows.Forms.TextBox();
+            this._openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -52,6 +54,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this._caricaFileButton);
             this.splitContainer1.Panel1.Controls.Add(this._rimuoviButton);
             this.splitContainer1.Panel1.Controls.Add(this._finalizzaButton);
             this.splitContainer1.Panel1.Controls.Add(this._aggiungiButton);
@@ -66,6 +69,16 @@
             this.splitContainer1.Size = new System.Drawing.Size(584, 350);
             this.splitContainer1.SplitterDistance = 240;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // _caricaFileButton
+            // 
+            this._caricaFileButton.Location = new System.Drawing.Point(39, 104);
+            this._caricaFileButton.Name = "_caricaFileButton";
+            this._caricaFileButton.Size = new System.Drawing.Size(91, 23);
+            this._caricaFileButton.TabIndex = 11;
+            this._caricaFileButton.Text = "Carica da file";
+            this._caricaFileButton.UseVisualStyleBackColor = true;
+            this._caricaFileButton.Click += new System.EventHandler(this._caricaFileButton_Click);
             // 
             // _rimuoviButton
             // 
@@ -140,6 +153,10 @@
             this._textBox.Size = new System.Drawing.Size(584, 106);
             this._textBox.TabIndex = 0;
             // 
+            // _openFileDialog
+            // 
+            this._openFileDialog.Filter = "Dll files (.dll) | *.dll";
+            // 
             // PiantaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,5 +186,7 @@
         private System.Windows.Forms.ComboBox _providerComboBox;
         private System.Windows.Forms.TextBox _textBox;
         private System.Windows.Forms.Button _rimuoviButton;
+        private System.Windows.Forms.Button _caricaFileButton;
+        private System.Windows.Forms.OpenFileDialog _openFileDialog;
     }
 }

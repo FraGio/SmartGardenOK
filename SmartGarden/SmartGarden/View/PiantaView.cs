@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SmartGarden.View;
 using SmartGarden.Model.Gestore_Informazioni;
 using SmartGarden.Model;
+using System.IO;
 
 namespace SmartGarden.View
 {
@@ -17,6 +18,7 @@ namespace SmartGarden.View
     {
         private IPianta _pianta;
         private Dictionary<Type, Type> _types;
+        private IInspector _insp;
 
         public PiantaView(IPianta pianta)
         {
@@ -40,11 +42,7 @@ namespace SmartGarden.View
 
             _aggiungiButton.Click += AggiungiProviderVisitor;
             _finalizzaButton.Click += FinalizzaGestore;
-
-            /*_providerComboBox.Items.AddRange(insp.GetListProvider().ToArray());
-            _visitorComboBox.Items.AddRange(insp.GetListVisitor().ToArray());*/
-
-            #region PROVA CARICAMENTO COMBO ALTERNATIVA
+            
             Dictionary<string, Type> providers = new Dictionary<string, Type>();
             foreach (Type prov in insp.GetListProvider())
             {
@@ -62,7 +60,6 @@ namespace SmartGarden.View
             _visitorComboBox.DataSource = new BindingSource(visitors, null);
             _visitorComboBox.DisplayMember = "Key";
             _visitorComboBox.ValueMember = "Value";
-            #endregion
         }
 
         private void AggiungiProviderVisitor(object sender, EventArgs e)
@@ -118,6 +115,19 @@ namespace SmartGarden.View
                 Type vis;
                 _types.TryGetValue(prov, out vis);
                 _textBox.AppendText("Provider: " + prov.Name + " ; " + "Visitor: " + vis.Name + Environment.NewLine);
+            }
+        }
+
+        private void _caricaFileButton_Click(object sender, EventArgs e)
+        {
+            var okClick = _openFileDialog.ShowDialog();
+
+            if(okClick == DialogResult.OK)
+            {
+                string fileName = _openFileDialog.SafeFileName;
+
+                _insp.GetProviderFromFile(fileName);
+                _insp.GetVisitorFromFile(fileName);
             }
         }
     }
