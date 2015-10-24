@@ -1,4 +1,4 @@
-﻿using SmartGarden.Control;
+﻿using SmartGarden.Controller;
 using SmartGarden.Model;
 using System;
 using System.Collections.Generic;

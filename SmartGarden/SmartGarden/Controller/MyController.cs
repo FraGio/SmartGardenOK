@@ -6,7 +6,7 @@ using SmartGarden.Controller;
 using System.Drawing;
 using System;
 
-namespace SmartGarden.Control
+namespace SmartGarden.Controller
 {
     class MyController : IMyController
     {

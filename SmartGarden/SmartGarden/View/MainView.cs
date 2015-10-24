@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SmartGarden.Control;
+using SmartGarden.Controller;
 using SmartGarden.Model;
 
 namespace SmartGarden.View
