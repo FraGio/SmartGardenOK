@@ -16,21 +16,14 @@ namespace SmartGarden.View
         private IMyController _controller;
         private GestioneGiardino _gestioneGiardino;
         private static MainWindow _instance = null;
-
-
-        /**public MainWindow()
-        {
-            InitializeComponent();
-            _provinceComboBox.SelectedIndexChanged += CambiaProvincia;
-            _gestioneGiardino = GestioneGiardino.GetGestoreGiardino();
-        }*/
-
+        
         private MainWindow()
         {
             InitializeComponent();
             _provinceComboBox.SelectedIndexChanged += CambiaProvincia;
             _gestioneGiardino = GestioneGiardino.GetGestoreGiardino();
         }
+
         public static MainWindow GetMainWindow()
         {
             if (_instance == null)

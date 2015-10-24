@@ -420,6 +420,7 @@
             this._meteoPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this._meteoPicture.TabIndex = 8;
             this._meteoPicture.TabStop = false;
+            this._meteoPicture.Click += new System.EventHandler(this._meteoPicture_Click);
             // 
             // label14
             // 

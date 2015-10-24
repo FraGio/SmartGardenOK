@@ -20,5 +20,6 @@ namespace SmartGarden.Controller
         void CreaSettoriView();
         void CreaNotificheView();
         void CreaGestoreFabbisognoPiantaView(IPianta pianta);
+        void CreaMeteoView();
     }
 }

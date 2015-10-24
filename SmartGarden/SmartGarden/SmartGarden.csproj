@@ -129,6 +129,12 @@
     <Compile Include="View\MainWindow.designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\MeteoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\MeteoView.designer.cs">
+      <DependentUpon>MeteoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\NotificheView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -191,6 +197,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\GestisciCisternaView.resx">
       <DependentUpon>GestisciCisternaView.cs</DependentUpon>
@@ -209,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MeteoView.resx">
+      <DependentUpon>MeteoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NotificheView.resx">
       <DependentUpon>NotificheView.cs</DependentUpon>
@@ -249,6 +259,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

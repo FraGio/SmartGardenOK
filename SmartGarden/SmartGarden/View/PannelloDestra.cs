@@ -99,6 +99,11 @@ namespace SmartGarden.View
         {
             Controller.CreaGestisciCisternaView();
         }
+        
+        private void _meteoPicture_Click(object sender, EventArgs e)
+        {
+            Controller.CreaMeteoView();
+        }
 
         #region useless
         private void label4_Click(object sender, EventArgs e)
@@ -116,5 +121,6 @@ namespace SmartGarden.View
             //
         }
         #endregion
+
     }
 }

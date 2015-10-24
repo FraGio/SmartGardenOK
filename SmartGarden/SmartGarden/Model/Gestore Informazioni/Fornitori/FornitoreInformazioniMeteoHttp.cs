@@ -89,7 +89,13 @@ namespace SmartGarden.Model.Gestore_Informazioni.Fornitori
                 if (i == _numeroIntervalloTempo) //stabilisce quale "intervallo" di 3 ore parsare
                 {
                     if (iterator.Current.HasAttributes)
-                        dato = double.Parse(iterator.Current.GetAttribute("value", ""), CultureInfo.InvariantCulture);
+                    {
+                        if(datoRichiesto != "clouds")
+                            dato = double.Parse(iterator.Current.GetAttribute("value", ""), CultureInfo.InvariantCulture);
+                        else
+                            dato = double.Parse(iterator.Current.GetAttribute("all", ""), CultureInfo.InvariantCulture);
+                    }
+                        
                     break;
                 }
                 i++;

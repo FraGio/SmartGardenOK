@@ -273,5 +273,18 @@ namespace SmartGarden.Control
                 var result = fabbisognoForm.ShowDialog();
             }
         }
+
+        public void CreaMeteoView()
+        {
+            using (var meteoForm = new Form())
+            {
+                MeteoView meteoView = new MeteoView();
+                meteoView.Dock = DockStyle.Fill;
+                meteoForm.Text = "Meteo tra 24h";
+                meteoForm.Size = new System.Drawing.Size(530, 320);
+                meteoForm.Controls.Add(meteoView);
+                var result = meteoForm.ShowDialog();
+            }
+        }
     }
 }
