@@ -56,9 +56,8 @@ namespace SmartGarden.Control
             {
                 PianteView pianteView = new PianteView(settore);
                 pianteView.Dock = DockStyle.Fill;
-                pianteForm.Text = "Piante di " + settore.Nome;
-                pianteForm.Size = new System.Drawing.Size(1000,400);
-                pianteForm.Controls.Add(pianteView);
+                CustomizeForm(pianteForm, "Piante di " + settore.Nome, new System.Drawing.Size(1000, 400), pianteView);
+
                 var result = pianteForm.ShowDialog();
                 if (result == DialogResult.Cancel)
                     CreaSettoriView();
@@ -94,9 +93,8 @@ namespace SmartGarden.Control
                 settoriView.GestoreGiardino = _gestioneGiardino;
                 settoriView.Controller = this;
                 settoriView.Dock = DockStyle.Fill;
-                settoriForm.Text = "Gestione settori";
-                settoriForm.Size = new System.Drawing.Size(900, 300);
-                settoriForm.Controls.Add(settoriView);
+                CustomizeForm(settoriForm, "Gestione settori", new System.Drawing.Size(900, 300), settoriView);
+
                 var result = settoriForm.ShowDialog();
 
                 if(result == DialogResult.OK)
@@ -114,9 +112,8 @@ namespace SmartGarden.Control
                 nuovoSettView.GestoreGiardino = _gestioneGiardino;
                 nuovoSettView.Controller = this;
                 nuovoSettView.Dock = DockStyle.Fill;
-                nuovoSettoreForm.Text = "Nuovo settore";
-                nuovoSettoreForm.Size = new System.Drawing.Size(350, 220);
-                nuovoSettoreForm.Controls.Add(nuovoSettView);
+                CustomizeForm(nuovoSettoreForm, "Nuovo settore", new System.Drawing.Size(350, 220), nuovoSettView);
+
                 var result = nuovoSettoreForm.ShowDialog();
             }
         }
@@ -147,9 +144,7 @@ namespace SmartGarden.Control
                 {
                     NuovoGiardinoView nuovoGiardinoView = new NuovoGiardinoView();
                     nuovoGiardinoView.Dock = DockStyle.Fill;
-                    nuovoGiardinoForm.Text = "Nuovo giardino";
-                    nuovoGiardinoForm.Size = new System.Drawing.Size(380, 170);
-                    nuovoGiardinoForm.Controls.Add(nuovoGiardinoView);
+                    CustomizeForm(nuovoGiardinoForm, "Nuovo giardino", new System.Drawing.Size(380, 170), nuovoGiardinoView);
 
                     var result2 = nuovoGiardinoForm.ShowDialog();
 
@@ -175,38 +170,38 @@ namespace SmartGarden.Control
                 piantaView.GestoreGiardino = _gestioneGiardino;
                 piantaView.Controller = this;
                 piantaView.Dock = DockStyle.Fill;
-                piantaForm.Text = "Gestione info pianta";
-                piantaForm.Size = new System.Drawing.Size(600, 300);
-                piantaForm.Controls.Add(piantaView);
+
+                CustomizeForm(piantaForm, "Gestione info pianta", new System.Drawing.Size(600, 300), piantaView);
+
                 piantaForm.ShowDialog();
             }
         }
 
         public void GestisciTimer()
         {
-            using (var form = new Form())
+            using (var timerForm = new Form())
             {
                 GestoreTimerView timerView = new GestoreTimerView();
                 timerView.GestoreGiardino = _gestioneGiardino;
                 timerView.Controller = this;
                 timerView.Dock = DockStyle.Fill;
-                form.Size = new System.Drawing.Size(500, 400);
-                form.Controls.Add(timerView);
-                form.ShowDialog();
+                CustomizeForm(timerForm, "Gestione timer", new System.Drawing.Size(500, 400), timerView);
+
+                timerForm.ShowDialog();
             }
         }
 
         public void CreaGestisciCisternaView()
         {
-            using (var form = new Form())
+            using (var cisternaForm = new Form())
             {
                 GestisciCisternaView cisternaView = new GestisciCisternaView();
                 cisternaView.GestoreGiardino = _gestioneGiardino;
                 cisternaView.Controller = this;
                 cisternaView.Dock = DockStyle.Fill;
-                form.Size = new System.Drawing.Size(600, 300);
-                form.Controls.Add(cisternaView);
-                form.ShowDialog();
+
+                CustomizeForm(cisternaForm, "Gestione cisterna", new System.Drawing.Size(600, 300), cisternaView);
+                cisternaForm.ShowDialog();
             }
         }
 
@@ -239,9 +234,8 @@ namespace SmartGarden.Control
             {
                 NuovaPiantaView nuovaPiantaView = new NuovaPiantaView(nomeSettore);
                 nuovaPiantaView.Dock = DockStyle.Fill;
-                piantaForm.Text = "Nuova pianta";
-                piantaForm.Size = new System.Drawing.Size(450, 550);
-                piantaForm.Controls.Add(nuovaPiantaView);
+                CustomizeForm(piantaForm, "Nuova pianta", new System.Drawing.Size(450, 550), nuovaPiantaView);
+
                 var result = piantaForm.ShowDialog();
             }
 
@@ -254,9 +248,8 @@ namespace SmartGarden.Control
             {
                 NotificheView notificheView = new NotificheView();
                 notificheView.Dock = DockStyle.Fill;
-                notificheForm.Text = "Notifiche";
-                notificheForm.Size = new System.Drawing.Size(500, 400);
-                notificheForm.Controls.Add(notificheView);
+                CustomizeForm(notificheForm, "Notifiche", new System.Drawing.Size(500, 400), notificheView);
+
                 var result = notificheForm.ShowDialog();
             }
         }
@@ -267,9 +260,9 @@ namespace SmartGarden.Control
             {
                 GestisciFabbisognoPiantaView fabbView = new GestisciFabbisognoPiantaView(pianta);
                 fabbView.Dock = DockStyle.Fill;
-                fabbisognoForm.Text = "Fabbisogni di: [" + pianta.NomeBotanico + ", " + pianta.NomeComune + "]";
-                fabbisognoForm.Size = new System.Drawing.Size(500, 400);
-                fabbisognoForm.Controls.Add(fabbView);
+                CustomizeForm(fabbisognoForm, "Fabbisogni di: [" + pianta.NomeBotanico + ", " + pianta.NomeComune + "]",
+                    new System.Drawing.Size(500, 400), fabbView);
+
                 var result = fabbisognoForm.ShowDialog();
             }
         }
@@ -280,11 +273,19 @@ namespace SmartGarden.Control
             {
                 MeteoView meteoView = new MeteoView();
                 meteoView.Dock = DockStyle.Fill;
-                meteoForm.Text = "Meteo tra 24h";
-                meteoForm.Size = new System.Drawing.Size(530, 320);
-                meteoForm.Controls.Add(meteoView);
+
+                CustomizeForm(meteoForm, "Meteo tra 24h", new System.Drawing.Size(530, 320), meteoView);
+
                 var result = meteoForm.ShowDialog();
             }
+        }
+
+        private void CustomizeForm(Form form, string titolo, Size size, MainView view)
+        {
+            form.Icon = Properties.Resources.Logo;
+            form.Text = titolo;
+            form.Size = size;
+            form.Controls.Add(view);
         }
     }
 }
