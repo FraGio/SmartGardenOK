@@ -8,5 +8,8 @@ namespace SmartGarden.Model
 {
     interface IGestioneGiardinoData
     {
+        TimeSpan Intervallo { get; }
+        DateTime OraInizioInnaffiatura { get; }
+        string Luogo { get; }
     }
 }

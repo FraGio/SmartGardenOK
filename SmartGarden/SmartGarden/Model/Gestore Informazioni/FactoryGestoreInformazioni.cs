@@ -43,7 +43,6 @@ namespace SmartGarden.Model.Gestore_Informazioni
             return gestore;
         }
 
-
         public GestoreInformazioni Modifica(GestoreInformazioni OldGestore, Dictionary<Type, Type> typeProviders)
         {
             _gestori[OldGestore]--;

@@ -47,6 +47,12 @@ namespace SmartGarden.Model.Gestore_Informazioni
         {
             tot += informationProvider.GetTemperatura() * _pianta.Area;
         }
+
+        private void VisitSpecialization(Object informationProvider)
+        {
+            mess.SendMessage("visitato Object informatore ");
+        }
+
         #endregion
     }
 }

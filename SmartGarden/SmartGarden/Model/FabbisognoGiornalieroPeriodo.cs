@@ -47,5 +47,24 @@ namespace SmartGarden.Model
 
            return tot ;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+
+            FabbisognoGiornalieroPeriodo fab = (FabbisognoGiornalieroPeriodo)obj;
+            if(fab.FabbisognoAcquaGiornaliero==FabbisognoAcquaGiornaliero &&
+                fab.InizioPeriodo.Equals(InizioPeriodo) &&
+                fab.FinePeriodo.Equals(FinePeriodo))
+            {
+                return true;
+            }
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }
