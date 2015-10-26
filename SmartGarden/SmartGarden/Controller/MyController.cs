@@ -5,6 +5,9 @@ using SmartGarden.Model;
 using SmartGarden.Controller;
 using System.Drawing;
 using System;
+using System.Collections.Generic;
+using SmartGarden.Model.Gestore_Informazioni;
+using SmartGarden.Model.Gestore_Informazioni.Fornitori;
 
 namespace SmartGarden.Controller
 {
@@ -216,6 +219,13 @@ namespace SmartGarden.Controller
             IPianta pianta = new Pianta(nomeBotanico, nomeComune, area);
             ISettore settore = _gestioneGiardino.Giardino.GetSettore(nomeSettore);
             pianta.AddFabisogno(fabbisognoPeriodo);
+
+            Dictionary<Type, Type> type = new Dictionary<Type, Type>();
+            type.Add(typeof(ProviderPrecipitazioniDefaultHttp), typeof(StandardInformationVisitor));
+            IFactoryGestoreInformazioni fac = FactoryGestoreInformazioni.GetFactory();
+
+            pianta.GestoreInformazioni = fac.GetGestore(type);
+
             settore.AddPianta(pianta);
         }
 
