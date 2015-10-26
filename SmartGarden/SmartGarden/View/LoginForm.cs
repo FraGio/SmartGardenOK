@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SmartGarden.Model;
+using System;
+using System.DirectoryServices.AccountManagement;
 using System.Windows.Forms;
 
 namespace SmartGarden.View
@@ -27,7 +29,8 @@ namespace SmartGarden.View
             {
                 _isValid = pc.ValidateCredentials(Environment.UserName, password);
             }*/
-            _isValid = true;
+            Utente utente = new Utente();
+            _isValid = utente.Login(password);
 
             if (_isValid)
             {

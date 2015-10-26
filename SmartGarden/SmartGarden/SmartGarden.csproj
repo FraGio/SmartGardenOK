@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -88,6 +89,7 @@
     <Compile Include="Model\PiantaFactory.cs" />
     <Compile Include="Model\SensorePressione.cs" />
     <Compile Include="Model\Settore.cs" />
+    <Compile Include="Model\Utente.cs" />
     <Compile Include="Model\Valvola.cs" />
     <Compile Include="Model\ValvolaDiSettore.cs" />
     <Compile Include="Model\ValvolaDiSicurezza.cs" />
