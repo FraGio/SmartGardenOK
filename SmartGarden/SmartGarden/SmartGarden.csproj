@@ -83,6 +83,7 @@
     <Compile Include="Model\IPianta.cs" />
     <Compile Include="Model\IRilevatorePressione.cs" />
     <Compile Include="Model\ISettore.cs" />
+    <Compile Include="Model\IUtente.cs" />
     <Compile Include="Model\IvalvolaDiSicurezza.cs" />
     <Compile Include="Model\MessagePump.cs" />
     <Compile Include="Model\MyTimer.cs" />

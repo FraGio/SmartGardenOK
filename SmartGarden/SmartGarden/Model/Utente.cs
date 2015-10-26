@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    class Utente
+    class Utente : IUtente
     {
         private bool _isValid;
 
