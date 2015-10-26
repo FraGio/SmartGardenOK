@@ -24,11 +24,7 @@ namespace SmartGarden.View
         {
             string password = _passwordBox.Text;
 
-
-            /*using (PrincipalContext pc = new PrincipalContext(ContextType.Machine))
-            {
-                _isValid = pc.ValidateCredentials(Environment.UserName, password);
-            }*/
+            
             Utente utente = new Utente();
             _isValid = utente.Login(password);
 

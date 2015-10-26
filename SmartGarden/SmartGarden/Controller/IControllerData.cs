@@ -19,5 +19,6 @@ namespace SmartGarden.Controller
         void NuovoGiardino();
         void CambiaProvincia(string provincia);
         void CaricaProvinceComboBox(ComboBox provinceComboBox);
+        void SettaTimer(DateTime inizio, TimeSpan intervallo);
     }
 }

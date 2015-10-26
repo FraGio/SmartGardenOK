@@ -52,8 +52,9 @@ namespace SmartGarden.View
                 TimeSpan intervallo = new TimeSpan(intervalloGiorni, (int)_oreInizioComboBox.SelectedItem, (int)_minutiInizioCombobox.SelectedItem, 0);
 
                 DateTime ora = DateTime.Now.Date + orarioInizio;
-                DateTime interv = ora + intervallo;
+                //DateTime interv = ora + intervallo;
 
+                Controller.SettaTimer(ora, intervallo);
 
             }
             catch

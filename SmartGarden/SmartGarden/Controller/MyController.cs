@@ -287,5 +287,10 @@ namespace SmartGarden.Controller
             form.Size = size;
             form.Controls.Add(view);
         }
+
+        public void SettaTimer(DateTime inizio, TimeSpan intervallo)
+        {
+            _gestioneGiardino.SetTimer(inizio, intervallo);
+        }
     }
 }

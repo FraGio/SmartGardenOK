@@ -39,6 +39,7 @@
             this._resetToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.gestisciGiardinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificaTimerGeneraleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizzaNotificheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem24 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem29 = new System.Windows.Forms.ToolStripMenuItem();
             this._statusStrip = new System.Windows.Forms.StatusStrip();
@@ -46,7 +47,6 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this._treeView = new SmartGarden.View.PannelloSinistra();
             this._pannelloDestra = new SmartGarden.View.PannelloDestra();
-            this.visualizzaNotificheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this._statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -134,6 +134,14 @@
             this.modificaTimerGeneraleToolStripMenuItem.Name = "modificaTimerGeneraleToolStripMenuItem";
             this.modificaTimerGeneraleToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.modificaTimerGeneraleToolStripMenuItem.Text = "Modifica timer generale";
+            this.modificaTimerGeneraleToolStripMenuItem.Click += new System.EventHandler(this.modificaTimerGeneraleToolStripMenuItem_Click);
+            // 
+            // visualizzaNotificheToolStripMenuItem
+            // 
+            this.visualizzaNotificheToolStripMenuItem.Name = "visualizzaNotificheToolStripMenuItem";
+            this.visualizzaNotificheToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.visualizzaNotificheToolStripMenuItem.Text = "Visualizza notifiche";
+            this.visualizzaNotificheToolStripMenuItem.Click += new System.EventHandler(this.visualizzaNotificheToolStripMenuItem_Click);
             // 
             // toolStripMenuItem24
             // 
@@ -205,13 +213,6 @@
             this._pannelloDestra.Size = new System.Drawing.Size(923, 616);
             this._pannelloDestra.TabIndex = 0;
             this._pannelloDestra.Load += new System.EventHandler(this._pannelloDestra_Load);
-            // 
-            // visualizzaNotificheToolStripMenuItem
-            // 
-            this.visualizzaNotificheToolStripMenuItem.Name = "visualizzaNotificheToolStripMenuItem";
-            this.visualizzaNotificheToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.visualizzaNotificheToolStripMenuItem.Text = "Visualizza notifiche";
-            this.visualizzaNotificheToolStripMenuItem.Click += new System.EventHandler(this.visualizzaNotificheToolStripMenuItem_Click);
             // 
             // MainWindow
             // 

@@ -144,5 +144,10 @@ namespace SmartGarden.View
         {
             Controller.CreaNotificheView();
         }
+
+        private void modificaTimerGeneraleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Controller.GestisciTimer();
+        }
     }
 }
