@@ -50,27 +50,30 @@
             this._panel.Controls.Add(this._passwordLabel);
             this._panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._panel.Location = new System.Drawing.Point(0, 0);
-            this._panel.MaximumSize = new System.Drawing.Size(415, 191);
-            this._panel.MinimumSize = new System.Drawing.Size(415, 191);
+            this._panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._panel.MaximumSize = new System.Drawing.Size(553, 235);
+            this._panel.MinimumSize = new System.Drawing.Size(553, 235);
             this._panel.Name = "_panel";
-            this._panel.Size = new System.Drawing.Size(415, 191);
+            this._panel.Size = new System.Drawing.Size(553, 235);
             this._panel.TabIndex = 0;
             // 
             // _username
             // 
             this._username.AutoSize = true;
             this._username.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._username.Location = new System.Drawing.Point(226, 38);
+            this._username.Location = new System.Drawing.Point(301, 47);
+            this._username.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._username.Name = "_username";
-            this._username.Size = new System.Drawing.Size(76, 25);
+            this._username.Size = new System.Drawing.Size(95, 31);
             this._username.TabIndex = 10;
             this._username.Text = "*user*";
             // 
             // _resetButton
             // 
-            this._resetButton.Location = new System.Drawing.Point(231, 117);
+            this._resetButton.Location = new System.Drawing.Point(308, 144);
+            this._resetButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._resetButton.Name = "_resetButton";
-            this._resetButton.Size = new System.Drawing.Size(75, 23);
+            this._resetButton.Size = new System.Drawing.Size(100, 28);
             this._resetButton.TabIndex = 7;
             this._resetButton.Text = "Reset";
             this._resetButton.UseVisualStyleBackColor = true;
@@ -78,9 +81,10 @@
             // 
             // _loginButton
             // 
-            this._loginButton.Location = new System.Drawing.Point(149, 117);
+            this._loginButton.Location = new System.Drawing.Point(199, 144);
+            this._loginButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._loginButton.Name = "_loginButton";
-            this._loginButton.Size = new System.Drawing.Size(75, 23);
+            this._loginButton.Size = new System.Drawing.Size(100, 28);
             this._loginButton.TabIndex = 6;
             this._loginButton.Text = "Login";
             this._loginButton.UseVisualStyleBackColor = true;
@@ -89,11 +93,12 @@
             // _passwordBox
             // 
             this._passwordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._passwordBox.Location = new System.Drawing.Point(149, 89);
+            this._passwordBox.Location = new System.Drawing.Point(199, 110);
+            this._passwordBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this._passwordBox.MaxLength = 0;
             this._passwordBox.Name = "_passwordBox";
             this._passwordBox.PasswordChar = '*';
-            this._passwordBox.Size = new System.Drawing.Size(157, 22);
+            this._passwordBox.Size = new System.Drawing.Size(208, 26);
             this._passwordBox.TabIndex = 5;
             // 
             // label1
@@ -101,9 +106,10 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(109, 38);
+            this.label1.Location = new System.Drawing.Point(145, 47);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 25);
+            this.label1.Size = new System.Drawing.Size(153, 31);
             this.label1.TabIndex = 4;
             this.label1.Text = "Benvenuto";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -112,9 +118,10 @@
             // 
             this._passwordLabel.AutoSize = true;
             this._passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._passwordLabel.Location = new System.Drawing.Point(72, 92);
+            this._passwordLabel.Location = new System.Drawing.Point(96, 113);
+            this._passwordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._passwordLabel.Name = "_passwordLabel";
-            this._passwordLabel.Size = new System.Drawing.Size(71, 16);
+            this._passwordLabel.Size = new System.Drawing.Size(88, 20);
             this._passwordLabel.TabIndex = 3;
             this._passwordLabel.Text = "Password:";
             this._passwordLabel.Click += new System.EventHandler(this._passwordLabel_Click);
@@ -122,14 +129,15 @@
             // LoginForm
             // 
             this.AcceptButton = this._loginButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(415, 191);
+            this.ClientSize = new System.Drawing.Size(551, 225);
             this.Controls.Add(this._panel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(431, 230);
-            this.MinimumSize = new System.Drawing.Size(431, 230);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(569, 272);
+            this.MinimumSize = new System.Drawing.Size(569, 272);
             this.Name = "LoginForm";
             this.Text = "Login";
             this._panel.ResumeLayout(false);

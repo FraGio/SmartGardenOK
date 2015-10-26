@@ -73,6 +73,7 @@ namespace SmartGarden.Model
             }
             _timerPrincipale.AddEventHandler(SetNextIntervalloPrincipale);
             #endregion
+            _timerPrincipale.Start();
             return true;
         }
 
@@ -107,6 +108,10 @@ namespace SmartGarden.Model
             }
 
             public void Start(Object source, ElapsedEventArgs e)
+            {
+                timer.Start();
+            }
+            public void Start()
             {
                 timer.Start();
             }
