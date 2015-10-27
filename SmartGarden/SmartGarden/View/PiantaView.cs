@@ -128,8 +128,6 @@ namespace SmartGarden.View
             {
                 string fileName = _openFileDialog.FileName;
 
-                //Path.GetFullPath();
-
                 List<Type> fileProviders = _insp.GetProviderFromFile(fileName);
                 List<Type> fileVisitors =_insp.GetVisitorFromFile(fileName);
 
