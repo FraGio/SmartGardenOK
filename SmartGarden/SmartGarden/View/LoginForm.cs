@@ -12,6 +12,12 @@ namespace SmartGarden.View
         public LoginForm()
         {
             InitializeComponent();
+            this.FormClosing += RespawnForm;
+        }
+
+        private void RespawnForm(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(1);
         }
 
         protected override void OnLoad(EventArgs e)
