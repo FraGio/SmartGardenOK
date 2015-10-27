@@ -32,7 +32,7 @@ namespace SmartGarden.View
             _oreComboBox.SelectedIndex = 0;
             _oreInizioComboBox.SelectedIndex = 0;
 
-            for (int i = 0; i < 59; i++)
+            for (int i = 0; i < 60; i++)
             {
                 _minutiComboBox.Items.Add(i);
                 _minutiInizioCombobox.Items.Add(i);
@@ -57,9 +57,13 @@ namespace SmartGarden.View
                 Controller.SettaTimer(ora, intervallo);
 
             }
-            catch
+            catch (FormatException ex)
             {
-                throw new ArgumentException("Giorno deve essere un valore numerico!");
+                MessageBox.Show("Giorno deve essere un valore numerico!");
+            }
+            catch (ArgumentException exc)
+            {
+                MessageBox.Show("Valori di ore e minuti non accettabili");
             }
         }
 
