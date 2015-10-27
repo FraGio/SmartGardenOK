@@ -68,6 +68,12 @@ namespace SmartGarden.View
             _gestioneGiardino.Giardino.Cisterna = cisterna;
             ISettore settore = new Settore("Settore nord", 200);
             ISettore settore2 = new Settore("Settore sud", 100);
+            ValvolaDiSettore valv = new ValvolaDiSettore();
+            valv.Name = "mario";
+            ValvolaDiSettore valv2 = new ValvolaDiSettore();
+            valv.Name = "ugo";
+            settore.ValvolaSettore = valv;
+            settore2.ValvolaSettore = valv2;
             IPianta pianta1 = new Pianta("Solanum lycopersicum", "Pomodoro", 0.50);
             FabbisognoGiornalieroPeriodo fabb1 = new FabbisognoGiornalieroPeriodo(DateTime.Now, DateTime.Now.AddYears(1), 50);
             pianta1.AddFabisogno(fabb1);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Timers;
 
+
 namespace SmartGarden.Model
 {
     class MyTimer
@@ -9,6 +10,7 @@ namespace SmartGarden.Model
         private Dictionary<TimeSpan, MyInternalTimer> _timers;
         private MyInternalTimer _timerPrincipale ;
         private TimeSpan _intervalloPrincipale;
+        private ElapsedEventHandler _eventoPrincipale;
         private static MyTimer instance = null;
 
         public static MyTimer GetMyTimer()
@@ -45,18 +47,20 @@ namespace SmartGarden.Model
         {
             if (!_timers.ContainsKey(data))
             {
-                MyInternalTimer timerApertura = new MyInternalTimer((long)data.TotalMilliseconds);
+                MyInternalTimer timerApertura = new MyInternalTimer((long)data.TotalMilliseconds+1);
                 _timers.Add(data, timerApertura);
             }
             _timers[data].AddEventHandler(ev);
+            _timers[data].Start();
 
             return true;
         }
 
-        public bool SetTimerPrincipale(DateTime date,TimeSpan intervallo)
+        public bool SetTimerPrincipale(DateTime date,TimeSpan intervallo,ElapsedEventHandler start)
         {
             TimeSpan data = date - DateTime.Now;
             _intervalloPrincipale = intervallo;
+            /*
             #region deregistro
             foreach (MyInternalTimer timer in _timers.Values)
             {
@@ -67,20 +71,26 @@ namespace SmartGarden.Model
             #endregion
 
             #region registro
+            //TODO non devo agganciare al timer principale i secondari ma li faccio partire immediatamente
+            //quando il timer scatta (funzione scatto timer principale) 
             foreach (MyInternalTimer timer in _timers.Values)
             {
                 _timerPrincipale.AddEventHandler(timer.Start);
             }
-            _timerPrincipale.AddEventHandler(SetNextIntervalloPrincipale);
+          
             #endregion
+            */
+            _timerPrincipale = new MyInternalTimer((long)data.TotalMilliseconds);
+            _timerPrincipale.AddEventHandler(start);
             _timerPrincipale.Start();
+            _timerPrincipale.AddEventHandler(SetNextIntervalloPrincipale);
             return true;
         }
 
         private void SetNextIntervalloPrincipale(Object source, ElapsedEventArgs e)
         {
             DateTime next = DateTime.Now + _intervalloPrincipale;
-            SetTimerPrincipale(next, _intervalloPrincipale);
+            SetTimerPrincipale(next, _intervalloPrincipale,_eventoPrincipale);
         }
 
         private class MyInternalTimer
@@ -90,6 +100,7 @@ namespace SmartGarden.Model
             public MyInternalTimer(long mills) 
             {
                 timer = new Timer(mills);
+                timer.AutoReset = false;
             }
 
             public void SetTimer(long mills)

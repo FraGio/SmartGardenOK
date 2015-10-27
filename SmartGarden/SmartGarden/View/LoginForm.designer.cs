@@ -50,7 +50,7 @@
             this._panel.Controls.Add(this._passwordLabel);
             this._panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._panel.Location = new System.Drawing.Point(0, 0);
-            this._panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._panel.Margin = new System.Windows.Forms.Padding(4);
             this._panel.MaximumSize = new System.Drawing.Size(553, 235);
             this._panel.MinimumSize = new System.Drawing.Size(553, 235);
             this._panel.Name = "_panel";
@@ -71,7 +71,7 @@
             // _resetButton
             // 
             this._resetButton.Location = new System.Drawing.Point(308, 144);
-            this._resetButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._resetButton.Margin = new System.Windows.Forms.Padding(4);
             this._resetButton.Name = "_resetButton";
             this._resetButton.Size = new System.Drawing.Size(100, 28);
             this._resetButton.TabIndex = 7;
@@ -82,7 +82,7 @@
             // _loginButton
             // 
             this._loginButton.Location = new System.Drawing.Point(199, 144);
-            this._loginButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._loginButton.Margin = new System.Windows.Forms.Padding(4);
             this._loginButton.Name = "_loginButton";
             this._loginButton.Size = new System.Drawing.Size(100, 28);
             this._loginButton.TabIndex = 6;
@@ -94,7 +94,7 @@
             // 
             this._passwordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._passwordBox.Location = new System.Drawing.Point(199, 110);
-            this._passwordBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this._passwordBox.Margin = new System.Windows.Forms.Padding(4);
             this._passwordBox.MaxLength = 0;
             this._passwordBox.Name = "_passwordBox";
             this._passwordBox.PasswordChar = '*';
@@ -135,7 +135,7 @@
             this.ClientSize = new System.Drawing.Size(551, 225);
             this.Controls.Add(this._panel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(569, 272);
             this.MinimumSize = new System.Drawing.Size(569, 272);
             this.Name = "LoginForm";

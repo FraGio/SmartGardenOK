@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Timers;
 
 namespace SmartGarden.Model
 {
@@ -37,7 +37,10 @@ namespace SmartGarden.Model
             }
             _oraInizioInnaffiatura = OraInizioInnaffiatura.Date + ts;
             _intervallo = new TimeSpan(1, 0, 0, 0);
-            _timers.SetTimerPrincipale(OraInizioInnaffiatura, Intervallo);
+            _timers.SetTimerPrincipale(OraInizioInnaffiatura, Intervallo,IniziaInnaffiatura);
+            //TODO da togliere
+            DateTime now = DateTime.Now.AddSeconds(5);
+            _timers.SetTimerPrincipale(now, Intervallo, IniziaInnaffiatura);
         }
 
         protected virtual void OnChanged()
@@ -79,12 +82,17 @@ namespace SmartGarden.Model
         {
             _oraInizioInnaffiatura = date;
             _intervallo = intervallo;
-            _timers.SetTimerPrincipale(date, intervallo);
+            _timers.SetTimerPrincipale(date, intervallo,IniziaInnaffiatura);
         }
 
         public static IGestioneGiardinoData GetData()
         {
             return _instance ;
+        }
+
+        private void IniziaInnaffiatura(Object source, ElapsedEventArgs e)
+        {
+            IniziaInnaffiatura(_oraInizioInnaffiatura,_oraInizioInnaffiatura.Date+Intervallo);
         }
 
         private void IniziaInnaffiatura(DateTime inizio ,DateTime fine)

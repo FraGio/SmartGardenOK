@@ -1,5 +1,6 @@
 ﻿using SmartGarden.Model;
 using System;
+using System.Windows.Forms;
 
 namespace SmartGarden.View
 {
@@ -16,17 +17,11 @@ namespace SmartGarden.View
         {
             base.OnLoad(e);
             _messagePump = MessagePump.GetMessagePump();
-            _messagePump.newMessage += RefreshNotifiche;
-        }
-
-        private void RefreshNotifiche(object sender, EventArgs e)
-        {
             _notificheTextBox.Clear();
-            foreach(string notifica in _messagePump.GetAllMEssages())
+            foreach (string notifica in _messagePump.GetAllMEssages())
             {
                 _notificheTextBox.AppendText(notifica + Environment.NewLine);
             }
-
         }
 
         private void _pulisciButton_Click(object sender, EventArgs e)

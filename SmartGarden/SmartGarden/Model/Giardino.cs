@@ -56,12 +56,15 @@ namespace SmartGarden.Model
             {
                TurnoItem turnoItem = new TurnoItem();
                 turnoItem.Attesa = turno;
-                double portata = settore.GetPortataVolumetricaSecondo(Cisterna.Portata);
+                double portata = settore.GetPortataVolumetricaSecondo(Cisterna.Portata)/1000;
                 long durata = (long)(settore.GetFabisogno(inizio,fine) / portata);
+                double mom=settore.GetFabisogno(inizio, fine);
                 tot += durata;
-                TimeSpan dur = new TimeSpan(durata*TimeSpan.TicksPerSecond);
+                TimeSpan dur = new TimeSpan(durata*TimeSpan.TicksPerSecond+1);
                 turnoItem.Durata = dur;
-                turno = turno.Add(new TimeSpan(durata*TimeSpan.TicksPerSecond));
+                turnoItem.AddOpenClose(settore.ValvolaSettore);
+                turni.Add(turnoItem);
+                turno = turno.Add(new TimeSpan(durata*TimeSpan.TicksPerSecond+1));
             }
             TurnoItem itemTurno = new TurnoItem();
             itemTurno.Attesa = new TimeSpan(0);

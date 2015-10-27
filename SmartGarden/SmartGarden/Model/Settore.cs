@@ -106,7 +106,7 @@ namespace SmartGarden.Model
 
         public double GetPortataVolumetricaSecondo(double portata)
         {
-            throw new NotImplementedException();
+            return _portataImpianto;
         }
 
      
