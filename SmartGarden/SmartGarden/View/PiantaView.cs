@@ -30,8 +30,8 @@ namespace SmartGarden.View
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-
-            IInspector insp = ProviderVisitorInspector.GetInspector();
+            
+            _insp = ProviderVisitorInspector.GetInspector();
 
             if(_pianta.GestoreInformazioni != null)
             {
@@ -44,7 +44,7 @@ namespace SmartGarden.View
             _finalizzaButton.Click += FinalizzaGestore;
             
             Dictionary<string, Type> providers = new Dictionary<string, Type>();
-            foreach (Type prov in insp.GetListProvider())
+            foreach (Type prov in _insp.GetListProvider())
             {
                 providers.Add(prov.Name, prov);
             }
@@ -53,7 +53,7 @@ namespace SmartGarden.View
             _providerComboBox.ValueMember = "Value";
 
             Dictionary<string, Type> visitors = new Dictionary<string, Type>();
-            foreach (Type visit in insp.GetListVisitor())
+            foreach (Type visit in _insp.GetListVisitor())
             {
                 visitors.Add(visit.Name, visit);
             }
@@ -124,7 +124,9 @@ namespace SmartGarden.View
 
             if(okClick == DialogResult.OK)
             {
-                string fileName = _openFileDialog.SafeFileName;
+                string fileName = _openFileDialog.FileName;
+
+                //Path.GetFullPath();
 
                 List<Type> providers = _insp.GetProviderFromFile(fileName);
                 List<Type> visitors =_insp.GetVisitorFromFile(fileName);
