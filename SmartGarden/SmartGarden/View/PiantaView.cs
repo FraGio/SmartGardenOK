@@ -142,7 +142,11 @@ namespace SmartGarden.View
                 {
                     visitors.Add("Extern:" + visit.Name, visit);
                 }
-                this.Refresh();
+
+                _providerComboBox.DataSource = null;
+                _providerComboBox.Items.AddRange(fileProviders.ToArray());
+                _visitorComboBox.DataSource = null;
+                _visitorComboBox.Items.AddRange(fileVisitors.ToArray());
             }
         }
     }
