@@ -70,9 +70,13 @@ namespace SmartGarden.Model
             _data = PiantaFactory.GetDatiPianta(nomeBotanico, nomeComune);
         }
 
-        public void AddFabisogno(FabbisognoGiornalieroPeriodo fab)
+        public bool AddFabisogno(FabbisognoGiornalieroPeriodo fab)
         {
             _data.AddFabisognoRelativoPeriodo(fab);
+
+            //TODO respingi periodo già occupato
+
+            return false;
         }
         
         public double FabbisognoPiantaAttuale(DateTime inizio, DateTime durata)

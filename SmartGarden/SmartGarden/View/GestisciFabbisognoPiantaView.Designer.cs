@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this._fabbisogniTextBox = new System.Windows.Forms.TextBox();
+            this._rimuoviButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -54,6 +55,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this._rimuoviButton);
             this.splitContainer1.Panel1.Controls.Add(this._aggiungiButton);
             this.splitContainer1.Panel1.Controls.Add(this._idPiantaTextBox);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
@@ -160,6 +162,16 @@
             this._fabbisogniTextBox.Size = new System.Drawing.Size(535, 117);
             this._fabbisogniTextBox.TabIndex = 0;
             // 
+            // _rimuoviButton
+            // 
+            this._rimuoviButton.Location = new System.Drawing.Point(332, 215);
+            this._rimuoviButton.Name = "_rimuoviButton";
+            this._rimuoviButton.Size = new System.Drawing.Size(87, 23);
+            this._rimuoviButton.TabIndex = 9;
+            this._rimuoviButton.Text = "Rimuovi tutto";
+            this._rimuoviButton.UseVisualStyleBackColor = true;
+            this._rimuoviButton.Click += new System.EventHandler(this._rimuoviButton_Click);
+            // 
             // GestisciFabbisognoPiantaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,5 +203,6 @@
         private System.Windows.Forms.DateTimePicker _fineDatePicker;
         private System.Windows.Forms.DateTimePicker _inizioDatePicker;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button _rimuoviButton;
     }
 }

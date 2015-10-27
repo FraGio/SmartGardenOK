@@ -65,5 +65,16 @@ namespace SmartGarden.View
         {
             //
         }
+
+        private void _rimuoviButton_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Questa operazione cancellerà tutti i fabbisogni della pianta.\r\nSei sicuro di voler procedere?", "Avviso", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                _fabbisogniTextBox.Clear();
+                //_pianta.FabbisogniPianta
+            }
+        }
     }
 }
