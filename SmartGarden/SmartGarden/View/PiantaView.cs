@@ -19,6 +19,8 @@ namespace SmartGarden.View
         private IPianta _pianta;
         private Dictionary<Type, Type> _types;
         private IInspector _insp;
+        Dictionary<string, Type> providers;
+        Dictionary<string, Type> visitors;
 
         public PiantaView(IPianta pianta)
         {
@@ -43,7 +45,7 @@ namespace SmartGarden.View
             _aggiungiButton.Click += AggiungiProviderVisitor;
             _finalizzaButton.Click += FinalizzaGestore;
             
-            Dictionary<string, Type> providers = new Dictionary<string, Type>();
+            providers = new Dictionary<string, Type>();
             foreach (Type prov in _insp.GetListProvider())
             {
                 providers.Add(prov.Name, prov);
@@ -52,7 +54,7 @@ namespace SmartGarden.View
             _providerComboBox.DisplayMember = "Key";
             _providerComboBox.ValueMember = "Value";
 
-            Dictionary<string, Type> visitors = new Dictionary<string, Type>();
+            visitors = new Dictionary<string, Type>();
             foreach (Type visit in _insp.GetListVisitor())
             {
                 visitors.Add(visit.Name, visit);
@@ -128,11 +130,19 @@ namespace SmartGarden.View
 
                 //Path.GetFullPath();
 
-                List<Type> providers = _insp.GetProviderFromFile(fileName);
-                List<Type> visitors =_insp.GetVisitorFromFile(fileName);
+                List<Type> fileProviders = _insp.GetProviderFromFile(fileName);
+                List<Type> fileVisitors =_insp.GetVisitorFromFile(fileName);
 
-                _providerComboBox.Items.AddRange(providers.ToArray());
-                _visitorComboBox.Items.AddRange(visitors.ToArray());
+                foreach (Type prov in fileProviders)
+                {
+                    providers.Add("Extern:"+prov.Name, prov);
+                }
+               
+                foreach (Type visit in fileVisitors)
+                {
+                    visitors.Add("Extern:" + visit.Name, visit);
+                }
+                this.Refresh();
             }
         }
     }

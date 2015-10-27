@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FintoFornitore2
+namespace SmartGarden.Model.Gestore_Informazioni.Fornitori
 {
-    interface IinformationProvider
+    public interface IinformationProvider
     {
         void Accept(IinformationProviderVisitor visitor);
     }

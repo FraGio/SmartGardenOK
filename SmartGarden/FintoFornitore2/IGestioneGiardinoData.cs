@@ -1,4 +1,4 @@
-﻿namespace FintoFornitore2
+﻿namespace SmartGarden.Model.Gestore_Informazioni
 {
     public interface IGestioneGiardinoData
     {

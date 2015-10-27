@@ -62,6 +62,15 @@ namespace SmartGarden.Model.Gestore_Informazioni
 
         private List<Type> GetTypeFromFile(String fileName,Type interf)
         {
+            Type[] typ = Assembly.LoadFile(fileName).GetExportedTypes();
+
+            foreach(Type type in typ)
+            {
+                Type[] cl = type.GetInterfaces();
+                string name =interf.Name;
+                Type yes = type.GetInterface(interf.Name);
+            }
+
             var q = from type in Assembly.LoadFile(fileName).GetExportedTypes()
                     where type.IsClass && type.GetInterface(interf.Name) != null
                     select type;

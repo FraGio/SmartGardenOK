@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FintoFornitore2
+namespace SmartGarden.Model.Gestore_Informazioni
 {
-    interface IinformationProviderVisitor
+   public interface IinformationProviderVisitor
     {
         //dynamic act like object in compile time
         void Visit(dynamic informationProvider);

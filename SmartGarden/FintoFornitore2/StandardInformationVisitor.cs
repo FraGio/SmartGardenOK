@@ -1,13 +1,14 @@
-﻿
+﻿using SmartGarden.Model;
+using SmartGarden.Model.Gestore_Informazioni.Fornitori;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FintoFornitore2
+namespace SmartGarden.Model.Gestore_Informazioni
 {
-    class StandardInformationVisitor : IinformationProviderVisitor
+   public class StandardInformationVisitor2 : IinformationProviderVisitor
     {
         double tot;
         IDataPianta _pianta;
@@ -32,14 +33,16 @@ namespace FintoFornitore2
         }
         
         #region VisitSpecialization
-        private void VisitSpecialization(FintoFornitoreInformazioni informationProvider )
+        private void VisitSpecialization(FintoFornitoreInformazioni2 informationProvider )
         {
            // mess.SendMessage("visitato finto informatore ");
         }
 
+        
+
         private void VisitSpecialization(Object informationProvider)
         {
-           // mess.SendMessage("visitato Object informatore ");
+          //  mess.SendMessage("visitato Object informatore ");
         }
 
         #endregion

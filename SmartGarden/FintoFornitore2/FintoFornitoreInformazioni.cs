@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace FintoFornitore2
+namespace SmartGarden.Model.Gestore_Informazioni.Fornitori
 {
-    class FintoFornitoreInformazioni : IinformationProvider
+    public class FintoFornitoreInformazioni2 : IinformationProvider
     {
         private String _ciao = "hola como estas";
         public String Ciao
