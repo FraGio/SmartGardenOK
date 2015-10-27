@@ -33,6 +33,10 @@ namespace SmartGarden.Model
             OnpressionChanged();
             mess.SendMessage("sono il sensore di pressione è cambiata la pressione");
         }
-        
+
+        public override string ToString()
+        {
+            return Descrizione;
+        }
     }
 }

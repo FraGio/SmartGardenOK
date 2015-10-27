@@ -8,6 +8,19 @@ namespace SmartGarden.Model
 {
     class ValvolaDiSicurezza : Valvola, IvalvolaDiSicurezza
     {
+        public string Nome
+        {
+            get
+            {
+                return Name;
+            }
+
+            set
+            {
+                Name = value;
+            }
+        }
+
         public event EventHandler stateChanged;
 
         public override void Close(object source, EventArgs e)

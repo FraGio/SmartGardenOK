@@ -116,7 +116,7 @@
             this._valvolaSicurezzaComboBox.FormattingEnabled = true;
             this._valvolaSicurezzaComboBox.Location = new System.Drawing.Point(145, 139);
             this._valvolaSicurezzaComboBox.Name = "_valvolaSicurezzaComboBox";
-            this._valvolaSicurezzaComboBox.Size = new System.Drawing.Size(87, 21);
+            this._valvolaSicurezzaComboBox.Size = new System.Drawing.Size(102, 21);
             this._valvolaSicurezzaComboBox.TabIndex = 12;
             // 
             // label6
@@ -134,7 +134,7 @@
             this._sensorePressioneComboBox.FormattingEnabled = true;
             this._sensorePressioneComboBox.Location = new System.Drawing.Point(145, 102);
             this._sensorePressioneComboBox.Name = "_sensorePressioneComboBox";
-            this._sensorePressioneComboBox.Size = new System.Drawing.Size(87, 21);
+            this._sensorePressioneComboBox.Size = new System.Drawing.Size(102, 21);
             this._sensorePressioneComboBox.TabIndex = 7;
             // 
             // _creaButton

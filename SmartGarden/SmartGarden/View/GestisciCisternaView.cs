@@ -24,23 +24,27 @@ namespace SmartGarden.View
 
             CaricaDatiCisterna();
 
-            List<IvalvolaDiSicurezza> valvole = new List<IvalvolaDiSicurezza>();
-            ValvolaDiSicurezza valvola = new ValvolaDiSicurezza();
-            valvola.Name = "Valvola FGH-02";
-            valvole.Add(valvola);
+            Dictionary<string, IvalvolaDiSicurezza> dizionarioValvole = new Dictionary<string, IvalvolaDiSicurezza>();
+            IvalvolaDiSicurezza valvola = new ValvolaDiSicurezza();
+            valvola.Nome = "Valvola FGH-02";
+            dizionarioValvole.Add(valvola.Nome, valvola);
             valvola = new ValvolaDiSicurezza();
-            valvola.Name = "Valvola ETR-45";
-            valvole.Add(valvola);
+            valvola.Nome = "Valvola ETR-45";
+            dizionarioValvole.Add(valvola.Nome, valvola);
 
-            _valvolaSicurezzaComboBox.Items.AddRange(valvole.ToArray());
-            
-            List<IRilevatorePressione> sensori = new List<IRilevatorePressione>();
+            _valvolaSicurezzaComboBox.DataSource = new BindingSource(dizionarioValvole, null);
+            _valvolaSicurezzaComboBox.DisplayMember = "Key";
+            _valvolaSicurezzaComboBox.ValueMember = "Value";
+
+            Dictionary<string, IRilevatorePressione> dizionarioSensori = new Dictionary<string, IRilevatorePressione>();
             IRilevatorePressione sensore = new SensorePressione("Sensore S01");
-            sensori.Add(sensore);
+            dizionarioSensori.Add(sensore.Descrizione, sensore);
             sensore = new SensorePressione("Sensore S02");
-            sensori.Add(sensore);
+            dizionarioSensori.Add(sensore.Descrizione, sensore);
 
-            _sensorePressioneComboBox.Items.AddRange(sensori.ToArray());
+            _sensorePressioneComboBox.DataSource = new BindingSource(dizionarioSensori, null);
+            _sensorePressioneComboBox.DisplayMember = "Key";
+            _sensorePressioneComboBox.ValueMember = "Value";
         }
 
         private void _creaButton_Click(object sender, EventArgs e)
@@ -52,7 +56,7 @@ namespace SmartGarden.View
                     GestoreGiardino.Giardino.Cisterna.SensorePressione = (IRilevatorePressione)_sensorePressioneComboBox.SelectedValue;
                     this.ParentForm.Close();
                 }
-                catch
+                catch (FormatException ex)
                 {
                     MessageBox.Show("Portata e capacità devono essere valori numerici!");
                 }
