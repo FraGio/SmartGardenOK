@@ -12,5 +12,6 @@ namespace SmartGarden.Model
 
         void AddFabisognoRelativoPeriodo(FabbisognoGiornalieroPeriodo fab);
         void RemoveFabisognoRelativoPeriodo(FabbisognoGiornalieroPeriodo fab);
+        void RemoveAllFabisogniRelativiApPeriodo();
     }
 }

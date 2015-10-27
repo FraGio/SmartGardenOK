@@ -78,6 +78,11 @@ namespace SmartGarden.Model
             {
                 _fabisogni.Remove(fab);
             }
+
+            public void RemoveAllFabisogniRelativiApPeriodo()
+            {
+                _fabisogni = new List<FabbisognoGiornalieroPeriodo>();
+            }
         }
     }
 }

@@ -101,5 +101,10 @@ namespace SmartGarden.Model
             return tot;
         }
 
+        public void RemoveAllFabisogniRelativiApPeriodo()
+        {
+            _data.RemoveAllFabisogniRelativiApPeriodo();
+        }
+
     }
 }

@@ -18,5 +18,6 @@ namespace SmartGarden.Model
         double Area { get; set; }
         string NomeComune { get; set; }
         string NomeBotanico { get; set;}
+        void RemoveAllFabisogniRelativiApPeriodo();
     }
 }
