@@ -25,14 +25,15 @@ namespace SmartGarden.View
 
         private void GestisciClick(object sender, DataGridViewCellEventArgs e)
         {
-            string nomeSettore = _dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
 
             if (_dataGridView.CurrentCell.ColumnIndex.Equals(3) && e.RowIndex != -1) //carica view piante
             {
+                string nomeSettore = _dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
                 Controller.CreaPianteView(nomeSettore, this.ParentForm);
             }
             else if (_dataGridView.CurrentCell.ColumnIndex.Equals(4) && e.RowIndex != -1) //cancella settore
             {
+                string nomeSettore = _dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
                 Controller.CancellaSettore(nomeSettore);
                 _dataGridView.Rows.Clear();
                 CaricaDati();

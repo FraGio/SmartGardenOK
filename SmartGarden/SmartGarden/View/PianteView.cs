@@ -24,9 +24,15 @@ namespace SmartGarden.View
 
         private void MostraGestoriInfoPianta(object sender, DataGridViewCellEventArgs e)
         {
-            Guid guidPianta = Guid.Parse(_dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString()); //GUID
+            Guid guidPianta;
+            IPianta pianta = null;
 
-            IPianta pianta = _settore.GetPianta(guidPianta);
+            if (!_dataGridView.CurrentCell.ColumnIndex.Equals(0))
+            {
+                guidPianta = Guid.Parse(_dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString()); //GUID
+
+                pianta = _settore.GetPianta(guidPianta);
+            }
 
             if (_dataGridView.CurrentCell.ColumnIndex.Equals(4) && e.RowIndex != -1) //aggiungi gestore
             {
