@@ -44,9 +44,7 @@ namespace SmartGarden.View
 
             _controller =  MyController.GetController(_gestioneGiardino);
 
-            bool loginOk = _controller.CreaLoginForm();
-            if (!loginOk)
-                this.Close();
+            
 
             IGiardino giardino = new Giardino();
             _gestioneGiardino.Giardino = giardino;
@@ -63,7 +61,7 @@ namespace SmartGarden.View
             type.Add(typeof(ProviderPrecipitazioniDefaultHttp), typeof(StandardInformationVisitor));
             IFactoryGestoreInformazioni fac = FactoryGestoreInformazioni.GetFactory();
 
-            _gestioneGiardino.Luogo = "Modena";
+            _gestioneGiardino.Luogo = "Bologna";
             ICisterna cisterna = new Cisterna(20, 30);
             _gestioneGiardino.Giardino.Cisterna = cisterna;
             ISettore settore = new Settore("Settore nord", 200);
@@ -90,10 +88,11 @@ namespace SmartGarden.View
             settore2.AddPianta(pianta3);
             _gestioneGiardino.Giardino.AddSettore(settore);
             _gestioneGiardino.Giardino.AddSettore(settore2);
-            
             #endregion
 
-
+            bool loginOk = _controller.CreaLoginForm();
+            if (!loginOk)
+                this.Close();
         }
 
         public GestioneGiardino GestioneGiardino
