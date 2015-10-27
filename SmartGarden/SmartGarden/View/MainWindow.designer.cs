@@ -40,8 +40,6 @@
             this.gestisciGiardinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificaTimerGeneraleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualizzaNotificheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem24 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem29 = new System.Windows.Forms.ToolStripMenuItem();
             this._statusStrip = new System.Windows.Forms.StatusStrip();
             this._dateStatusBar = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -59,8 +57,7 @@
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.giardinoToolStripMenuItem,
-            this.toolStripMenuItem24});
+            this.giardinoToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(1264, 24);
@@ -78,7 +75,7 @@
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(92, 22);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem11.Text = "E&xit";
             this.toolStripMenuItem11.Click += new System.EventHandler(this.toolStripMenuItem11_Click);
             // 
@@ -142,20 +139,6 @@
             this.visualizzaNotificheToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.visualizzaNotificheToolStripMenuItem.Text = "Visualizza notifiche";
             this.visualizzaNotificheToolStripMenuItem.Click += new System.EventHandler(this.visualizzaNotificheToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem24
-            // 
-            this.toolStripMenuItem24.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem29});
-            this.toolStripMenuItem24.Name = "toolStripMenuItem24";
-            this.toolStripMenuItem24.Size = new System.Drawing.Size(44, 20);
-            this.toolStripMenuItem24.Text = "&Help";
-            // 
-            // toolStripMenuItem29
-            // 
-            this.toolStripMenuItem29.Name = "toolStripMenuItem29";
-            this.toolStripMenuItem29.Size = new System.Drawing.Size(116, 22);
-            this.toolStripMenuItem29.Text = "&About...";
             // 
             // _statusStrip
             // 
@@ -271,8 +254,6 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem24;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem29;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
         private System.Windows.Forms.StatusStrip _statusStrip;
