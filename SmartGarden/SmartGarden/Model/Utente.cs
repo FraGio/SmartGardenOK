@@ -23,7 +23,6 @@ namespace SmartGarden.Model
                 _isValid = pc.ValidateCredentials(Environment.UserName, password);
             }
             return _isValid;
-            return true;
         }
     }
 
