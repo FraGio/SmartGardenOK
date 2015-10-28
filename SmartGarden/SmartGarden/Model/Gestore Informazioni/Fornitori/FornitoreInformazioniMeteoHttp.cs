@@ -5,8 +5,8 @@ using System.Xml;
 using System.Xml.XPath;
 
 namespace SmartGarden.Model.Gestore_Informazioni.Fornitori
-{ 
-     class FornitoreInformazioniMeteoHttp
+{
+    public class FornitoreInformazioniMeteoHttp
     {
         private XmlDocument _xmlDati;
         private int _numeroIntervalloTempo = 8; //di default il meteo prende le informazioni di 24 ore dopo (3 ore a intervallo, 8° intervallo->24h)

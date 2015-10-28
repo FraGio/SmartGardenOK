@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SmartGarden.Model
 {
-    class FabbisognoGiornalieroPeriodo
+    public class FabbisognoGiornalieroPeriodo
     {
         //TODO gestire correttamente i periodi, ad esempio quando si aggiunge un fabbisogno nuovo
 

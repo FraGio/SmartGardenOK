@@ -3,7 +3,7 @@ using System.Timers;
 
 namespace SmartGarden.Model
 {
-    class GestioneGiardino : IGestioneGiardinoData,IGestioneGiardino
+    public class GestioneGiardino : IGestioneGiardinoData,IGestioneGiardino
     {
         private IGiardino _giardino;
         private string _luogo;

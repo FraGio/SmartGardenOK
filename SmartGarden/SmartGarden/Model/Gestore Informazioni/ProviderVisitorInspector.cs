@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model.Gestore_Informazioni
 {
-    class ProviderVisitorInspector : IInspector
+    public class ProviderVisitorInspector : IInspector
     {
         //TODO cambiare interfaccia con interfaccia esterna
         private readonly string @namespaceVisitor = "SmartGarden.Model.Gestore_Informazioni";

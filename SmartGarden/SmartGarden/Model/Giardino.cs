@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SmartGarden.Model
 {
-    class Giardino : IGiardino
+    public class Giardino : IGiardino
     {
         private ICisterna _cisterna;
         public event EventHandler Changed;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    interface ICisterna
+    public interface ICisterna
     {
         double Portata { get; set; }
         double Capienza { get; set; }

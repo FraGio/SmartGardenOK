@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    interface ISettore
+    public interface ISettore
     {
         bool AddPianta(IPianta pianta);
 

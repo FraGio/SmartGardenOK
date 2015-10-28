@@ -3,7 +3,7 @@ using System.Timers;
 
 namespace SmartGarden.Model
 {
-    abstract class Valvola : IOpenClose
+    public abstract class Valvola : IOpenClose
     {
         private String _name;
         protected IMessagePump _mess= MessagePump.GetMessagePump();

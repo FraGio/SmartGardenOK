@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    interface IGestioneGiardinoData
+    public interface IGestioneGiardinoData
     {
         TimeSpan Intervallo { get; }
         DateTime OraInizioInnaffiatura { get; }

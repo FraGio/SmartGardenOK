@@ -8,7 +8,7 @@ using System.Timers;
 
 namespace SmartGarden.Model
 {
-    class Settore : ISettore
+    public class Settore : ISettore
     {
         public IOpenClose ValvolaSettore { get; set; }
         private String _nome;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model.Gestore_Informazioni.Fornitori
 {
-    interface IinformationProvider
+    public interface IinformationProvider
     {
         void Accept(IinformationProviderVisitor visitor);
     }

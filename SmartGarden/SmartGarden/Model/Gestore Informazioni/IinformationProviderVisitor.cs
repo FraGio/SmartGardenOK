@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model.Gestore_Informazioni
 {
-    interface IinformationProviderVisitor
+    public interface IinformationProviderVisitor
     {
         //dynamic act like object in compile time
         void Visit(dynamic informationProvider);
