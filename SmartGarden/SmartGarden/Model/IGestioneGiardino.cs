@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    interface IGestioneGiardino
+    public interface IGestioneGiardino
     {
         IGiardino Giardino { get; set; }
         string Luogo { get; set; }

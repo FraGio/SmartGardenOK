@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    interface IUtente
+    public interface IUtente
     {
         bool Login(string password);
     }

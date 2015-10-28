@@ -7,7 +7,7 @@ using System.Timers;
 
 namespace SmartGarden.Model
 {
-    class SensorePressione : IRilevatorePressione
+    public class SensorePressione : IRilevatorePressione
     {
         public event EventHandler pressionChanged;
         public string Descrizione { get; set; }

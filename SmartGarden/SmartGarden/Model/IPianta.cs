@@ -6,8 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SmartGarden.Model
-{ 
-   interface IPianta
+{
+    public interface IPianta
     {
        
         IGestoreInformazioni GestoreInformazioni { get; set; }

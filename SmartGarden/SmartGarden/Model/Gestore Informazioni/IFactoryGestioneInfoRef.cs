@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model.Gestore_Informazioni
 {
-    interface IFactoryGestioneInfoRef
+    public interface IFactoryGestioneInfoRef
     {
         void Remove(IGestoreInformazioni gestore);
     }

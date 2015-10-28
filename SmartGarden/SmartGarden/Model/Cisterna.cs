@@ -7,7 +7,7 @@ using System.Timers;
 
 namespace SmartGarden.Model
 {
-    class Cisterna : ICisterna
+    public class Cisterna : ICisterna
     {
         private Guid _guid;
         private IRilevatorePressione _sensorePressione ;

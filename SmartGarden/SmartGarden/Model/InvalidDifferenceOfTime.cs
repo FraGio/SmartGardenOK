@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    class InvalidDifferenceOfTime : Exception
+    public class InvalidDifferenceOfTime : Exception
     {
         public InvalidDifferenceOfTime() : base() { }
         public InvalidDifferenceOfTime(string message) : base(message) { }

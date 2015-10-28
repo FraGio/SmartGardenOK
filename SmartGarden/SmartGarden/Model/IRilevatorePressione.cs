@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    interface IRilevatorePressione
+    public interface IRilevatorePressione
     {
         event EventHandler pressionChanged;
         string Descrizione { get; set; }

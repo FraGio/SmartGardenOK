@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model.Gestore_Informazioni
 {
-    interface IGestoreInformazioni
+    public interface IGestoreInformazioni
     {
         double GetModifierRequirement(IDataPianta pianta);
         Dictionary<Type, Type> GetTypeProviders();

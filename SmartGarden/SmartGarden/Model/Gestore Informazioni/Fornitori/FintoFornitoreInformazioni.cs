@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model.Gestore_Informazioni.Fornitori
 {
-    class FintoFornitoreInformazioni : IinformationProvider
+    public class FintoFornitoreInformazioni : IinformationProvider
     {
         private String _ciao = "hola como estas";
         public String Ciao

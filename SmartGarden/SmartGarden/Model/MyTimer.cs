@@ -5,7 +5,7 @@ using System.Timers;
 
 namespace SmartGarden.Model
 {
-    class MyTimer
+    public class MyTimer
     {
         private Dictionary<TimeSpan, MyInternalTimer> _timers;
         private MyInternalTimer _timerPrincipale ;

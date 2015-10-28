@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model.Gestore_Informazioni.Fornitori
 {
-    class ProviderPrecipitazioniDefaultHttp : IinformationProvider
+    public class ProviderPrecipitazioniDefaultHttp : IinformationProvider
     {
         //TODO da lavorarci
         FornitoreInformazioniMeteoHttp giver;

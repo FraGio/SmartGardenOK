@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    class PiantaFactory
+    public class PiantaFactory
     {
        private static readonly Dictionary<string,IDataPiantaFlyweight> _piante= new Dictionary<string, IDataPiantaFlyweight>();
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    class ValvolaDiSettore : Valvola
+    public class ValvolaDiSettore : Valvola
     {
 
         public override void Open(object source, EventArgs e)

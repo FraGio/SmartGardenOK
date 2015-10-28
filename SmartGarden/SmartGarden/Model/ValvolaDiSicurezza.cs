@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    class ValvolaDiSicurezza : Valvola, IvalvolaDiSicurezza
+    public class ValvolaDiSicurezza : Valvola, IvalvolaDiSicurezza
     {
         public string Nome
         {

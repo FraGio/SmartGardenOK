@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    class MessagePump:IMessagePump
+    public class MessagePump:IMessagePump
     {
         public event EventHandler newMessage;
         private List<String> _messages;

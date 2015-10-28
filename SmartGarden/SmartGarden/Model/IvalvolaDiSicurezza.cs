@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    interface IvalvolaDiSicurezza :IOpenClose
+    public interface IvalvolaDiSicurezza :IOpenClose
     {
         event EventHandler stateChanged;
         string Nome { get; set; }

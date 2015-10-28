@@ -7,7 +7,7 @@ using System.Timers;
 
 namespace SmartGarden.Model
 {
-    interface IOpenClose
+    public interface IOpenClose
     {
         void Open(Object source, EventArgs e);
 

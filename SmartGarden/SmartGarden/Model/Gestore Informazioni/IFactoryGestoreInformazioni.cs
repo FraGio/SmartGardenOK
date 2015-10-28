@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model.Gestore_Informazioni
 {
-    interface IFactoryGestoreInformazioni
+    public interface IFactoryGestoreInformazioni
     {
         GestoreInformazioni GetGestore(Dictionary<Type, Type> typeProviders);
 

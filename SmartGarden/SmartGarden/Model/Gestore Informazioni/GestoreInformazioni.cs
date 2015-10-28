@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace SmartGarden.Model.Gestore_Informazioni
 {
-    class GestoreInformazioni :IGestoreInformazioni
+    public class GestoreInformazioni :IGestoreInformazioni
     {
         private Dictionary<IinformationProvider, IinformationProviderVisitor> _providers;
         private FactoryVisitor _factoryVisitor;

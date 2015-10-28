@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    class Pianta : IPianta, IDataPianta
+    public class Pianta : IPianta, IDataPianta
     {
         private Guid Guid;
         private IDataPiantaFlyweight _data;

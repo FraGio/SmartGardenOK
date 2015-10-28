@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model.Gestore_Informazioni
 {
-    class StandardInformationVisitor : IinformationProviderVisitor
+    public class StandardInformationVisitor : IinformationProviderVisitor
     {
         double tot;
         IDataPianta _pianta;

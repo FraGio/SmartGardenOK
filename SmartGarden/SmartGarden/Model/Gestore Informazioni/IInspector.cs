@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model.Gestore_Informazioni
 {
-    interface IInspector
+    public interface IInspector
     {
         List<Type> GetListProvider();
 

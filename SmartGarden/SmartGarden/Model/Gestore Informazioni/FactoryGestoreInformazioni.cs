@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SmartGarden.Model.Gestore_Informazioni
-{  
-    class FactoryGestoreInformazioni:IFactoryGestoreInformazioni,IFactoryGestioneInfoRef //Pattern Singleton
+{
+    public class FactoryGestoreInformazioni:IFactoryGestoreInformazioni,IFactoryGestioneInfoRef //Pattern Singleton
     { 
 
         private Dictionary<GestoreInformazioni,int> _gestori;

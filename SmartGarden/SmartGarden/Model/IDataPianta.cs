@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartGarden.Model
 {
-    interface IDataPianta
+    public interface IDataPianta
     {
         double Area { get; }
         string NomeComune { get; }
