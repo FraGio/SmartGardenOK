@@ -18,7 +18,7 @@ namespace SmartGarden.Model
 
         public bool Login(string password)
         {
-            /* using (PrincipalContext pc = new PrincipalContext(ContextType.Machine))
+             /*using (PrincipalContext pc = new PrincipalContext(ContextType.Machine))
              {
                  _isValid = pc.ValidateCredentials(Environment.UserName, password);
              }
