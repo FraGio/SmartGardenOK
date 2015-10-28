@@ -117,7 +117,7 @@ namespace SmartGarden.Model
         }
     }
 
-    class TurnoItem
+    public class TurnoItem
     {
         public TimeSpan Attesa { get; set; }
         public TimeSpan Durata { get; set; }

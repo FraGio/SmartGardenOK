@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SmartGarden.Model.Gestore_Informazioni
 {
-    public internal class FactoryVisitor
+    public class FactoryVisitor
     {
 
         Dictionary<Type, IinformationProviderVisitor> _visitors;

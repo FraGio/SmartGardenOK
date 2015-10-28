@@ -2,7 +2,7 @@
 
 namespace SmartGarden.Model
 {
-    public internal interface IDataPiantaFlyweight
+    public interface IDataPiantaFlyweight
     {
         string NomeComune{ get; set; }
 
